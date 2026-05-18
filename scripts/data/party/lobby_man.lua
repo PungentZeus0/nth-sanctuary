@@ -30,7 +30,7 @@ function character:init()
 
     -- Spells
     self:addSpell("pacify")
-    self:addSpell("heal_prayer")
+    self:addSpell("compel")
 
     -- Current health (saved to the save file)
     self.health = 180
