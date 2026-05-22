@@ -4,7 +4,7 @@ function Dummy:init()
     super.init(self)
 
     -- Enemy name
-    self.name = "3D Spinning Donut"
+    self.name = "3D Spinning Cube"
     -- Sets the actor, which handles the enemy's sprites (see scripts/data/actors/dummy.lua)
     self:setActor("3d-2")
 
@@ -23,7 +23,7 @@ function Dummy:init()
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
-        "cubes-1"
+
     }
 
     self.tired_percentage = -math.huge
@@ -40,15 +40,16 @@ function Dummy:init()
     }
     self.dialogue_offset = {30, 0}
     -- Check text (automatically has "ENEMY NAME - " at the start)
-    self.check = "AT [image:infinite, -5, 0, 2,2] DF [image:infinite,-5,0,2,2] \n* Start fucking running"
+    self.check = "AT [image:infinite, -5, 0, 2,2] DF [image:infinite,-5,0,2,2] \n* Again? [wait:10]Really?"
 
     -- Text randomly displayed at the bottom of the screen each turn
     self.text = {
-        "Placeholder Text",
-        "Spinning and Spinning and Spinning and Spinning and Spinning and Spinning and Spinning and",
-        "Too any excess vacation days? Take a goddamn vacation straight to [shake:2][color:red]HELL",
-        "[font:main_mono,64]Hello",
-        "woa",
+        "* The 3D cube cubes, cubically.",
+        "* Too many excess vertices?\n* Go to hell!",
+        "* cube",
+        "* The 3D Spinning Cube mumbles something about AI generated french fries. [wait:10]It doesn't make any sense.",
+        "* Not placeholder text, [wait:5]I swear.",
+        "* The third dimension is a lie.",
     }
     -- Text displayed at the bottom of the screen when the enemy has low health
     self.low_health_text = "* damn he dyin"
