@@ -5,6 +5,7 @@
  </editorsettings>
  <properties>
   <property name="border" value="leaves"/>
+  <property name="inside" type="bool" value="true"/>
   <property name="light" type="bool" value="true"/>
   <property name="music" value="mus_school"/>
  </properties>
