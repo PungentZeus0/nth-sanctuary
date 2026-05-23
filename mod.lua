@@ -150,7 +150,25 @@ function Mod:init()
     end)
 end
 
-
+function Mod:onFootstep(chara, num)
+    if chara:includes(Player) then
+        for i, w in ipairs(Game.stage.weather) do
+			local make_steps = true
+			for _,dryzone in ipairs(Game.world.map:getEvents("dryzone")) do
+				if Game.world.player:collidesWith(dryzone.collider) then
+					make_steps = false
+				end
+			end
+			if w.rainsplash and not Game.world.map.inside and not Game.world.map.data.properties["inside"] and make_steps then
+				if num == 1 then
+					Assets.playSound("stepsplash1")
+				elseif num == 2 then				
+					Assets.playSound("stepsplash2")
+				end
+			end
+        end
+    end
+end
 
 function Mod:afmGetMusic()
     local data = Kristal.getSaveFile(1)
