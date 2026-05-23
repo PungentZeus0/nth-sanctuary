@@ -853,24 +853,6 @@ return {
           }
         },
         {
-          id = 51,
-          name = "script",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 680,
-          width = 40,
-          height = 200,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["cutscene"] = "hometown_digi.wrongway_b",
-            ["flagcheck"] = "!digi_complete",
-            ["once"] = false
-          }
-        },
-        {
           id = 52,
           name = "dryzone",
           type = "",

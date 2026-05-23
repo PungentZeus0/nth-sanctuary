@@ -6,7 +6,7 @@
  <properties>
   <property name="border" value="leaves"/>
   <property name="light" type="bool" value="true"/>
-  <property name="music" value="deltarune/mus_birdnoise"/>
+  <property name="music" value="mus_birdnoise"/>
  </properties>
  <tileset firstgid="1" source="../../../../tilesets/hometown.tsx"/>
  <tileset firstgid="287" source="../../../../tilesets/hometownobjects.tsx"/>
@@ -342,20 +342,6 @@
   <object id="42" name="interactable" x="240" y="2280" width="160" height="40">
    <properties>
     <property name="text" value="* (It's locked.)"/>
-   </properties>
-  </object>
-  <object id="45" name="script" x="240" y="1000" width="160" height="40">
-   <properties>
-    <property name="cutscene" value="hometown_digi.call"/>
-    <property name="flagcheck" value="!hometown_digicall"/>
-    <property name="once" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="47" name="script" x="240" y="1200" width="160" height="40">
-   <properties>
-    <property name="cutscene" value="hometown_digi.wrongway_a"/>
-    <property name="flagcheck" value="!digi_complete"/>
-    <property name="once" type="bool" value="false"/>
    </properties>
   </object>
   <object id="52" gid="441" x="108" y="2332" width="418" height="240"/>

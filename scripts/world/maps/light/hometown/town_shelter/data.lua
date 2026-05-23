@@ -14,7 +14,7 @@ return {
   properties = {
     ["border"] = "leaves",
     ["light"] = true,
-    ["music"] = "deltarune/mus_birdnoise"
+    ["music"] = "mus_birdnoise"
   },
   tilesets = {
     {
@@ -848,42 +848,6 @@ return {
           visible = true,
           properties = {
             ["text"] = "* (It's locked.)"
-          }
-        },
-        {
-          id = 45,
-          name = "script",
-          type = "",
-          shape = "rectangle",
-          x = 240,
-          y = 1000,
-          width = 160,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["cutscene"] = "hometown_digi.call",
-            ["flagcheck"] = "!hometown_digicall",
-            ["once"] = false
-          }
-        },
-        {
-          id = 47,
-          name = "script",
-          type = "",
-          shape = "rectangle",
-          x = 240,
-          y = 1200,
-          width = 160,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["cutscene"] = "hometown_digi.wrongway_a",
-            ["flagcheck"] = "!digi_complete",
-            ["once"] = false
           }
         },
         {

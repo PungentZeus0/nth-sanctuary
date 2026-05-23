@@ -429,8 +429,25 @@ function Mod:onMapMusic(map, music)
 		return {"bell_ambience", 0.5, 0.5}
 	elseif music == "church_study_slower" then
 		return {"church_dark_study", 1, 0.75}
+	elseif music == "hometown" then
+		if Game:getFlag("hometown_time", "day") == "day" then
+			return "town_day"
+		elseif Game:getFlag("hometown_time", "day") == "sunset" then
+			return "town"
+		elseif Game:getFlag("hometown_time", "day") == "night" then
+			return "night_ambience"
+		end
+	elseif music == "church" then
+		if Game:getFlag("hometown_time", "day") == "night" then
+			return "church_lw_night"
+		else
+			return "church_lw"
+		end
+	elseif music == "mus_birdnoise" and Game:getFlag("hometown_time", "day") == "night" then
+		return "night_ambience"
 	end
 end
+
 
 function Mod:onShadowCrystal(item, light)
     if light then return end

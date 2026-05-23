@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -15,7 +15,7 @@ return {
     ["border"] = "leaves",
     ["inside"] = true,
     ["light"] = true,
-    ["music"] = "deltarune/home"
+    ["music"] = "home"
   },
   tilesets = {},
   layers = {
@@ -59,6 +59,7 @@ return {
           width = 210,
           height = 138,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -72,6 +73,7 @@ return {
           width = 336,
           height = 138,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -85,6 +87,7 @@ return {
           width = 52,
           height = 138,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -98,6 +101,7 @@ return {
           width = 40,
           height = 256,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -111,6 +115,7 @@ return {
           width = 840,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -124,6 +129,7 @@ return {
           width = 40,
           height = 256,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -137,6 +143,7 @@ return {
           width = 42,
           height = 138,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -166,6 +173,7 @@ return {
           width = 44,
           height = 78,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["offset"] = "10"
@@ -181,6 +189,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -197,6 +206,7 @@ return {
           width = 102,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -216,6 +226,7 @@ return {
           width = 44,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (It's what they call \"you.\")"
@@ -231,6 +242,7 @@ return {
           width = 62,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -247,6 +259,7 @@ return {
           width = 102,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -263,6 +276,7 @@ return {
           width = 76,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 0.3,
@@ -282,6 +296,7 @@ return {
           width = 62,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 0.3,
@@ -318,6 +333,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -331,6 +347,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -14,7 +14,7 @@ return {
   properties = {
     ["border"] = "leaves",
     ["light"] = true,
-    ["music"] = "deltarune/mus_school"
+    ["music"] = "mus_school"
   },
   tilesets = {
     {
@@ -112,6 +112,7 @@ return {
           width = 440,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -125,6 +126,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -138,6 +140,7 @@ return {
           width = 880,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -151,6 +154,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -164,6 +168,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -177,6 +182,7 @@ return {
           width = 440,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -190,6 +196,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -203,6 +210,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -232,6 +240,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "down",
@@ -249,6 +258,7 @@ return {
           width = 81,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (The door is locked.)"
@@ -264,6 +274,7 @@ return {
           width = 88,
           height = 112,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -277,6 +288,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 1,
@@ -297,6 +309,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (It's locked.)"
@@ -328,6 +341,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -341,6 +355,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -388,6 +403,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
