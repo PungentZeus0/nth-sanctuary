@@ -213,6 +213,7 @@ function Mod:registerTextCommands(text)
     end, {dry = true})
     text:registerCommand("rainbow", function(self, node, dry)
         self.state.rainbow = (node.arguments[1] ~= "unrainbow")
+        self.draw_every_frame = true
     end, {dry = true})
 end
 
@@ -277,7 +278,7 @@ function Mod:onDrawText(text, node, state, x, y, scale, font, use_color)
         love.graphics.print(node.character, 0, 0, 0, scale, scale)
         Draw.popCanvas()
         love.graphics.setShader(shader)
-        local r,g,b = pastelRainbow(love.timer.getTime() * 1.5) -- slow rainbow
+        local r,g,b = pastelRainbow(Kristal.getTime() * 1.5) -- slow rainbow
         shader:sendColor("inputcolor", {r, g, b, 1})
         shader:send("amount", 1)
         Draw.draw(canvas, x, y)
