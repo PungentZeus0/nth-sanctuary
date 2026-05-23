@@ -423,8 +423,6 @@ end
 function Mod:onMapMusic(map, music)
 	if music == "homebase" and self.legacy_base_music then
 		return "homebase_old"
-	elseif music == "second_church" and self.legacy_base_music then
-		return "second_church_gamble"
     elseif music == "grand_bells" then
 		return {"bell_ambience", 0.5, 0.5}
 	elseif music == "church_study_slower" then
