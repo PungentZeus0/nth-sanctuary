@@ -13,6 +13,7 @@ return {
   nextobjectid = 38,
   properties = {
     ["border"] = "leaves",
+    ["inside"] = true,
     ["light"] = true,
     ["music"] = "hometown"
   },
