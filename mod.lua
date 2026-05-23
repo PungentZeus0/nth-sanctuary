@@ -202,6 +202,7 @@ function Mod:registerTextCommands(text)
     text:registerCommand("imbuedstatic", function(self, node, dry)
         self.state.imbued_static = (node.arguments[1] ~= "unstatic")
         self.state.static_brightness = node.arguments[2] or 1
+        self.draw_every_frame = true
     end, {dry = true})
     text:registerCommand("dualcol", function(self, node, dry)
         self.state.dualcol = (node.arguments[1] ~= "stop")
