@@ -339,6 +339,7 @@ function Mod:afmPostInit(new_file)
         Game:setFlag("fun", love.math.random(1, 170))
         Game.world:startCutscene("primary.intro")
 		Game:setFlag("ft_last_map", "base_center")
+		Game:setFlag("hometown_time", "night")
         if (Game:getFlag("route") == 2 or Game:getFlag("route") == 3) then
             if Game:hasPartyMember("kris") then
                 Game:getPartyMember("kris").health = 240
@@ -358,6 +359,9 @@ function Mod:afmPostInit(new_file)
         end
     else
         Game:setFlag("shards", nil) -- Clean up old save files
+        if not Game:getFlag("hometown_time", nil) then
+			Game:setFlag("hometown_time", "night")
+		end
         if Game:getFlag("apkpure", true) then
             Game.world:startCutscene(function(cutscene)
                 cutscene:setSpeaker("susie")
@@ -518,6 +522,16 @@ end
 
 function Mod:preUpdate()
     self.sound_timer = MathUtils.approach(self.sound_timer, 0, DTMULT)
+end
+
+function Mod:loadObject(world, name, data)
+    if data.gid then
+		local tobj = world.map:createTileObject(data)
+		tobj.day_mode = data.properties["day"] or nil
+		tobj.night_mode = data.properties["night"] or nil
+		tobj.rain_mode = data.properties["rain"] or nil
+		return tobj
+    end
 end
 
 --[==[
