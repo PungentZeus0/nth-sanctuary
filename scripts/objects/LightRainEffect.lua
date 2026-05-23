@@ -135,9 +135,12 @@ function LightRainEffect:update()
 		if self.build_timer > 0 then
 			self.build_timer = self.build_timer - DTMULT
 		end
-		if self.build_timer < 100 then return end
 		if self.build_timer <= 0 then
 			self:remove()
+		end
+		if self.build_timer < 100 then 
+			self.rainsplash = false
+			return
 		end
 	end
 	self.dropcount = #Game.stage:getObjects(LightRainDrop)
