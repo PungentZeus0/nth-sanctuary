@@ -51,6 +51,38 @@ function HometownDayNight:postLoad()
             end
         end
     end
+	if Game:getFlag("hometown_time", "day") == "night" then
+		for index, value in ipairs(Game.world.stage:getObjects(Object)) do
+			if value.day_mode or value.sunrise_mode or value.sunset_mode then
+				value:remove()
+			end
+		end
+	else
+		for index, value in ipairs(Game.world.stage:getObjects(Object)) do
+			if value.night_mode then
+				value:remove()
+			end
+			if Game:getFlag("hometown_time", "day") == "sunrise" and value.sunrise_mode then
+				value:remove()
+			end
+			if Game:getFlag("hometown_time", "day") == "sunset" and value.sunset_mode then
+				value:remove()
+			end
+		end
+	end
+	if Game:getFlag("hometown_raining", 0) > 0 then
+		for index, value in ipairs(Game.world.stage:getObjects(Object)) do
+			if value.rain_mode == 0 then
+				value:remove()
+			end
+		end
+	else
+		for index, value in ipairs(Game.world.stage:getObjects(Object)) do
+			if value.rain_mode == 1 then
+				value:remove()
+			end
+		end
+	end
 end
 
 function HometownDayNight:onRemove(parent)
