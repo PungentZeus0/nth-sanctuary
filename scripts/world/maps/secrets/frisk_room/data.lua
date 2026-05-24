@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -103,7 +103,6 @@ return {
           width = 640,
           height = 1600,
           rotation = 0,
-          opacity = 1,
           gid = 833,
           visible = true,
           properties = {
@@ -120,7 +119,6 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
-          opacity = 1,
           gid = 829,
           visible = true,
           properties = {
@@ -137,7 +135,6 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
-          opacity = 1,
           gid = 829,
           visible = true,
           properties = {
@@ -154,7 +151,6 @@ return {
           width = 200,
           height = 1240,
           rotation = 0,
-          opacity = 1,
           gid = 830,
           visible = true,
           properties = {
@@ -187,7 +183,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -409,7 +404,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["prophecy"] = true
@@ -425,7 +419,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "sanctum_hell/hell_1",
@@ -442,7 +435,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "frisk",
@@ -459,7 +451,6 @@ return {
           width = 280,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["cond"] = "Game:getFlag(\"fun\") ~= 69",
@@ -484,7 +475,6 @@ return {
           width = 280,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["cond"] = "Game:getFlag(\"fun\") == 69",
@@ -497,23 +487,6 @@ return {
             ["text"] = "FAFA",
             ["texture"] = "friskroom-fafa",
             ["txt_offy"] = -20
-          }
-        },
-        {
-          id = 32,
-          name = "npc",
-          type = "",
-          shape = "point",
-          x = 540,
-          y = 310,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["actor"] = "rouxls",
-            ["text1"] = "* WHEREST AM I?!?!?!"
           }
         }
       }
@@ -542,7 +515,6 @@ return {
           width = 376,
           height = 458,
           rotation = 0,
-          opacity = 1,
           gid = 932,
           visible = true,
           properties = {
@@ -563,7 +535,6 @@ return {
           width = 376,
           height = 458,
           rotation = 0,
-          opacity = 1,
           gid = 932,
           visible = true,
           properties = {
@@ -584,7 +555,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -614,7 +584,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -644,7 +613,6 @@ return {
           width = 1040,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -658,7 +626,6 @@ return {
           width = 1040,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -672,7 +639,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }

@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -90,12 +90,11 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           gid = 260,
           visible = true,
           properties = {
             ["cutscene"] = "konverge.untroll",
-            ["usetile"] = "true"
+            ["usetile"] = true
           }
         }
       }
@@ -124,7 +123,6 @@ return {
           width = 880,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -138,7 +136,6 @@ return {
           width = 40,
           height = 280,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -152,7 +149,6 @@ return {
           width = 880,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -166,7 +162,6 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -180,7 +175,6 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -210,7 +204,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["amount"] = "1",
@@ -227,7 +220,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -241,7 +233,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -255,7 +246,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -269,7 +259,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -283,7 +272,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -297,7 +285,6 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/citadel_room/citadel_room_1",
@@ -314,11 +301,10 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           gid = 183,
           visible = true,
           properties = {
-            ["solid"] = "true",
+            ["solid"] = true,
             ["text1"] = "* (If you can read this, [wait:10]you've screwed yourself over.)",
             ["usetile"] = true
           }
@@ -333,12 +319,11 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
-          opacity = 1,
           gid = 186,
           visible = true,
           properties = {
             ["cutscene"] = "konverge.cruel",
-            ["usetile"] = "true"
+            ["usetile"] = true
           }
         }
       }
@@ -367,7 +352,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["flag"] = "trolled",
@@ -405,7 +389,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
