@@ -36,12 +36,9 @@ function Dummy:init()
         },
         "SPIN",
         "I'm gonna fucking kill you",
-<<<<<<< HEAD
-        "I AM NOT A CROSSWALK."
-=======
+        "I AM NOT A CROSSWALK.",
         "The FittnessGram Pacer Test is a       ",
         "[voice:none][speed:100][wait:5][font:main,32][color:#FF69B4][sound:heh]heh"
->>>>>>> 62a84314a4d327a6d606cede6593a6c4a31f70cc
     }
     self.dialogue_offset = {30, 0}
     -- Check text (automatically has "ENEMY NAME - " at the start)
