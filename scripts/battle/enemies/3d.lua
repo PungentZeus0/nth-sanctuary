@@ -213,18 +213,6 @@ function ThreeDPrism:onTurnEnd()
     self.progress = self.progress + 1
 end
 
-function ThreeDPrism:onHurt(damage, battler)
-	super.onHurt(self, damage, battler)
-	self.sprite.hurted = true
-	self.sprite.change_hurt_rot = true
-end
-
-function ThreeDPrism:onHurtEnd()
-	super.onHurtEnd(self)
-	self.sprite.hurted = false
-	self.sprite.change_hurt_rot = false
-end
-
 function ThreeDPrism:getNextWaves()	
 	if Game.battle.encounter.raged then
 		if (self.progress == 0) then
