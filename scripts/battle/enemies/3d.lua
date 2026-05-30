@@ -308,11 +308,12 @@ function ThreeDPrism:onSpared()
 end
 
 function ThreeDPrism:onDefeat(damage, battler)
-	self.sprite.slow_down = true
     super.onDefeat(self, damage, battler)
     self.hurt_timer = -1
     self.defeated = true
 
+	self.sprite.slow_down = true
+	self.overlay_sprite.slow_down = true
     self:defeat("VIOLENCED", true)
 	Game.battle.encounter.prism_bg_con = 2
     Game.battle.music:stop()
