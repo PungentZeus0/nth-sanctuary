@@ -60,20 +60,6 @@ function ThreeDPrism:init()
     self.progress = 0
 	self.exit_on_defeat = false
 	self.tired_percentage = -1
-    self.sprite.anim_delay = (1/30)
-    self.sprite.loop = true
-	self.sprite:setAnimation(function(sprite, wait)
-		while true do
-			sprite:setFrame(1)
-			wait(sprite.anim_delay)
-			while sprite.frame < #sprite.frames do
-				sprite:setFrame(sprite.frame + math.floor(Game.battle.encounter.rage_anim_speed))
-				wait(sprite.anim_delay)
-				sprite:setFrame(sprite.frame + math.ceil(Game.battle.encounter.rage_anim_speed))
-				wait(sprite.anim_delay)
-			end
-		end
-	end)
 	self.challenge_acted = false
 end
 
@@ -283,9 +269,7 @@ function ThreeDPrism:onSpared()
         end
    end, function()
         spare_flash.amount = 0
-		Game.battle.timer:tween(2, self.sprite, {anim_delay = 1}, "in-quad", function()
-			self.sprite:stop(true)
-		end)
+		self.sprite.slow_down = true
         local img1 = AfterImage(self, 0.7, (1/25) * 0.7)
         local img2 = AfterImage(self, 0.4, (1/30) * 0.4)
         img1:addFX(ColorMaskFX())

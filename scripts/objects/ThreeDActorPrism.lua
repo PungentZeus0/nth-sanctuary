@@ -13,6 +13,8 @@ function ThreeDActorPrism:init(actor)
 	self.timer = 0
 	self.canvas = love.graphics.newCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
 	self.hurted = false
+	self.slow_down = false
+	self.slow_timer = 0
 end						
 
 function ThreeDActorPrism:onRemove(parent)
@@ -37,7 +39,10 @@ function ThreeDActorPrism:update()
 			self.model.mesh:setTexture(Assets.getTexture("models/prism"))
 			self.hurted = false
 		end
-		self.timer = self.timer + (10 * Game.battle.encounter.rage_anim_speed) * DTMULT
+		if self.slow_down then
+			self.slow_timer = MathUtils.approach(self.slow_timer, 60, DTMULT)
+		end
+		self.timer = self.timer + MathUtils.lerp((10 * Game.battle.encounter.rage_anim_speed), 0, self.slow_timer/60) * DTMULT
 		local y_offset = math.sin((self.timer / 10) * 0.1) * 10
 		self.model:setRotation(math.rad(90), 0, math.rad(self.timer))
 		self.model:setTranslation(10, 320, 120 + y_offset)
