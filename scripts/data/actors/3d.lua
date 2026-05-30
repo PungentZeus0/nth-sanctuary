@@ -117,6 +117,7 @@ end
 
 function actor:onSpriteDraw(sprite)
 	super.onSpriteDraw(sprite)
+    Draw.setColor(sprite:getDrawColor())
 	Draw.drawCanvas(sprite.canvas)
 end
 
