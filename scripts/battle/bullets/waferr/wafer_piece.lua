@@ -35,6 +35,20 @@ function WaferPieceBullet:update()
 			else
 				self.physics.friction = -0.45
 			end
+			local afterimage = AfterImage(self, 0.5, 0.07)
+			afterimage.graphics.grow_x = 0.1
+			afterimage.graphics.grow_y = 0.1
+			afterimage.layer = self.layer - 1
+			afterimage.physics.direction = self.rotation + math.rad(180)
+			afterimage.physics.speed = 0.6
+			if #Game.battle.enemies <= 1 then
+				afterimage.physics.friction = -0.65
+			elseif #Game.battle.enemies <= 2 then
+				afterimage.physics.friction = -0.5
+			else
+				afterimage.physics.friction = -0.45
+			end
+			self.wave:spawnObject(afterimage)
 			self.timer = 0
 			self.con = 2
 		end
