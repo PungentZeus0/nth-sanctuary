@@ -30,8 +30,10 @@ function WaferPieceBullet:update()
 			self.physics.speed = 1
 			if #Game.battle.enemies <= 1 then
 				self.physics.friction = -0.65
-			else
+			elseif #Game.battle.enemies <= 2 then
 				self.physics.friction = -0.5
+			else
+				self.physics.friction = -0.45
 			end
 			self.timer = 0
 			self.con = 2

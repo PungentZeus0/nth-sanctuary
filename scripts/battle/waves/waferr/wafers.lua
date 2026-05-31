@@ -18,6 +18,7 @@ function Wafers:onStart()
 	for sameattacker = 0, #self.enemies-1 do
 		local count = sameattacker
 		self.timer:script(function(wait)
+			wait(((8*self.ratio)*sameattacker)/30)
 			while true do
 				local x = count % 2 == 0 and Game.battle.arena.left - 120 or Game.battle.arena.right + 120
 				local y = Game.battle.arena.y + MathUtils.random(-30, 30)
@@ -36,11 +37,9 @@ function Wafers:onStart()
 				local target_type = 0
 				local not_done_yet = 0
 				if #Game.battle.enemies >= 2 then
-					if self.sameattack >= 2 then
-						buls_start = count % 2 == 0 and 1 or 5
-						buls_end = count % 2 == 0 and 4 or 8
-						not_done_yet = 1
-					end
+					buls_start = count % 2 == 0 and 1 or 5
+					buls_end = count % 2 == 0 and 4 or 8
+					not_done_yet = 1
 					target_type = 1
 					if self.sameattack < 2 then
 						target_type = 2
@@ -76,7 +75,7 @@ function Wafers:onStart()
 						buls_end = count % 2 == 0 and 4 or 8
 						not_done_yet = 1
 					end
-					target_type = 1
+					target_type = 3
 					if self.sameattack < 3 then
 						target_type = 2
 					end
@@ -87,6 +86,8 @@ function Wafers:onStart()
 						target = (i % 4 == 0 and true or false)
 					elseif target_type == 2 then
 						target = true
+					elseif target_type == 2 then
+						target = false
 					end
 					bullet:splitPiece(i, target)
 					wait((self.ratio*2)/30)
@@ -101,6 +102,8 @@ function Wafers:onStart()
 							target = (i % 4 == 0 and true or false)
 						elseif target_type == 2 then
 							target = true
+						elseif target_type == 3 then
+							target = false
 						end
 						bullet:splitPiece(i, target)
 						wait((self.ratio*2)/30)
@@ -130,6 +133,8 @@ function Wafers:onStart()
 								target = (i % 4 == 0 and true or false)
 							elseif target_type == 2 then
 								target = true
+							elseif target_type == 3 then
+								target = false
 							end
 							bullet:splitPiece(i, target)
 							wait((self.ratio*2)/30)
