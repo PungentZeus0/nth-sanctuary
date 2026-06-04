@@ -177,7 +177,8 @@ function DarkMenu:addButtons()
 		["disabled"]       = function() 
 			if Game.world.map.id == "sanctum_hell/hell_1" or 
 			Game.world.map.id == "sanctum_hell/hell_unknown" or 
-			Game.world.map.id == "secrets/frisk_room" then
+			Game.world.map.id == "secrets/frisk_room" or
+			StringUtils.contains(Game.world.map.id, "final_sanctuary") then
 				return true
 			end
 			return false
