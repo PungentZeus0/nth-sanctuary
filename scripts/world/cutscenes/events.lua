@@ -405,6 +405,7 @@ return {
 			for _, fog in ipairs(Game.world:getEvents("churchfog")) do
 				fog.xx = fog.xx + 400 / 2
 			end
+			Game.world.camera.x = Game.world.camera.x + 400
 		elseif Game.world.camera.x + 400*side <= 960 then
 			Game.world.player.x = Game.world.player.x + 400
 			for _, follower in ipairs(Game.world.followers) do
@@ -416,6 +417,7 @@ return {
 			for _, fog in ipairs(Game.world:getEvents("churchfog")) do
 				fog.xx = fog.xx - 400 / 2
 			end
+			Game.world.camera.x = Game.world.camera.x - 400
 		end
 		cutscene:text("[noskip]* We needed to stop for the night, [wait:5]so we ended up in Hometown.[wait:30]", "neutral", jamm, {auto = true})
 		cutscene:text("[noskip]* I noticed Marcy was gone, [wait:5]so I followed her trail of crackers...[wait:30]", "look_left", jamm, {auto = true})
