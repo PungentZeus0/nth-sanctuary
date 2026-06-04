@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="70" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="25">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="70" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="25">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -72,6 +72,11 @@
    </properties>
    <point/>
   </object>
+  <object id="12" gid="1696" x="2490" y="370" width="26" height="36">
+   <properties>
+    <property name="color" type="color" value="#ffffffff"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer id="1" name="Tile Layer 1" width="70" height="12">
   <data encoding="csv">
@@ -105,14 +110,8 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="5" name="objects_overlay">
+ <objectgroup id="10" name="objects_under_overlay">
   <object id="1" name="churchfog" x="-55.8125" y="-0.5">
-   <point/>
-  </object>
-  <object id="2" name="filter" x="-60" y="-20">
-   <properties>
-    <property name="type" value="hsv3"/>
-   </properties>
    <point/>
   </object>
   <object id="8" name="darkness" x="2866" y="-8">
@@ -128,14 +127,17 @@
    </properties>
    <point/>
   </object>
-  <object id="12" gid="1696" x="2490" y="370" width="26" height="36">
-   <properties>
-    <property name="color" type="color" value="#ffffffff"/>
-   </properties>
-  </object>
   <object id="13" name="staticlight" x="2503" y="360">
    <properties>
     <property name="size" type="float" value="200"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="objects_overlay">
+  <object id="2" name="filter" x="-60" y="-20">
+   <properties>
+    <property name="type" value="hsv3"/>
    </properties>
    <point/>
   </object>

@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,7 +9,7 @@ return {
   height = 16,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 14,
+  nextlayerid = 15,
   nextobjectid = 67,
   properties = {
     ["border"] = "church_d",
@@ -63,6 +63,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -92,6 +93,7 @@ return {
           width = 640,
           height = 1600,
           rotation = 0,
+          opacity = 1,
           gid = 203,
           visible = true,
           properties = {
@@ -108,6 +110,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 300,
           visible = true,
           properties = {
@@ -140,6 +143,7 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
+          opacity = 1,
           gid = 199,
           visible = true,
           properties = {
@@ -156,6 +160,7 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
+          opacity = 1,
           gid = 199,
           visible = true,
           properties = {
@@ -172,6 +177,7 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
+          opacity = 1,
           gid = 199,
           visible = true,
           properties = {
@@ -188,6 +194,7 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
+          opacity = 1,
           gid = 199,
           visible = true,
           properties = {
@@ -204,6 +211,7 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
+          opacity = 1,
           gid = 199,
           visible = true,
           properties = {
@@ -236,6 +244,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["huge"] = true
@@ -267,6 +276,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -280,6 +290,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -309,6 +320,7 @@ return {
           width = 2800,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -322,6 +334,7 @@ return {
           width = 2800,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -387,6 +400,7 @@ return {
           width = 26,
           height = 36,
           rotation = 0,
+          opacity = 1,
           gid = 284,
           visible = true,
           properties = {
@@ -403,6 +417,7 @@ return {
           width = 26,
           height = 36,
           rotation = 0,
+          opacity = 1,
           gid = 284,
           visible = true,
           properties = {
@@ -419,6 +434,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["size"] = 200
@@ -434,6 +450,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["size"] = 200
@@ -449,6 +466,7 @@ return {
           width = 26,
           height = 36,
           rotation = 0,
+          opacity = 1,
           gid = 284,
           visible = true,
           properties = {
@@ -465,6 +483,7 @@ return {
           width = 26,
           height = 36,
           rotation = 0,
+          opacity = 1,
           gid = 284,
           visible = true,
           properties = {
@@ -481,6 +500,7 @@ return {
           width = 26,
           height = 36,
           rotation = 0,
+          opacity = 1,
           gid = 284,
           visible = true,
           properties = {
@@ -497,6 +517,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["size"] = 200
@@ -512,6 +533,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["size"] = 200
@@ -527,6 +549,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["size"] = 200
@@ -542,6 +565,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "4_4th_sanctuary/fourth_sanctum_7",
@@ -558,6 +582,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* It appears that I am stuck.",
@@ -574,6 +599,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "organikk"
@@ -589,6 +615,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -602,6 +629,7 @@ return {
           width = 30,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "4_4th_sanctuary/fourth_sanctum_9",
@@ -706,6 +734,7 @@ return {
           width = 525.415,
           height = 640,
           rotation = 0,
+          opacity = 1,
           gid = 581,
           visible = true,
           properties = {
@@ -742,9 +771,43 @@ return {
           width = 2880,
           height = 100,
           rotation = 45,
+          opacity = 1,
           gid = 290,
           visible = true,
           properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 14,
+      name = "objects_under_overlay",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 16,
+          name = "darkness",
+          type = "",
+          shape = "point",
+          x = 2800,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["alpha"] = 0.25,
+            ["highlight"] = true
+          }
         },
         {
           id = 51,
@@ -756,6 +819,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -776,22 +840,6 @@ return {
       properties = {},
       objects = {
         {
-          id = 16,
-          name = "darkness",
-          type = "",
-          shape = "point",
-          x = 2800,
-          y = 0,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["alpha"] = 0.25,
-            ["highlight"] = true
-          }
-        },
-        {
           id = 50,
           name = "filter",
           type = "",
@@ -801,6 +849,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv3"

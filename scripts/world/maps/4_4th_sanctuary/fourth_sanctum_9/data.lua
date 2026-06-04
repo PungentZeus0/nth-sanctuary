@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 10,
+  nextlayerid = 11,
   nextobjectid = 25,
   properties = {
     ["border"] = "church_d",
@@ -65,6 +65,7 @@ return {
           width = 160,
           height = 155,
           rotation = 0,
+          opacity = 1,
           gid = 1630,
           visible = true,
           properties = {}
@@ -95,6 +96,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 1703,
           visible = true,
           properties = {}
@@ -109,6 +111,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 1703,
           visible = true,
           properties = {}
@@ -123,6 +126,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 1703,
           visible = true,
           properties = {}
@@ -137,6 +141,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 1703,
           visible = true,
           properties = {}
@@ -151,6 +156,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 1703,
           visible = true,
           properties = {}
@@ -165,6 +171,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 1703,
           visible = true,
           properties = {}
@@ -179,6 +186,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 1703,
           visible = true,
           properties = {}
@@ -193,6 +201,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 1703,
           visible = true,
           properties = {}
@@ -207,6 +216,7 @@ return {
           width = 200,
           height = 289,
           rotation = 0,
+          opacity = 1,
           gid = 1703,
           visible = true,
           properties = {}
@@ -237,6 +247,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -266,6 +277,7 @@ return {
           width = 2800,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -279,6 +291,7 @@ return {
           width = 2800,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -340,6 +353,7 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "4_4th_sanctuary/fourth_sanctum_8",
@@ -356,6 +370,7 @@ return {
           width = 26,
           height = 36,
           rotation = 0,
+          opacity = 1,
           gid = 1696,
           visible = true,
           properties = {
@@ -372,6 +387,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "events.jamm_lore",
@@ -379,6 +395,23 @@ return {
             ["xback"] = -800,
             ["xpoint"] = 960,
             ["yback"] = 0
+          }
+        },
+        {
+          id = 12,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 2490,
+          y = 370,
+          width = 26,
+          height = 36,
+          rotation = 0,
+          opacity = 1,
+          gid = 1696,
+          visible = true,
+          properties = {
+            ["color"] = "#ffffffff"
           }
         }
       }
@@ -450,8 +483,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 5,
-      name = "objects_overlay",
+      id = 10,
+      name = "objects_under_overlay",
       class = "",
       visible = true,
       opacity = 1,
@@ -471,23 +504,9 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
-        },
-        {
-          id = 2,
-          name = "filter",
-          type = "",
-          shape = "point",
-          x = -60,
-          y = -20,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["type"] = "hsv3"
-          }
         },
         {
           id = 8,
@@ -499,6 +518,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["alpha"] = 0.25,
@@ -515,25 +535,10 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["size"] = 200
-          }
-        },
-        {
-          id = 12,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 2490,
-          y = 370,
-          width = 26,
-          height = 36,
-          rotation = 0,
-          gid = 1696,
-          visible = true,
-          properties = {
-            ["color"] = "#ffffffff"
           }
         },
         {
@@ -546,9 +551,42 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["size"] = 200
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 5,
+      name = "objects_overlay",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 2,
+          name = "filter",
+          type = "",
+          shape = "point",
+          x = -60,
+          y = -20,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["type"] = "hsv3"
           }
         }
       }

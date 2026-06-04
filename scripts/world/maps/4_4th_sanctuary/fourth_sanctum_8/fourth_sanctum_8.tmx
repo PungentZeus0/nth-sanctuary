@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="70" height="16" tilewidth="40" tileheight="40" infinite="0" nextlayerid="14" nextobjectid="67">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="70" height="16" tilewidth="40" tileheight="40" infinite="0" nextlayerid="15" nextobjectid="67">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -233,11 +233,8 @@
  </objectgroup>
  <objectgroup id="9" name="objects_top" parallaxx="1.5">
   <object id="38" gid="290" x="800" y="-560" width="2880" height="100" rotation="45"/>
-  <object id="51" name="churchfog" x="-51.8125" y="-12.5">
-   <point/>
-  </object>
  </objectgroup>
- <objectgroup id="5" name="objects_overlay">
+ <objectgroup id="14" name="objects_under_overlay">
   <object id="16" name="darkness" x="2800" y="0">
    <properties>
     <property name="alpha" type="float" value="0.25"/>
@@ -245,6 +242,11 @@
    </properties>
    <point/>
   </object>
+  <object id="51" name="churchfog" x="-51.8125" y="-12.5">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="objects_overlay">
   <object id="50" name="filter" x="-56" y="-32">
    <properties>
     <property name="type" value="hsv3"/>
