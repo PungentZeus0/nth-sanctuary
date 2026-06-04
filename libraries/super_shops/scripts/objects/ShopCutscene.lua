@@ -203,8 +203,8 @@ function ShopCutscene:text(text, portrait, actor, options)
         else
             self.textbox:setFont(options["font"])
         end
-    elseif Game.shop and Game.shop.shopkeeper and Game.shop.shopkeeper:getActor() then
-        self.textbox:setFont(Game.shop.shopkeeper:getActor():getFont() or "main_mono")
+	elseif Game.shop and Game.shop.shopkeeper and Game.shop.shopkeeper:getActor() then
+		self.textbox:setFont(Game.shop.shopkeeper:getActor():getFont() or "main_mono")
     end
 
     if options["align"] then
