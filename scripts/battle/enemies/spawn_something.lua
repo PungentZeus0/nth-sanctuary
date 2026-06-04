@@ -3,7 +3,7 @@ local TitanSpawn, super = Class(EnemyBattler, "spawn_something")
 function TitanSpawn:init()
     super.init(self)
 
-    self.name = "Titan Spawn"
+    self.name = "Something Spawn"
     self:setActor("spawn_something")
 
     self.max_health = 3000
@@ -21,8 +21,8 @@ function TitanSpawn:init()
 
     self.text = {
         "* You hear your heart beating in \nyour ears.",
-        "* When did you start being \nyourself?",
-        "* It sputtered in a voice like \ncrushed glass."
+        "* Waiting for something to happen?",
+        "* It sputtered in a voice like \nanguish."
     }
     if Game:hasPartyMember("ralsei") then
         table.insert(self.text, "* Ralsei mutters to himself to \nstay calm.")
@@ -123,12 +123,12 @@ function TitanSpawn:onAct(battler, name)
 	if name == "Check" then
         if Game:getTension() >= 64 then
             return {
-                "* TITAN SPAWN - AT 30 DF 200\n* A shard of fear. Appears \nin places of deep dark.",
+                "* SOMETHING SPAWN - AT 30 DF 200\n* A shard of guilt, taking the form of your fears.",
                 "* The atmosphere feels tense...\n* (You can use [color:yellow]BANISH[color:reset]!)"
             }
         else
             return {
-                "* TITAN SPAWN - AT 30 DF 200\n* A shard of fear. Appears \nin places of deep dark.",
+                "* SOMETHING SPAWN - AT 30 DF 200\n* A shard of guilt, taking the form of your fears.",
                 "* Expose it to LIGHT... and gather COURAGE to gain TP.",
                 "* Then, \"[color:yellow]BANISH[color:reset]\" it!",
             }
