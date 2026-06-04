@@ -76,9 +76,9 @@ function MadDummy:getEncounterText()
     elseif self.dialogue_index == 4 then
         return "[facec:susie/smile][voice:susie]* (Or you can just use my\nRUDE BUSTER, because it's\ncooler.)"
     elseif self.dialogue_index == 5 then
-        return "* You tell Mad Dummy that there is no such thing as a \"barrier\" in this universe."
+        return "* You tell Mad Dummy that there is no such thing as a \"barrier\" here."
     elseif self.dialogue_index == 6 then
-        return "* You are filled with the power of not knowing what you're talking about."
+        return "* You are filled with the power of\nnot knowing what you're talking\nabout."
     end
 
     return super.getEncounterText(self)
