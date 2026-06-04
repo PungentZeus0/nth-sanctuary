@@ -158,9 +158,9 @@ function DarkMenu:addButtons()
 		["disabled"]       = false
     })
     
-    -- TALK
+    -- TRAVEL
     self:addButton({
-        ["state"]          = "TRAVELMENU",
+        ["state"]          = "TRAVEL",
         ["sprite"]         = Assets.getTexture("ui/menu/btn/sanctum"),
         ["hovered_sprite"] = Assets.getTexture("ui/menu/btn/sanctum_h"),
         ["disabled_sprite"]= Assets.getTexture("ui/menu/btn/sanctum_d"),
