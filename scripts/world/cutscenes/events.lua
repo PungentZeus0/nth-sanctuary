@@ -372,6 +372,7 @@ return {
 		local ralsei = cutscene:getCharacter("ralsei")
 		local jamm = cutscene:getCharacter("jamm")
 		cutscene:enableMovement()
+		Game.world.player.force_walk = true
 		cutscene:text("[noskip]* So, uh, [wait:5]Jamm, [wait:5]right?[wait:60]", "nervous", susie, {auto = true})
 		cutscene:text("[noskip]* Yeah.[wait:30]", "neutral", jamm, {auto = true})
 		cutscene:text("[noskip]* Where exactly did you, [wait:5]uh... [wait:10]Come from?[wait:20]", "nervous", susie, {auto = true})
@@ -398,6 +399,7 @@ return {
 		cutscene:text("[noskip]* But Marcy was in there, [wait:5]so I figured I should follow.[wait:40]", "stern", jamm, {auto = true})
 		cutscene:wait(cutscene:attachCamera())
 		Game.lock_movement = false
+		Game.world.player.force_walk = false
 		Game:setFlag("jamm_lore_done", true)
 		Game.world:getEvent("stairlooper"):remove()
 		
