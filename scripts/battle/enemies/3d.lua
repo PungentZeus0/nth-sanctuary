@@ -328,6 +328,9 @@ function ThreeDPrism:onSpared()
    end, function()
         spare_flash.amount = 0
 		self.sprite.slow_down = true
+		Game.battle.timer:tween(2, self.sprite, {anim_delay = 1}, "in-quad", function()
+			self.sprite:stop(true)
+		end)
         local img1 = AfterImage(self, 0.7, (1/25) * 0.7)
         local img2 = AfterImage(self, 0.4, (1/30) * 0.4)
         img1:addFX(ColorMaskFX())
