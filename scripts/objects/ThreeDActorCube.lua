@@ -7,14 +7,14 @@ function ThreeDActorCube:init(actor)
 	
 	self.stage = Stage3D()
 	Game.battle:addChild(self.stage)
-    self.model = Assets3D.newModel("cube", "models/3d", {20,20,20}, {0,0,0})
+    self.model = Assets3D.newModel("cube", "models/3d", {80,80,80}, {0,0,0})
 	self.model:setShader("p3d", {
 		["matcaps"] = Assets.getTexture("models/p3d_matcaps"),
 		["material"] = 0,
 		["lighting"] = 0,
 		["eyePosition"] = {160,-320,120},
 	})
-    self.model:setScale(50,50,70)
+    self.model:setScale(60,60,70)
 	self.debug_lighting = {x = 160, y = -320, z = 120}
 	self.debug_lighting_last = {x = 160, y = -320, z = 120}
     self.stage:add(self.model)
