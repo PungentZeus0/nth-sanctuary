@@ -7,14 +7,14 @@ function ThreeDActorCube:init(actor)
 	
 	self.stage = Stage3D()
 	Game.battle:addChild(self.stage)
-    self.model = Assets3D.newModel("prism", "models/3d", {20,20,20}, {0,0,0})
+    self.model = Assets3D.newModel("cube", "models/3d", {20,20,20}, {0,0,0})
 	self.model:setShader("p3d", {
 		["matcaps"] = Assets.getTexture("models/p3d_matcaps"),
 		["material"] = 0,
 		["lighting"] = 0,
 		["eyePosition"] = {160,-320,120},
 	})
-    self.model:setScale(80,60,80)
+    self.model:setScale(50,50,70)
 	self.debug_lighting = {x = 160, y = -320, z = 120}
 	self.debug_lighting_last = {x = 160, y = -320, z = 120}
     self.stage:add(self.model)
@@ -69,7 +69,7 @@ function ThreeDActorCube:update()
 			self.model.shadervars["eyePosition"] = {160,-320,MathUtils.lerp(125, 120, self.slow_timer/60)}
 			self.hurted = true
 		end
-		self.timer = self.timer + Game.battle.encounter.rage_anim_speed * DTMULT
+		self.timer = self.timer + 1 * DTMULT
 		local rot = MathUtils.lerp(math.sin(self.timer / 4) * 45, 0, self.slow_timer/60)
 		self.model:setRotation(math.rad(90), math.rad(MathUtils.lerp(5, 0, self.slow_timer/60)), math.rad(rot))
 		self.model.shadervars["eyePosition"] = {160,-160,MathUtils.lerp(125, 120, self.slow_timer/60)}
@@ -80,9 +80,9 @@ function ThreeDActorCube:update()
 			self.model.shadervars["eyePosition"] = {160,-320,120}
 			self.hurted = false
 		end
-		self.timer = self.timer + MathUtils.lerp((10 * Game.battle.encounter.rage_anim_speed), 0, self.slow_timer/60) * DTMULT
+		self.timer = self.timer + MathUtils.lerp(10, 0, self.slow_timer/60) * DTMULT
 		local y_offset = math.sin((self.timer / 10) * 0.1) * 10
-		self.model:setRotation(math.rad(90), 0, math.rad(self.timer))
+		self.model:setRotation(math.rad(90), -math.rad(self.timer), math.rad(self.timer))
 		self.model:setTranslation(160, 320, 120 + y_offset)
 	end
     Draw.pushCanvas(self.canvas)

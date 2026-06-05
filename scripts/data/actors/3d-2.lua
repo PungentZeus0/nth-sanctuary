@@ -4,7 +4,7 @@ function actor:init()
     super.init(self)
 
     -- Display name (optional)
-    self.name = "3D Spinning Donut"
+    self.name = "3D Spinning Cube"
 
     -- Width and height for this actor, used to determine its center
     self.width = 100
@@ -50,6 +50,20 @@ function actor:init()
         -- Since the width and height is the idle sprite size, the offset is 0,0
         ["idle"] = {0, 0},
     }
+end
+
+function actor:createSprite()
+    return ThreeDActorCube(self)
+end
+
+function actor:preSpriteDraw(sprite)
+	super.preSpriteDraw(sprite)
+end
+
+function actor:onSpriteDraw(sprite)
+	super.onSpriteDraw(sprite)
+    Draw.setColor(sprite:getDrawColor())
+	Draw.drawCanvas(sprite.canvas)
 end
 
 return actor
