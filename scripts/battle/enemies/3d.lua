@@ -143,7 +143,7 @@ function ThreeDPrism:onAct(battler, name)
 			self.last_mercy = self.mercy
 			self.mercy = 0
 			self.disable_mercy = true
-			self.defense = -200
+			self.defense = -100
 			Game.battle.encounter.raged = true
 		end)
 	elseif name == "BegForMercy" then
@@ -151,7 +151,15 @@ function ThreeDPrism:onAct(battler, name)
         Game.battle:startActCutscene(function(cutscene)
 			self.disable_mercy = false
 			self.mercy = self.last_mercy
-			self.defense = self.defense * 2
+			if self.defense == -200 then
+				self.defense = -100
+			elseif self.defense == -300 then
+				self.defense = -150
+			elseif self.defense == -400 then
+				self.defense = -200
+			elseif self.defense == -500 then
+				self.defense = -250
+			end
 			if self.challenge_acted then
 				self:addMercy(25)
 				Assets.playSound("sparkle_gem")
@@ -206,6 +214,7 @@ function ThreeDPrism:setTired(bool, hide_message)
 		self.name = "3D Spinning Prism"
 	end
 end
+
 function ThreeDPrism:onShortAct(battler, name)
     if name == "Standard" then --X-Action
         Assets.stopAndPlaySound("pirouette", 0.7, 1.1)
