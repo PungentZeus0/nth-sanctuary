@@ -50,7 +50,7 @@ function ThreeDPrism:init()
     -- Text displayed at the bottom of the screen when the enemy has low health
     self.low_health_text = "* damn he dyin"
 
-    self:getAct("Check").description = "Useless\nanalysis"
+    self:getAct("Check").description = "Somewhat\nuseless\nanalysis"
     -- Register act called "Smile"
     self:registerAct("HoldBreath", "Move\nfaster", nil, 2)
     self:registerAct("Gyrate", "Spin\n6%\nmercy")
