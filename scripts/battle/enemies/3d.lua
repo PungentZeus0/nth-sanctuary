@@ -86,7 +86,7 @@ end
 function ThreeDPrism:onAct(battler, name)
     if name == "Check" then
 		if Game.battle.encounter.raged then
-			return "* FURIOUS 3D PRISM - AT [image:infinite, -5, 0, 2,2]^2 DF "..math.floor((self.defense+100)/10).." \n* Now you've REALLY made it angry!"
+			return "* FURIOUS 3D PRISM - AT [image:infinite, -5, 0, 2,2]^2 DF "..math.floor((self.defense+100)/10).." \n* Now you've REALLY made it angry!\n* Its DEFENSE will lower each turn."
 		else
 			return "* 3D SPINNING PRISM - AT [image:infinite, -5, 0, 2,2] DF "..math.floor((self.defense+100)/10).." \n* Start fucking running"
 		end
