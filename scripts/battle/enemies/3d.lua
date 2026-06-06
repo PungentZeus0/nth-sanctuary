@@ -86,8 +86,14 @@ end
 function ThreeDPrism:onAct(battler, name)
     if name == "Check" then
 		if Game.battle.encounter.raged then
+			if self.defense >= -600 then
+				self:getAct("Check").description = "Useless\nanalysis"
+			end
 			return "* FURIOUS 3D PRISM - AT [image:infinite, -5, 0, 2,2]^2 DF "..math.floor((self.defense+100)/10).." \n* Now you've REALLY made it angry!\n* Its DEFENSE will lower each turn."
 		else
+			if self.defense <= -100 then
+				self:getAct("Check").description = "Useless\nanalysis"
+			end
 			return "* 3D SPINNING PRISM - AT [image:infinite, -5, 0, 2,2] DF "..math.floor((self.defense+100)/10).." \n* Start fucking running"
 		end
     elseif name == "HoldBreath" then
@@ -271,14 +277,12 @@ function ThreeDPrism:onTurnEnd()
 			self.defense = self.defense - 100
 		else
 			self.defense = -600
-			self:getAct("Check").description = "Useless\nanalysis"
 		end
 	else
 		if self.defense < -100 then
 			self.defense = self.defense + 50
 		else
 			self.defense = -100
-			self:getAct("Check").description = "Useless\nanalysis"
 		end
 	end
 end
