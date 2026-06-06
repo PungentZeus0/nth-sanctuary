@@ -202,6 +202,7 @@ function ThreeDPrism:onAct(battler, name)
 			elseif self.progress == 8 then
 				self.progress = 3
 			end
+			self:removeAct("Beg4Mercy")
 			self:removeAct("BegForMercy")
 			self:registerAct("Challenge", "Still a\nterrible\nidea", "susie")
 		end)
