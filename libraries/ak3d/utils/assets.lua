@@ -42,86 +42,52 @@ function Assets3D.initShaders()
     end
 end
 
-function Assets3D.preprocessShader(id)
+function Assets3D.preprocessShader(id, file_names)
     local path = assert(Assets3D.shader_paths[id], "No such shader: "..id)
-    local shader_src = ("/// @file:%s,%s\n"):format(id, path)
+    file_names = file_names or {[1] = id}
+    if not TableUtils.getKey(file_names, id) then
+        table.insert(file_names, id)
+    end
+    local file_id = TableUtils.getKey(file_names, id)
+    local shader_src = ("#line 0 " .. file_id .. "\n")
+    local line_n = 0
     for line in love.filesystem.lines(Assets3D.shader_paths[id]) do
         ---@cast line string
         ---@type boolean, string
-        local incl, include_path = Utils.startsWith(line, "#include")
+        local incl, include_path = StringUtils.startsWith(line, "#include")
         if incl then
             local shader_id = "_include/" .. select(3,include_path:find(" *\"(.*)\""))
-            line = Assets3D.preprocessShader(shader_id)
+            line = Assets3D.preprocessShader(shader_id, file_names)
         end
         shader_src = shader_src .. line .. "\n"
+        if incl then
+            shader_src = shader_src .. "#line " .. line_n .. " " .. file_id .. "\n"
+        end
+        line_n = line_n + 1
     end
-    return shader_src .. ("\n/// @fileend:%s,%s\n"):format(id, path)
+    return shader_src, file_names
 end
 
 ---@return love.Shader
 function Assets3D.newShader(id)
-    local shader_src = Assets3D.preprocessShader(id)
+    local shader_src, file_ids = Assets3D.preprocessShader(id)
+    if id == "p3d" then
+        print(shader_src)
+    end
     local ok, out = pcall(love.graphics.newShader, shader_src, nil)
     if ok then --[[@cast out -string]] return out end
     ---@cast out string
 
-    local error_split = Utils.split(out, "\n")
-    local shadersrc_split = Utils.split(shader_src, "\n")
-    ---@class AK3D.Assets3D.file_ptr
-    ---@field id string---@field path string---@field linenum number
-
-    ---@type AK3D.Assets3D.file_ptr[]
-    local file_stack = {}
-    ---@param t AK3D.Assets3D.file_ptr
-    local function pushfile(t) 
-        table.insert(file_stack, t)
-    end
-    ---@type table<number,AK3D.Assets3D.file_ptr>
-    local line_number_map = {}
-    for index,srcline in ipairs(shadersrc_split) do
-        local filemarker; filemarker, srcline = Utils.startsWith(srcline, "/// @file")
-        if filemarker then
-            local fileend; fileend, srcline = Utils.startsWith(srcline, "end")
-            srcline = srcline:sub(2)
-            local sub_id, sub_path = unpack(Utils.split(srcline, ","))
-            if not fileend then
-                pushfile{
-                    id = assert(sub_id),
-                    path = assert(sub_path),
-                    linenum = 1,
-                }
-                line_number_map[index] = {
-                    id = assert(sub_id),
-                    path = assert(sub_path),
-                    linenum = 0,
-                }
-            else
-                line_number_map[index] = {
-                    id = assert(sub_id),
-                    path = assert(sub_path),
-                    linenum = file_stack[#file_stack].linenum + 1,
-                }
-                table.remove(file_stack, #file_stack)
-            end
-        elseif file_stack[#file_stack] then
-            line_number_map[index] = Utils.copy(file_stack[#file_stack])
-            file_stack[#file_stack].linenum = file_stack[#file_stack].linenum + 1
-        end
-    end
-    for i,v in ipairs(error_split) do
-        error_split[i] = v:gsub("Line %d+", function(text)
-            local number = assert(tonumber(select(2, Utils.startsWith(text, "Line "))))
-            return ("Line %s of %s"):format(line_number_map[number].linenum, line_number_map[number].id)
-        end)
-    end
-    print("line_number_map")
-    for k, v in pairs(line_number_map) do
-        print("", k,Utils.dump(v))
-    end
+    local error_line_pattern = "ERROR: (%d+):"
     error({msg = ([[
+%s
 shader %s: %s
 %s
-]]):format(id,table.concat(error_split, "\n"), debug.traceback())})
+]]) :format(
+            TableUtils.dump(file_ids),
+            id,out:gsub(error_line_pattern, function(n)
+        return string.format("ERROR: %s:", file_ids[tonumber(n)] or n)
+    end), debug.traceback())})
 end
 
 function Assets3D.initModels()

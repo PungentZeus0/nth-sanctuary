@@ -17,16 +17,16 @@ vec2 matcap(vec3 eye, vec3 normal) {
 }
 
 #ifdef VERTEX
-	float inverse(float m) {
+	float schminverse(float m) {
 	  return 1.0 / m;
 	}
 
-	mat2 inverse(mat2 m) {
+	mat2 schminverse(mat2 m) {
 	  return mat2(m[1][1],-m[0][1],
 				 -m[1][0], m[0][0]) / (m[0][0]*m[1][1] - m[0][1]*m[1][0]);
 	}
 
-	mat3 inverse(mat3 m) {
+	mat3 schminverse(mat3 m) {
 	  float a00 = m[0][0], a01 = m[0][1], a02 = m[0][2];
 	  float a10 = m[1][0], a11 = m[1][1], a12 = m[1][2];
 	  float a20 = m[2][0], a21 = m[2][1], a22 = m[2][2];
@@ -42,7 +42,7 @@ vec2 matcap(vec3 eye, vec3 normal) {
 				  b21, (-a21 * a00 + a01 * a20), (a11 * a00 - a01 * a10)) / det;
 	}
 
-	mat4 inverse(mat4 m) {
+	mat4 schminverse(mat4 m) {
 	  float
 		  a00 = m[0][0], a01 = m[0][1], a02 = m[0][2], a03 = m[0][3],
 		  a10 = m[1][0], a11 = m[1][1], a12 = m[1][2], a13 = m[1][3],
@@ -91,7 +91,7 @@ vec2 matcap(vec3 eye, vec3 normal) {
         screenPosition = projectionMatrix * viewPosition;
         vertexNormal = VertexNormal;
         vertexColor = VertexColor;
-		normalMatrix = mat3(transpose(inverse(modelMatrix))) * vertexNormal;  
+		normalMatrix = mat3(transpose(schminverse(modelMatrix))) * vertexNormal;  
 
 	    eyeVector = normalize(vec3(modelViewMatrix * vec4(eyePosition, 1.0)));
 	    normalVector = normalize((normalMatrix * vertexNormal));
