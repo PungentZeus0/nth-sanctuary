@@ -1,8 +1,8 @@
-local ThreeDActorCube, super = Class(ActorSprite)
+local ThreeDActorPrism, super = Class(ActorSprite)
 local Assets3D = modRequire("libraries.ak3d.utils.assets")
 local Stage3D = modRequire("libraries.ak3d.src.game.world.Stage3D")
 
-function ThreeDActorCube:init(actor)
+function ThreeDActorPrism:init(actor)
     super.init(self, actor)
 	
     self.model = Assets3D.newModel("prism", "models/3d", {20,20,20}, {0,0,0})
@@ -22,14 +22,14 @@ function ThreeDActorCube:init(actor)
 	self.slow_timer = 0
 end						
 
-function ThreeDActorCube:onRemove(parent)
+function ThreeDActorPrism:onRemove(parent)
     super.onRemove(self, parent)
 	
 	self.canvas:release()
 	self.canvas = nil
 end
 
-function ThreeDActorCube:update()
+function ThreeDActorPrism:update()
     super.update(self)
 	if DEBUG_RENDER then
 		if Input.keyDown("w") then
@@ -92,7 +92,7 @@ function ThreeDActorCube:update()
 	Draw.popCanvas()
 end
 
-function ThreeDActorCube:draw()
+function ThreeDActorPrism:draw()
     -- so that far polygons don't overlap near polygons
 	local canvas = Draw.pushCanvas(SCREEN_WIDTH * 2, SCREEN_HEIGHT * 2)
     self.actor:preSpriteDraw(self)
@@ -108,4 +108,4 @@ function ThreeDActorCube:draw()
 	end
 end
 
-return ThreeDActorCube
+return ThreeDActorPrism
