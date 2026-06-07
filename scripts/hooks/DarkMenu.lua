@@ -18,7 +18,67 @@ function DarkMenu:draw()
 	    local shards = tostring(Mod:getDarkShardCount())
         love.graphics.print(shards, 554, 41)
     end
+    if self.box then return end --scary
+    love.graphics.push("all")
+    love.graphics.origin()
+    for k, party in ipairs(Game.party) do
+        if k > 3 then
+            local col = math.floor((k - 4) / 11)
+            local row = (k - 4) % 11
 
+            local x_head  = MathUtils.rangeMap(self.y, -80, 0, -100, 20  + col * 150)
+            local x_bar   = MathUtils.rangeMap(self.y, -80, 0, -100, 60  + col * 150)
+            local x_text  = MathUtils.rangeMap(self.y, -80, 0, -100, 60  + col * 150)
+            local y_pos   = 90 + 30 * row
+
+            Draw.setColor(1, 1, 1, 1)
+			if party.id == "lobby_man" then
+				local static_shader = Assets.getShader("static_bullet")
+				static_shader:send("time", Kristal.getTime())
+				static_shader:send("brightness", 0.5)
+				love.graphics.setShader(static_shader)
+			end
+            local a = Assets.getTexture(party:getHeadIcons().."/head")
+            Draw.draw(a, x_head, y_pos)
+
+            local health = (party:getHealth() / party:getStat("health")) * 100
+			local health_bg_col = PALETTE["action_health_bg"]
+			if party.id == "lobby_man" then
+				health_bg_col = COLORS.dkgray
+			end
+            Draw.setColor(health_bg_col)
+            Draw.rectangle("fill", x_bar, y_pos + 10, 100, 10)
+            Draw.setColor(party:getColor())
+			if party.id == "lobby_man" then
+				Draw.setColor(COLORS.white)
+				local static_shader = Assets.getShader("static_bullet")
+				static_shader:send("time", Kristal.getTime())
+				static_shader:send("brightness", 1)
+				love.graphics.setShader(static_shader)
+			end
+            Draw.rectangle("fill", x_bar, y_pos + 10, math.ceil(health), 10)
+			love.graphics.setShader()
+
+            love.graphics.setFont(Assets.getFont("smallnumbers"))
+            local color
+            if (party:getHealth() <= (party:getStat("health") / 4)) then
+                color = PALETTE["action_health_text_low"]
+            else
+                color = PALETTE["action_health_text"]
+            end
+
+            Draw.setColor(COLORS.black)
+            for x = -1, 1 do
+                for y = -1, 1 do
+                    love.graphics.print(party:getHealth().."/"..party:getStat("health"), x_text + x, y_pos + y)
+                end
+            end
+            Draw.setColor(color)
+            love.graphics.print(party:getHealth().."/"..party:getStat("health"), x_text, y_pos)
+        end
+    end
+    Draw.setColor(1,1,1,1)
+    love.graphics.pop()
 end
 
 function DarkMenu:onKeyPressed(key)
