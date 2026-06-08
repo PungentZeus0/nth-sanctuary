@@ -63,6 +63,8 @@ function Dummy:init()
     }
 	self.static_hp = true
     self.nametimer = 2
+
+    self:inflictStatus("imbued")
 end
 
 function Dummy:getHealthDisplay()
@@ -93,6 +95,28 @@ function Dummy:onHurt(damage, battler)
 	super.onHurt(self, damage, battler)
 
     Assets.stopAndPlaySound("creature_hurt", 1.5)
+end
+
+function Dummy:hurtStatus(amount, battler, on_defeat, color, show_status, attacked)
+        if amount == 0 or (amount < 0 and Game:getConfig("damageUnderflowFix")) then
+        if show_status ~= false then
+            self:statusMessage("msg", "miss", color or (battler and { battler.chara:getDamageColor() }))
+        end
+
+        self:onDodge(battler, attacked)
+        return
+    end
+
+    self.health = self.health - amount
+    if show_status ~= false then
+        self:statusMessage("damage", amount, color or (battler and { battler.chara:getDamageColor() }))
+    end
+
+    if amount > 0 then
+        self.hurt_timer = 1
+    end
+
+    self:checkHealth(on_defeat, amount, battler)
 end
 
 function Dummy:getAttackDamage(damage, battler, points)

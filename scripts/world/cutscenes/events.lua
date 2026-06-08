@@ -305,14 +305,17 @@ return {
 		local ralsei = cutscene:getCharacter("ralsei")
 		local jamm = cutscene:getCharacter("jamm")
 		ralsei.y = 340
+		cutscene:detachFollowers()
 		if jamm then jamm.y = 380 end
 		susie.x = 90
 		susie:setSprite("point_right")
 		cutscene:text("* HEY, [wait:5]YOU!", "angry_c", susie)
 		cutscene:text("* YOU CAN'T RUN! [wait:10]GET BACK HERE!", "angry_d", susie)
 		susie:resetSprite()
-		cutscene:walkTo(susie, 620, susie.y, 2)
-		cutscene:wait(cutscene:panTo(800, Game.world.camera.y, 2, 'in-out-cubic'))
+		cutscene:panTo(800, Game.world.camera.y, 2, 'in-out-cubic')
+		cutscene:wait(cutscene:walkTo(susie, 520, susie.y, 1))
+		cutscene:wait(cutscene:walkTo(susie, 780, 280, 1))
+		
 		Game.world.music:pause()
 		local rect = Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 		rect:setColor(COLORS.black)
@@ -343,7 +346,7 @@ return {
 		cutscene:wait(2)
 		rect:remove()
 		g:removeFX(ColorMaskFX())
-		Assets.playSound("imbue_hit", 2.5, 1)
+		local snd = Assets.playSound("imbue_hit", 2.5, 1)
 		local sm = SmokeFx(g.x-10, g.y - g.height/2, 2, 1.5)
 		Game.world:spawnObject(sm)
 		g.layer = origlayer
@@ -359,15 +362,103 @@ return {
         waw:addFX(static_fx, "static_fx")
 		g:addFX(static_fx, "static_fx")
 		
+		--[[
+		S; * [speed:0.7]What... Is that...? 
+[Sad portrait, looks scared imo, step back sprite]
+
+[Ralsei runs over and skids to a halt(?)]
+R: * N- [terrified_up]
+[shake:0.62]* No.... No, No, [shake:1]NO...! [terrified_up_anim]
+[shake:0.62]* The prophecy.... T-This- [w:10]It's- 
+* Has the roaring already begun...?!
+
+[Kris follows from behind. Jamm too.]
+
+J: Ralsei, the prophecy doesn't matter right now!
+J: This thing looks like it's in pain!
+
+R; * But how...? [terrified]
+* I don't think- Did-
+
+S; * They made a fountain INSIDE this thing! [angry_unsure]
+[Overworld: Point]
+* Kris, [speed:0.8]Jamm, [s:1]let's do this. [angry_teeth]
+* You too, Ralsei. We have to help it.
+]]		
+		
+		susie:setSprite("surprise_step")
+		susie:shake()
+		--cutscene:("")
+		cutscene:wait(2)
+		cutscene:text("* [speed:0.5]What... [wait:5]Is that...?", "sad", susie)
+		Game.world.music:play("GALLERY", 0.5, 1)
+		cutscene:wait(cutscene:walkTo(ralsei, 520, ralsei.y, 2))
+		cutscene:wait(cutscene:walkTo(ralsei, 780, 320, 1))
+		ralsei:shake()
+		ralsei:setSprite("shocked_right")
+		cutscene:text("* N-","terrified_up", ralsei)
+		cutscene:text("[shake:0.62][speed:0.5]* No... [speed:1]No, [wait:5]No, [wait:5][shake:1]NO...!", "terrified_up", ralsei)
+		cutscene:text("[shake:0.62][speed:0.5]* The prophecy... [wait:10]T-[wait:5]This- [wait:10]It's- ","terrified_up", ralsei)
+		cutscene:walkTo(kris, 780, kris.y, 2)
+		local a = cutscene:walkTo(jamm, 780, jamm.y, 2)
+		cutscene:text("[shake:0.62][speed:0.5]* Has the roaring already begun...?!", "terrified_up", ralsei)
+		cutscene:wait(a)
+		cutscene:text("* Ralsei, [wait:5]the prophecy doesn't matter right now!", "stern", jamm)
+		cutscene:text("* [shake:0.4]This thing looks like it's in pain!", "stern", jamm)
+		cutscene:text("[shake:0.62][speed:0.5]* But how...?", "terrified_up", ralsei)
+		cutscene:text("[shake:0.62][speed:0.5]* I don't think- [wait:10]Did-", "terrified_up", ralsei, {auto = true})
+		Assets.playSound("weaponpull_fast")
+		susie:setSprite("point_right")
+		cutscene:slideTo(susie, susie.x+30, susie.y, 1, 'out-expo')
+		cutscene:text("* They made a fountain INSIDE this thing!", "angry_unsure", susie)
+		cutscene:text("* Kris, [wait:5]Jamm, [wait:5]let's do this.", "angry_teeth", susie)
+		cutscene:text("* You too, [wait:5]Ralsei. [wait:10]We have to help it.", "angry_teeth", susie)
+		g.layer = Game.world.fader.layer + 1
+		sm:fadeOutAndRemove(2)
+		Game.world.music:fade(0, 1.5)
+		Game.world.timer:tween(1, Game.world.fader, {alpha = 0.5})
+		cutscene:wait(cutscene:panTo(1000, Game.world.camera.y, 2, 'linear'))
+		local spr = Sprite("enemies/creature_a/eye", 1016, 285)
+		spr:setOrigin(0.5, 0.5)
+		spr:setScale(2)
+		spr.graphics.spin = 0.01
+		spr:setLayer(g.layer + 1)
+		spr.alpha = 0
+		Game.world:addChild(spr)
+		Game.world.timer:tween(1, spr.graphics, {spin = 0.15}, 'in-cubic', function()
+			Game.world.timer:tween(2, spr.graphics, {spin = 0.05}, 'out-cubic')
+		end)
+		local function circleAura()
+			local aura = Sprite("effects/darksmoke")
+			aura:addFX(ColorMaskFX(COLORS.white), "color")
+			Game.world:addChild(aura)
+			aura.layer = spr.layer - 0.1
+			aura:setOrigin(0.5, 0.5)
+			aura:setPosition(spr.x, spr.y)
+			aura:setScale(1)
+			Game.world.timer:tween(3, aura, {scale_x = 30, scale_y = 30, alpha = 0}, 'out-expo', function() 
+				aura:remove() 
+			end)
+		end
+		Game.world.timer:tween(1, spr, {scale_x = 6, scale_y = 6, alpha = 1}, 'in-cubic', function()
+			circleAura()
+			Game.world.timer:tween(1, Game.world.fader, {alpha = 0}, 'out-expo')
+			Game.world.timer:tween(2, spr, {scale_x = 2, scale_y = 2}, 'out-cubic')
+		end)
+		cutscene:wait(1/3)
+		Assets.playSound("great_shine",1, 0.75)
+		Assets.playSound("eye_telegraph",1, 0.75)
+		
 		cutscene:wait(3)
+		g.layer = origlayer
+		cutscene:wait(cutscene:fadeOut(1, {music = true}))
+		cutscene:wait(cutscene:slideTo(spr, 1231, 197, 2, 'in-out-cubic'))
 		Game:setFlag("chase_cutscene_prog", 2)
 		cutscene:startEncounter("creature_a", false)
+		cutscene:fadeIn(0.01, {music = false})
 		
 	end,
 	jamm_lore = function (cutscene)
-		-- J: What was odd to me, and in hindsight, maybe not to you...
-		-- J: Was that when I opened the doors, I couldn't see... anything.
-		-- J: But Marcy was in there, so I figured I should follow.
 		local susie = cutscene:getCharacter("susie")
 		local ralsei = cutscene:getCharacter("ralsei")
 		local jamm = cutscene:getCharacter("jamm")
