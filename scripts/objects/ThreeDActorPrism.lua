@@ -1,12 +1,10 @@
-local ThreeDActorCube, super = Class(ActorSprite)
+local ThreeDActorPrism, super = Class(ActorSprite)
 local Assets3D = modRequire("libraries.ak3d.utils.assets")
 local Stage3D = modRequire("libraries.ak3d.src.game.world.Stage3D")
 
-function ThreeDActorCube:init(actor)
+function ThreeDActorPrism:init(actor)
     super.init(self, actor)
 	
-	self.stage = Stage3D()
-	Game.battle:addChild(self.stage)
     self.model = Assets3D.newModel("prism", "models/3d", {20,20,20}, {0,0,0})
 	self.model:setShader("p3d", {
 		["matcaps"] = Assets.getTexture("models/p3d_matcaps"),
@@ -14,10 +12,9 @@ function ThreeDActorCube:init(actor)
 		["lighting"] = 0,
 		["eyePosition"] = {160,-320,120},
 	})
-    self.model:setScale(80,60,80)
+    self.model:setScale(80/2,60/2,80/2)
 	self.debug_lighting = {x = 160, y = -320, z = 120}
 	self.debug_lighting_last = {x = 160, y = -320, z = 120}
-    self.stage:add(self.model)
 	self.timer = 0
 	self.canvas = love.graphics.newCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
 	self.hurted = false
@@ -25,14 +22,14 @@ function ThreeDActorCube:init(actor)
 	self.slow_timer = 0
 end						
 
-function ThreeDActorCube:onRemove(parent)
+function ThreeDActorPrism:onRemove(parent)
     super.onRemove(self, parent)
 	
 	self.canvas:release()
 	self.canvas = nil
 end
 
-function ThreeDActorCube:update()
+function ThreeDActorPrism:update()
     super.update(self)
 	if DEBUG_RENDER then
 		if Input.keyDown("w") then
@@ -83,7 +80,7 @@ function ThreeDActorCube:update()
 		self.timer = self.timer + MathUtils.lerp((10 * Game.battle.encounter.rage_anim_speed), 0, self.slow_timer/60) * DTMULT
 		local y_offset = math.sin((self.timer / 10) * 0.1) * 10
 		self.model:setRotation(math.rad(90), 0, math.rad(self.timer))
-		self.model:setTranslation(160, 320, 120 + y_offset)
+		self.model:setTranslation(160/4, 380, -(200 - y_offset))
 	end
     Draw.pushCanvas(self.canvas)
 	love.graphics.setMeshCullMode("back")
@@ -95,13 +92,15 @@ function ThreeDActorCube:update()
 	Draw.popCanvas()
 end
 
-function ThreeDActorCube:draw()
+function ThreeDActorPrism:draw()
+    -- so that far polygons don't overlap near polygons
 	local canvas = Draw.pushCanvas(SCREEN_WIDTH * 2, SCREEN_HEIGHT * 2)
     self.actor:preSpriteDraw(self)
     self.actor:onSpriteDraw(self)
 	Draw.popCanvas()
 	
-	Draw.draw(canvas, 0, 0, 0, 0.5, 0.5)
+    local offset_height = 60
+	Draw.drawCanvas(canvas, 0, offset_height, 0, 1, -1, 0, offset_height)
 	if DEBUG_RENDER then
 		love.graphics.setFont(Assets.getFont("main"))
 		Draw.setColor(COLORS.red, 1)
@@ -109,4 +108,4 @@ function ThreeDActorCube:draw()
 	end
 end
 
-return ThreeDActorCube
+return ThreeDActorPrism

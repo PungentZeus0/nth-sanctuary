@@ -22,11 +22,11 @@ end
 function Stage3D:drawChildren()
     super.drawChildren(self)
     for i,v in ipairs(self.objects) do
-        love.graphics.setDepthMode("lequal", true)
+        -- love.graphics.setDepthMode("lequal", true)
         love.graphics.setWireframe(DEBUG_RENDER)
         v:draw()
         love.graphics.setWireframe(false)
-        love.graphics.setDepthMode("always", true)
+        -- love.graphics.setDepthMode("always", true)
     end
 end
 

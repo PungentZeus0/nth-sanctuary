@@ -1,5 +1,124 @@
 local BattleUI, super = HookSystem.hookScript(BattleUI)
 
+function BattleUI:draw()
+    super.draw(self)
+    love.graphics.translate(0,30)
+    if Game.battle.state == "DEFENDING" then
+        self.adraw2 = self.adraw2 + 4*DT
+        self.adraw2 = MathUtils.clamp(self.adraw2, 0, 1)
+        for e, party in ipairs(Game.battle.party) do
+            if e > 3 then
+                local col = (e - 4) % 5        -- 0,1,2,3,4, 0,1,2,3,4...
+                local row = math.floor((e - 4) / 5)  -- 0,0,0,0,0, 1,1,1,1,1...
+
+                local x = 130 * col
+                local y = 10 + 40 * row
+
+                local tex = self.action_boxes[e].head_sprite.texture
+                local col = (e - 4) % 5        -- 0,1,2,3,4, 0,1,2,3,4...
+                local row = math.floor((e - 4) / 5)  -- 0,0,0,0,0, 1,1,1,1,1...
+
+                local x = 130 * col
+                local y = 10 + 40 * row
+
+                Draw.setColor(1, 1, 1, self.adraw2)
+				if party.chara.id == "lobby_man" then
+					local static_shader = Assets.getShader("static_bullet")
+					static_shader:send("time", Kristal.getTime())
+					static_shader:send("brightness", 0.5)
+					love.graphics.setShader(static_shader)
+				end
+                Draw.draw(tex, x, y)
+				love.graphics.setShader()
+
+                local health = (party.chara:getHealth() / party.chara:getStat("health")) * 100
+                local color
+                if health <= 0 then
+                    color = {1, 0, 0, self.adraw2}
+                elseif (party.chara:getHealth() <= (party.chara:getStat("health") / 4)) then
+                    color = {1, 1, 0, self.adraw2}
+                else
+                    color = {1, 1, 1, self.adraw2}
+                end
+
+                Draw.setColor(color)
+                love.graphics.setFont(Assets.getFont("smallnumbers"))
+                love.graphics.print(party.chara.health.."/"..party.chara.stats.health, x + tex:getWidth() + 5, y + 10)
+            end
+        end
+    else
+        self.adraw2 = 0
+    end
+
+    love.graphics.translate(0,-360)
+    if Input.down("showhealth") then
+        self.adraw = self.adraw + 4*DT
+        self.adraw = MathUtils.clamp(self.adraw, 0, 1)
+        Draw.setColor(0,0,0,self.adraw-0.6)
+        Draw.rectangle("fill",0,0,SCREEN_WIDTH, (#Game.battle.party * 30)+ 13)
+        for k, party in ipairs(Game.battle.party) do
+            local head = Assets.getTexture(party.chara:getHeadIcons().."/head")
+            local name = Assets.getTexture(party.chara:getNameSprite())
+            Draw.setColor(1,1,1,self.adraw)
+			if party.chara.id == "lobby_man" then
+				local static_shader = Assets.getShader("static_bullet")
+				static_shader:send("time", Kristal.getTime())
+				static_shader:send("brightness", 0.5)
+				love.graphics.setShader(static_shader)
+			end
+            Draw.draw(head, 15, 10 + 30*(k-1))
+			love.graphics.setShader()
+            Draw.draw(name, 65, 15 + 30*(k-1))
+
+			local health_bg_col = PALETTE["action_health_bg"]
+			if party.chara.id == "lobby_man" then
+				health_bg_col = COLORS.dkgray
+			end
+            Draw.setColor(health_bg_col)
+            Draw.rectangle("fill", 140, (30*(k-1))+name:getHeight()+3, 100, 10)
+            local health = (party.chara:getHealth() / party.chara:getStat("health")) * 100
+            Draw.setColor(party.chara.color[1], party.chara.color[2], party.chara.color[3], self.adraw)
+			if party.chara.id == "lobby_man" then
+				Draw.setColor(1, 1, 1, self.adraw)
+				local static_shader = Assets.getShader("static_bullet")
+				static_shader:send("time", Kristal.getTime())
+				static_shader:send("brightness", 1)
+				love.graphics.setShader(static_shader)
+			end
+            if health > 0 then
+                Draw.rectangle("fill", 140, (30*(k-1))+name:getHeight()+3, math.ceil(health), 10)
+            end
+			love.graphics.setShader()
+
+            local g = Assets.getFont("smallnumbers")
+            local h = (30*(k-1))+name:getHeight()+3
+
+            love.graphics.setFont(g)
+            local color = PALETTE["action_health_text"]
+
+            if health <= 0 then
+                color = PALETTE["action_health_text_down"]
+            elseif (party.chara:getHealth() <= (party.chara:getStat("health") / 4)) then
+                color = PALETTE["action_health_text_low"]
+            else
+                color = PALETTE["action_health_text"]
+            end
+
+            local health_offset = (#tostring(party.chara:getHealth()) - 1) * 8
+
+            Draw.setColor(color[1], color[2], color[3], self.adraw)
+            love.graphics.print(party.chara:getHealth(), 250, h)
+            Draw.setColor(PALETTE["action_health_text"])
+            love.graphics.print("/", (260+health_offset), h)
+            local string_width = g:getWidth(tostring(party.chara:getStat("health")))
+            Draw.setColor(color[1], color[2], color[3], self.adraw)
+            love.graphics.print(party.chara:getStat("health"), (280 + health_offset), h)
+        end
+    else
+        self.adraw = 0
+    end
+end
+
 function BattleUI:drawState()
 	super.drawState(self)
     if Game.battle.state == "MENUSELECT" then
@@ -31,7 +150,7 @@ function BattleUI:drawState()
                     -- Draw head only if it isn't the currently selected character
                     if Game.battle:getPartyIndex(party_id) ~= Game.battle.current_selecting then
 						if chara.id == "lobby_man" then
-							local static_shader = Mod.staticBulletShader
+							local static_shader = Assets.getShader("static_bullet")
 							static_shader:send("time", Kristal.getTime())
 							static_shader:send("brightness", 0.5)
 							love.graphics.setShader(static_shader)
@@ -60,7 +179,7 @@ function BattleUI:drawState()
                 -- Using color like a function feels wrong... should this be called getColor?
                 Draw.setColor(item:color() or { 1, 1, 1, 1 })
 				if item.name == Game.battle.party[Game.battle.current_selecting].chara:getXActName() and Game.battle.party[Game.battle.current_selecting].chara.id == "lobby_man" then
-					local static_shader = Mod.staticBulletShader
+					local static_shader = Assets.getShader("static_bullet")
 					static_shader:send("time", Kristal.getTime())
 					static_shader:send("brightness", 0.3)
 					love.graphics.setShader(static_shader)
@@ -112,7 +231,7 @@ function BattleUI:drawState()
                 if Game.battle.state_reason == "XACT" then
 					if Game.battle.party[Game.battle.current_selecting].chara.id == "lobby_man" then
 						Draw.setColor(COLORS.white)
-						local static_shader = Mod.staticBulletShader
+						local static_shader = Assets.getShader("static_bullet")
 						static_shader:send("time", Kristal.getTime())
 						static_shader:send("brightness", 0.3)
 						love.graphics.setShader(static_shader)
@@ -136,7 +255,7 @@ function BattleUI:drawState()
                         love.graphics.rectangle("fill", hp_x, 55 + y_off, 81, 16)
 
                         Draw.setColor(COLORS.white)
-						local static_shader = Mod.staticBulletShader
+						local static_shader = Assets.getShader("static_bullet")
 						static_shader:send("time", Kristal.getTime())
 						static_shader:send("brightness", 1)
                         love.graphics.setShader(static_shader)
@@ -180,7 +299,7 @@ function BattleUI:drawState()
 				-- Swooning is the only time you can ever see it this low
 				percentage = math.max(-1, percentage)
 				Draw.setColor(COLORS.white)
-				local static_shader = Mod.staticBulletShader
+				local static_shader = Assets.getShader("static_bullet")
 				static_shader:send("time", Kristal.getTime())
 				static_shader:send("brightness", 1)
 				love.graphics.setShader(static_shader)

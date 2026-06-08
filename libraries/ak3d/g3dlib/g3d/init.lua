@@ -57,9 +57,6 @@ g3d_tmp.vectors = (modRequire("libraries.ak3d.g3dlib.g3d.vectors"))
 g3d_tmp.camera.updateProjectionMatrix()
 g3d_tmp.camera.updateViewMatrix()
 
--- so that far polygons don't overlap near polygons
-love.graphics.setDepthMode("lequal", true)
-
 -- get rid of g3d from the global namespace and return it instead
 local g3d = g3d_tmp
 g3d_tmp = nil
