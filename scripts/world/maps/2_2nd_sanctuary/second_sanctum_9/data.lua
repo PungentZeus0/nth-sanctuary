@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 1065,
+  nextobjectid = 1069,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -1029,6 +1029,34 @@ return {
             ["map"] = "2_2nd_sanctuary/second_sanctum_10_final",
             ["marker"] = "entry"
           }
+        },
+        {
+          id = 1065,
+          name = "window_glow",
+          type = "",
+          shape = "point",
+          x = 100,
+          y = 300,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 1068,
+          name = "window_glow",
+          type = "",
+          shape = "point",
+          x = 260,
+          y = 300,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
