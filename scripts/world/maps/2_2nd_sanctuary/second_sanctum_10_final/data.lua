@@ -389,20 +389,6 @@ return {
           }
         },
         {
-          id = 41,
-          name = "savepoint",
-          type = "",
-          shape = "rectangle",
-          x = 240,
-          y = 280,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 82,
           name = "tile_oscillate",
           type = "",
@@ -1022,6 +1008,20 @@ return {
           y = 220,
           width = 0,
           height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 41,
+          name = "savepoint",
+          type = "",
+          shape = "rectangle",
+          x = 240,
+          y = 280,
+          width = 40,
+          height = 40,
           rotation = 0,
           opacity = 1,
           visible = true,

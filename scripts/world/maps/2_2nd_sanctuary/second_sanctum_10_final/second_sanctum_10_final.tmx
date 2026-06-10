@@ -101,7 +101,6 @@
    </properties>
    <point/>
   </object>
-  <object id="41" name="savepoint" x="240" y="280" width="40" height="40"/>
   <object id="82" name="tile_oscillate" x="600" y="440" width="120" height="120"/>
   <object id="83" name="tile_oscillate" x="600" y="160" width="120" height="120"/>
   <object id="90" name="tile_oscillate" x="600" y="160" width="480" height="40"/>
@@ -225,6 +224,7 @@
   <object id="89" name="window_glow" x="1260" y="220">
    <point/>
   </object>
+  <object id="41" name="savepoint" x="240" y="280" width="40" height="40"/>
  </objectgroup>
  <objectgroup id="3" name="objects_fog">
   <object id="2" name="churchfog" x="80" y="0">
