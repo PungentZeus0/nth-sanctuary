@@ -903,7 +903,8 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["actor"] = "guei"
+            ["actor"] = "guei",
+            ["cond"] = "Game:getFlag(\"chase_cutscene_prog\", 0) < 2"
           }
         },
         {

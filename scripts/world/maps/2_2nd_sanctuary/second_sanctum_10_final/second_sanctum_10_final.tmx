@@ -191,6 +191,7 @@
   <object id="6" name="npc" x="1040" y="370">
    <properties>
     <property name="actor" value="guei"/>
+    <property name="cond" value="Game:getFlag(&quot;chase_cutscene_prog&quot;, 0) &lt; 2"/>
    </properties>
    <point/>
   </object>
