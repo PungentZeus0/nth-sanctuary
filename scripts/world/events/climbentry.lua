@@ -7,6 +7,11 @@ function event:init(data)
     self.up = properties.up or false
     self.yoffset = properties.yoff or (self.up and -5 or (self.height + 40))
 	self.marker = properties["marker"] or nil
+	self.exit_marker = properties["exitmarker"] or nil
+	self.party_marker = properties["partymarker"] and TiledUtils.parsePropertyList("partymarker", properties) or nil
+	self.party_facing = properties["partyfacing"] and TiledUtils.parsePropertyList("partyfacing", properties) or nil
+	self.allow_exit = properties["exit"] or true
+	self.need_climbclaws = properties["clawsneeded"] or true
 	self.center_if_tower = properties["towercenter"] ~= false
     self.timer = self:addChild(Timer())
 	self.true_x = self.x
@@ -71,7 +76,11 @@ end
 ---@param player Player
 function event:onInteract(player, dir)
     if player.state_manager.state ~= "WALK" then return end
-    if dir ~= "up" and dir ~= "down" then
+	if self.need_climbclaws and not Game.inventory:getDarkInventory():hasItem("claimbclaws") then
+		Game.world:showText("* (It looks like you'd be able to climb this if you had the right tools.)")
+		return true
+	end
+    if dir ~= "up" and dir ~= "down" and not self.marker then
         Kristal.Console:warn("climbentry interacted at a weird angle ("..dir..")! Assuming \"down\"...")
         dir = "down"
     end
@@ -91,8 +100,10 @@ function event:onInteract(player, dir)
     self:startScript(function (scr)
         -- TODO: Accurate camera movement
         self.world:setCameraAttached(false)
-        self.world.camera:panTo(self.x + (self:getScaledWidth()/2), self.y+(self.up and 38 or -32), .5)
-        local tx = MathUtils.round(player.x-(self.x+20), 40)+(self.x+20)
+		if self.world.map.cyltower and self.center_if_tower then
+			self.world.camera:panTo(self.world.map.cyltower.tower_x - SCREEN_WIDTH/2, self.world.camera.y, 8/30)
+		end
+        local tx = MathUtils.roundToMultiple(player.x-(self.x+20), 40)+(self.x+20)
         tx = MathUtils.clamp(tx, self.x+20, self.x+self.width-20)
         local ty = MathUtils.round(self.y, 40)
         if dir == "down" then
@@ -100,24 +111,20 @@ function event:onInteract(player, dir)
         else
             ty = ty
         end
+		if self.marker then
+			tx, ty = self.world.map:getMarker(self.marker)
+		end
         
         Assets.playSound("wing")
         player.sprite:set("jump_ball")
         scr.wait(jumpTo(player,tx,ty,8,8/30))
         player:resetSprite()
         self.world:detachFollowers()
-		if self.marker then
-			player:setPosition(self.world.map:getMarker(self.marker))
-		end
         Assets.playSound("noise")
         player:setState("CLIMB")
 		if self.world.map.cyltower then
 			if self.center_if_tower then
-				if self.world.map.cyltower.horizontal then
-					player.y = self.true_y
-				else
-					player.x = self.true_x + 20
-				end
+				player.x = self.true_x + 20
 			end
 			Kristal.Console:log(self.world.map.cyltower.tower_angle)
 			player.onrotatingtower = true
@@ -140,11 +147,10 @@ end
 
 ---@param player Player
 function event:preClimbEnter(player)
-    if player.state_manager.state == "CLIMB" then
+    if player.state_manager.state == "CLIMB" and self.allow_exit then
         player:setState("WALK")
         local tx, ty = player.x, self.y
         ty = ty + self.yoffset
-        -- TODO: Accurate camera movement
 		if self.world.map.cyltower then
 			if self.world.map.cyltower.horizontal then
 				ty = self.world.map.cyltower.tower_y + 80
@@ -157,21 +163,25 @@ function event:preClimbEnter(player)
 			else
 				self.world.player.x = tx
 			end
-			self.world.camera:panTo(self.world.camera.x, self.y+(self.up and -42 or 43), .5, nil, function()
-				Kristal.Console:log(self.world.camera.y)
-				self.world.camera:setAttached(true)
-			end)
-		else
-			self.world.camera:panTo(self.x + (self:getScaledWidth()/2), self.y+(self.up and -42 or 43), .5, nil, function()
-				Kristal.Console:log(self.world.camera.y)
-				self.world.camera:setAttached(true)
-			end)
 		end
+		if self.exit_marker then
+			tx, ty = self.world.map:getMarker(self.exit_marker)
+		end
+        local cx, cy = self.x + (self:getScaledWidth()/2), self.y+(self.up and -42 or 43)
+		if self.world.map.cyltower then
+			cx = self.world.camera.x
+		end
+		if self.exit_marker then
+			cx, cy = self.world.map:getMarker(self.exit_marker)
+		end
+		self.world.camera:panTo(cx, cy, 16/30, nil, function()
+			self.world.camera:setAttached(true)
+		end)
         self:startScript(function (scr)
             Assets.stopAndPlaySound("wing")
             player.sprite:set("jump_ball")
 			local jumpstrength = 8
-			if self.facing == "up" then
+			if player.facing == "up" then
 				jumpstrength = 12
 			end
             scr.wait(jumpTo(player,tx,ty,jumpstrength,16/30))
@@ -197,8 +207,12 @@ function event:preClimbEnter(player)
 					follower.highlight_force_off = false
 				end)
                 -- TODO: Support parties > 3
-                follower:setPosition(tx + (i == 1 and -30 or 30), ty + (self.up and 10 or -10))
-                follower:setFacing(player.facing)
+				local fx, fy = tx + (i == 1 and -30 or 30), ty + (self.up and 10 or -10)
+				if self.party_marker and type(self.party_marker) == "table" then
+					fx, fy = self.world.map:getMarker(self.party_marker[i])
+				end
+                follower:setPosition(fx, fy)
+                follower:setFacing(type(self.exit_facing) == "table" and self.exit_facing[i] or player.facing)
             end
 			self.world.player.highlight_force_off = false
             self.world.player:interpolateFollowers()
