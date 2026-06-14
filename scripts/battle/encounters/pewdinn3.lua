@@ -21,6 +21,7 @@ function Pewdinns:init()
 	self.heat_wave_mag_bg = 0
 	self.heat_wave_mag = 0
 	self.apply_heatfx_to_bullets = false
+	self.undo_heatwave_at_end = false
 	self.heatfxbg = ShaderFX("lavawave", {
 		wave_sine = function()
 			return Kristal.getTime() * 90
@@ -71,9 +72,19 @@ end
 
 function Pewdinns:onStateChange(old, new, reason)
     if new == "DEFENDINGBEGIN" then
+		self.undo_heatwave_at_end = true
 		Game.battle.arena:addFX(self.heatfx)
 		Game.battle.soul:addFX(self.heatfx)
 		self.apply_heatfx_to_bullets = true
+	elseif new == "ACTIONSELECT" then
+		if self.undo_heatwave_at_end then
+			Game.battle.timer:tween(0.5, self, {heat_wave_mag_bg = math.max(self.heat_wave_mag_bg - 1, 0)})
+			self.heat_wave_mag = math.max(self.heat_wave_mag - 1, 0)
+			if self.heat_wave_mag <= 0 then
+				self.apply_heatfx_to_bullets = false
+			end
+			self.undo_heatwave_at_end = false
+		end
 	end
 end
 

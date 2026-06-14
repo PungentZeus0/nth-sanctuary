@@ -235,11 +235,6 @@ function Pewdinn:onTurnStart()
         self:statusMessage("damage", "-5", {1, 0.25, 0})
         self.attack = self.attack - 5
     end
-	Game.battle.timer:tween(0.5, Game.battle.encounter, {heat_wave_mag_bg = math.max(Game.battle.encounter.heat_wave_mag_bg - 1, 0)})
-	Game.battle.encounter.heat_wave_mag = math.max(Game.battle.encounter.heat_wave_mag - 1, 0)
-	if Game.battle.encounter.heat_wave_mag <= 0 then
-		Game.battle.encounter.apply_heatfx_to_bullets = false
-	end
 end
 
 return Pewdinn
