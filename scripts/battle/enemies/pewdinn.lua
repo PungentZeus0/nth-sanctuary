@@ -1,6 +1,6 @@
-local Dummy, super = Class(EnemyBattler)
+local Pewdinn, super = Class(EnemyBattler)
 
-function Dummy:init()
+function Pewdinn:init()
     super.init(self)
 
     -- Enemy name
@@ -73,12 +73,12 @@ function Dummy:init()
     self.charcoaled = false
 end
 
-function Dummy:onSpareable()
+function Pewdinn:onSpareable()
     super.onSpareable(self)
     self:setAnimation("spare")
 end
 
-function Dummy:getEnemyDialogue()
+function Pewdinn:getEnemyDialogue()
     if self.dialogue_override then
         local dialogue = self.dialogue_override
         self.dialogue_override = nil
@@ -92,7 +92,7 @@ function Dummy:getEnemyDialogue()
     return TableUtils.pick(self.dialogue)
 end
 
-function Dummy:getNextWaves()
+function Pewdinn:getNextWaves()
     local waves = super.getNextWaves(self)
 
     local shared = {
@@ -121,7 +121,7 @@ function Dummy:getNextWaves()
     return filter
 end
 
-function Dummy:onAct(battler, name)
+function Pewdinn:onAct(battler, name)
     if name == "Smile" then
         -- Give the enemy 100% mercy
         self:addMercy(100)
@@ -139,6 +139,8 @@ function Dummy:onAct(battler, name)
         Game.battle:startActCutscene(function(cutscene)
             self:statusMessage("damage", "+5", {1, 0.25, 0})
             self.attack = self.attack + 5
+			Game.battle.timer:tween(0.5, Game.battle.encounter, {heat_wave_mag_bg = 1})
+			Game.battle.encounter.heat_wave_mag = 2
             self.atkup = true
             cutscene:text("* You and Ralsei fanned Pewdinn's flames!\n* The flame burned brighter!")
             self.dialogue_override = "[shake:1]Ooooh, that's hot!"
@@ -172,6 +174,8 @@ function Dummy:onAct(battler, name)
             self:statusMessage("damage", "+5", {1, 0.25, 0})
             self:flash()
             self:setAnimation("fire")
+			Game.battle.timer:tween(0.5, Game.battle.encounter, {heat_wave_mag_bg = 1})
+			Game.battle.encounter.heat_wave_mag = 2
             cutscene:text("* Pewdinn's ATTACK rose from the charcoal!")
             self.attack = self.attack + 5
             self.atkup = true
@@ -192,7 +196,7 @@ function Dummy:onAct(battler, name)
     return super.onAct(self, battler, name)
 end
 
-function Dummy:onTurnStart()
+function Pewdinn:onTurnStart()
     if self.charcoaled then
         self:resetSprite()
     end
@@ -201,7 +205,10 @@ function Dummy:onTurnStart()
         self.charcoaled = false
         self:statusMessage("damage", "-5", {1, 0.25, 0})
         self.attack = self.attack - 5
+		Game.battle.timer:tween(0.5, Game.battle.encounter, {heat_wave_mag_bg = 0})
+		Game.battle.encounter.heat_wave_mag = 0
+		Game.battle.encounter.apply_heatfx_to_bullets = false
     end
 end
 
-return Dummy
+return Pewdinn
