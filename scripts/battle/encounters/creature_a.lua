@@ -64,6 +64,17 @@ function ImbuedGuei:getDialogueCutscene()
                 local dy = math.sin(angle) * 100
                 table.insert(radius_points, {dx, dy})
             end
+            cutscene:during(function()
+                for i = #particles, 1, -1 do
+                    local particle = particles[i]
+                    local dx = aura.x - particle.x
+                    local dy = aura.y - particle.y
+                    if dx * dx + dy * dy < 32 then
+                        particle:remove()
+                        table.remove(particles, i)
+                    end
+                end
+            end)
             for i = 1, 30 do
                 local p = Sprite("effects/particle")
                 local offset = TableUtils.pick(radius_points)
@@ -76,18 +87,46 @@ function ImbuedGuei:getDialogueCutscene()
                 table.insert(particles, p)
                 cutscene:wait(1/15)
             end
-            cutscene:during(function()
-                for i = #particles, 1, -1 do
-                    local particle = particles[i]
-                    local dx = x - particle.x
-                    local dy = y - particle.y
-                    if dx * dx + dy * dy < 16 then
-                        particle:remove()
-                        table.remove(particles, i)
-                    end
+            cutscene:wait(1)
+            Assets.playSound("ghostappear", 1, 0.75)
+            Assets.playSound("great_shine")
+            local e = Sprite("enemies/creature_a/eye")
+            e:setPosition(x, y)
+	        e:setOrigin(0.5, 0.5)
+	        e:setScale(2)
+	        e.graphics.spin = 0.01
+	        e.layer = aura.layer
+            e.alpha = 0
+	        Game.battle:addChild(e)
+	        Game.battle.timer:tween(1, e.graphics, {spin = 0.15}, 'out-cubic')
+            Game.battle.timer:tween(1, e, {scale_x = 6, scale_y = 6, alpha = 0.7}, 'out-cubic', function()
+                Game.battle.timer:tween(1, e, {scale_x = 1, scale_y = 1, alpha = 0}, 'in-cubic', function() e:remove() end)
+            end)
+            Game.battle.timer:tween(3, aura, {scale_x = 10, scale_y = 10, alpha = 0}, 'out-cubic', function() aura:remove() end)
+            Game.battle.timer:tween(1.5, self.fakefade, {alpha = 0}, 'out-cubic')
+            -- cutscene:wait(3)
+            Game.battle.timer:every(1/30, function()
+                for Kristal = 1, 2 do --                    <-- Evil moniey deletr
+                    local a = self.g.x + ((love.math.random() * self.g.width) - (self.g.width / 2)) * 2
+                    local b = self.g.y - (love.math.random() * self.g.height) * 2
+                    local sparkle = HealSparkle(a, b)
+                    sparkle:setLayer(WORLD_LAYERS["below_ui"])
+                    sparkle:setColor(137/255, 157/255, 254/255, 1)
+                    Game.battle:addChild(sparkle)
                 end
-            end) -- ??? Need to make them vanish when they reach the center
-            cutscene:wait(5)
+            end, 4)
+            --cutscene:wait(1)
+            Assets.playSound("creature_heal")
+            self.g:statusMessage("damage", "4000", {0.5, 0.6, 1})
+            local ralsei = Game.battle:getPartyBattler("ralsei")
+            ralsei:shake()
+            ralsei:setSprite("shocked_right")
+            cutscene:wait(2)
+            cutscene:text("[shake:0.62][speed:0.5]* No... [wait:10]W-[wait:5]Wait...","concern_smile", ralsei)
+            cutscene:text("[shake:0.62][speed:0.5]* It... [wait:10]Healed itself...","concern_smile", ralsei)
+            
+            cutscene:text("[shake:0.62][speed:0.5]* This is hopeless. [wait:10][face:down_alt]It's just like the titan...","down", ralsei)
+
         end
     end
 end
