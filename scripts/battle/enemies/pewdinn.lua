@@ -143,7 +143,7 @@ function Pewdinn:onAct(battler, name)
 			Game.battle.encounter.heat_wave_mag = math.min(Game.battle.encounter.heat_wave_mag + 2, 6)
             self.atkup = true
             self.charcoaled = true
-            self:setAnimation("fire")
+            self:setAnimation(self.mercy >= 100 and "sparefire" or "fire")
             self:flash()
 			Game.battle.timer:script(function(wait)
 				Assets.playSound("board_bomb")
@@ -187,7 +187,7 @@ function Pewdinn:onAct(battler, name)
             self:hurt(80)
             Assets.playSound("damage")
             self:statusMessage("damage", "+5", {1, 0.25, 0})
-            self:setAnimation("fire")
+            self:setAnimation(self.mercy >= 100 and "sparefire" or "fire")
             self:getActiveSprite():flash()
 			Game.battle.timer:script(function(wait)
 				Assets.playSound("board_bomb")
@@ -224,7 +224,7 @@ end
 function Pewdinn:onTurnStart()
     if self.charcoaled then
         if self:canSpare() then
-            self:setAnimation("spared")
+            self:setAnimation("spare")
         else
             self:resetSprite()
         end

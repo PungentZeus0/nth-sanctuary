@@ -42,9 +42,11 @@ function actor:init()
         -- Looping animation with 0.25 seconds between each frame
         -- (even though there's only 1 idle frame)
         ["idle"] = {"idle", 1/7, true},
-        ["spared"] = {"spare", 1/7, true},
+        ["spare"] = {"spare", 1/7, true},
         ["hurt"] = {"hurt", 1/7, true},
         ["fire"] = {"fire", 1/7, true},
+        ["sparefire"] = {"sparefire", 1/7, true},
+        
         
         
         
@@ -55,6 +57,8 @@ function actor:init()
         -- Since the width and height is the idle sprite size, the offset is 0,0
         ["idle"] = {0, 0},
         ["fire"] = {-1, -7},
+        ["sparefire"] = {-1, -7},
+        
     }
 end
 
