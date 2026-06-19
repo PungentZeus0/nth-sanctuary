@@ -41,7 +41,10 @@ function ImbuedGuei:getDialogueCutscene()
             
             self.g.layer = BATTLE_LAYERS["ui"]
             self.fakefade.layer = self.g.layer - 1
-
+            Game.battle:setState("ACTIONSELECT")
+            Game.battle.current_selecting = 0
+            Game.battle:setState("CUTSCENE")
+            Game.battle.battle_ui.encounter_text:setText("")
             Game.battle.timer:tween(2, self.fakefade, {alpha = 0.5})
             cutscene:wait(3)
             local spr = self.g.sprite.eye.sprite
@@ -89,7 +92,7 @@ function ImbuedGuei:getDialogueCutscene()
             end
             cutscene:wait(1)
             Assets.playSound("ghostappear", 1, 0.75)
-            Assets.playSound("great_shine")
+            Assets.playSound("great_shine", 0.8, 0.75)
             local e = Sprite("enemies/creature_a/eye")
             e:setPosition(x, y)
 	        e:setOrigin(0.5, 0.5)
@@ -119,14 +122,29 @@ function ImbuedGuei:getDialogueCutscene()
             Assets.playSound("creature_heal")
             self.g:statusMessage("damage", "4000", {0.5, 0.6, 1})
             local ralsei = Game.battle:getPartyBattler("ralsei")
+            local susie = Game.battle:getPartyBattler("susie")
+            local jamm = Game.battle:getPartyBattler("jamm")
             ralsei:shake()
             ralsei:setSprite("shocked_right")
             cutscene:wait(2)
             cutscene:text("[shake:0.62][speed:0.5]* No... [wait:10]W-[wait:5]Wait...","concern_smile", ralsei)
-            cutscene:text("[shake:0.62][speed:0.5]* It... [wait:10]Healed itself...","concern_smile", ralsei)
-            
+            cutscene:text("[shake:0.62][speed:0.5]* It... [wait:10]Healed itself...","concern_smile", ralsei)            
             cutscene:text("[shake:0.62][speed:0.5]* This is hopeless. [wait:10][face:down_alt]It's just like the titan...","down", ralsei)
+            cutscene:text("* Ralsei, [wait:10]that doesn't matter right now!", "pissed", jamm)
+            cutscene:text("* Focus on this thing! [wait:10]Kris, [wait:5]can you still hold on?", "bangs/nervous_b", susie)
+            cutscene:text("[shake:0.62][speed:0.5]* ...","roaring", ralsei)
+            cutscene:text("[shake:0.62][speed:0.5]* ...","roaring", ralsei)
+            cutscene:text("[shake:0.62][speed:0.5]* ...[wait:5]Kris, [wait:5]Susie, [wait:5]I...","roaring", ralsei)
+            cutscene:text("[shake:0.62][speed:0.5]* ...","down", ralsei)
+            cutscene:text("[shake:0.7][speed:0.75]* I won't back down like before..!", "determined", ralsei)
+            ralsei:setAnimation("battle/spellready")
+            cutscene:wait(5)
+            
+            --Assets.playSound("chargeshot_fire", 1, 0.7)
+            --Assets.playSound("dtrans_square", 1, 0.7)
+            --Assets.playSound("board_bomb", 1, 1)
 
+             
         end
     end
 end
