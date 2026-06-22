@@ -488,11 +488,11 @@
   <object id="189" x="1280" y="720" width="200" height="40"/>
   <object id="190" x="1280" y="760" width="80" height="200"/>
   <object id="249" x="1600" y="640" width="40" height="120"/>
-  <object id="253" x="1640" y="720" width="320" height="40"/>
+  <object id="253" x="1640" y="720" width="314" height="40"/>
   <object id="254" x="1920" y="1000" width="120" height="120"/>
   <object id="255" x="1920" y="840" width="200" height="80"/>
   <object id="256" x="2120" y="760" width="40" height="440"/>
-  <object id="351" x="2000" y="720" width="120" height="40"/>
+  <object id="351" x="2006" y="720" width="114" height="40"/>
   <object id="352" x="1920" y="680" width="120" height="40"/>
  </objectgroup>
  <objectgroup color="#ff00ff" id="4" name="objects_buckets">
