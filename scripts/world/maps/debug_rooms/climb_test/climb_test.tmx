@@ -149,7 +149,7 @@
   <object id="107" name="fallingclimbarea" gid="1219" x="600" y="280" width="40" height="40"/>
  </objectgroup>
  <objectgroup color="#ff00ff" id="2" name="objects_party">
-  <object id="7" name="climblanding" x="240" y="360" width="160" height="40"/>
+  <object id="7" name="climblanding" x="240" y="400" width="160" height="40"/>
   <object id="32" name="proxycandle" x="40" y="200">
    <properties>
     <property name="trigger_horz" type="float" value="200"/>
