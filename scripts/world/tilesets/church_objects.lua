@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   name = "church_objects",
   class = "",
   tilewidth = 2880,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 98,
+  tilecount = 101,
   tiles = {
     {
       id = 0,
@@ -788,6 +788,24 @@ return {
       image = "../../../assets/sprites/world/objects/couch.png",
       width = 78,
       height = 40
+    },
+    {
+      id = 104,
+      image = "../../../assets/sprites/world/events/climbtiles/brittlebrick.png",
+      width = 20,
+      height = 20
+    },
+    {
+      id = 105,
+      image = "../../../assets/sprites/world/events/climbtiles/brittlewall.png",
+      width = 20,
+      height = 20
+    },
+    {
+      id = 106,
+      image = "../../../assets/sprites/world/events/climbtiles/brittlewallred.png",
+      width = 20,
+      height = 20
     }
   }
 }

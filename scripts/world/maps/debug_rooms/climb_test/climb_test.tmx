@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="42" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="9" nextobjectid="85">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="42" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="103">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -12,6 +12,8 @@
  <tileset firstgid="629" source="../../../tilesets/bg_dw_church_c_tileset.tsx"/>
  <tileset firstgid="908" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="1106" source="../../../tilesets/ExtraClimbingTiles.tsx"/>
+ <tileset firstgid="1115" source="D:/kristaldata/Kristal/mods/example/scripts/world/tilesets/castle.tsx"/>
+ <tileset firstgid="1175" source="../../../tilesets/church_objects.tsx"/>
  <layer id="5" name="Tile Layer 4" width="42" height="12" tintcolor="#4a4a4a">
   <data encoding="csv">
 659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,659,
@@ -115,21 +117,6 @@
     <property name="value" type="int" value="10"/>
    </properties>
   </object>
-  <object id="45" name="destructableclimbarea" x="480" y="240" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="46" name="destructableclimbarea" x="520" y="240" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="47" name="destructableclimbarea" x="560" y="240" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
   <object id="48" name="destructableclimbarea" x="600" y="240" width="40" height="40">
    <properties>
     <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
@@ -141,13 +128,8 @@
     <property name="timed" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="62" name="destructableclimbarea" x="480" y="200" width="160" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
  </objectgroup>
- <objectgroup color="#740002" id="8" name="collision">
+ <objectgroup color="#740002" id="8" name="collision" visible="0">
   <object id="68" x="0" y="320" width="960" height="40"/>
   <object id="70" x="0" y="440" width="1680" height="40"/>
   <object id="71" x="1600" y="360" width="80" height="40"/>
@@ -155,26 +137,31 @@
   <object id="73" x="960" y="200" width="640" height="40"/>
   <object id="74" x="920" y="240" width="40" height="80"/>
  </objectgroup>
+ <objectgroup color="#00ffff" id="9" name="climbing">
+  <object id="9" x="160" y="160" width="40" height="160"/>
+  <object id="10" x="200" y="160" width="240" height="40"/>
+  <object id="11" x="440" y="160" width="40" height="160"/>
+  <object id="12" x="240" y="280" width="80" height="40"/>
+  <object id="33" x="480" y="160" width="40" height="40"/>
+  <object id="34" x="720" y="160" width="200" height="40"/>
+  <object id="37" x="600" y="320" width="40"/>
+  <object id="41" x="760" y="280" width="40" height="40"/>
+  <object id="57" x="360" y="200" width="40" height="80"/>
+  <object id="63" x="600" y="160" width="40" height="40"/>
+  <object id="75" x="600" y="280" width="40" height="40"/>
+  <object id="98" name="fallingclimbarea" gid="1279" x="480" y="280" width="40" height="40"/>
+  <object id="100" name="fallingclimbarea" gid="1279" x="520" y="280" width="40" height="40"/>
+  <object id="101" name="fallingclimbarea" gid="1279" x="560" y="280" width="40" height="40"/>
+  <object id="102" name="fallingclimbarea" gid="1279" x="480" y="240" width="160" height="40"/>
+ </objectgroup>
  <objectgroup id="2" name="objects_party">
-  <object id="6" name="climbentry" x="160" y="320" width="40" height="40"/>
-  <object id="7" name="climblanding" x="240" y="400" width="40" height="40"/>
-  <object id="8" name="climbentry" x="440" y="320" width="40" height="40"/>
-  <object id="9" name="climbarea" x="160" y="160" width="40" height="160"/>
-  <object id="10" name="climbarea" x="200" y="160" width="240" height="40"/>
-  <object id="11" name="climbarea" x="440" y="160" width="40" height="160"/>
-  <object id="12" name="climbarea" x="240" y="280" width="80" height="40"/>
+  <object id="7" name="climblanding" x="240" y="400" width="160" height="40"/>
   <object id="32" name="proxycandle" x="40" y="200">
    <properties>
     <property name="trigger_horz" type="float" value="200"/>
    </properties>
    <point/>
   </object>
-  <object id="33" name="climbarea" x="480" y="160" width="40" height="40"/>
-  <object id="34" name="climbarea" x="720" y="160" width="200" height="40"/>
-  <object id="36" name="climbentry" x="600" y="320" width="40" height="40"/>
-  <object id="37" name="climbarea" x="600" y="320" width="40"/>
-  <object id="41" name="climbarea" x="760" y="280" width="40" height="40"/>
-  <object id="42" name="climbentry" x="760" y="320" width="40" height="40"/>
   <object id="52" name="npc" x="940" y="370">
    <properties>
     <property name="actor" value="ddelta"/>
@@ -204,18 +191,14 @@
   <object id="56" name="window_oscillate" x="1360" y="200">
    <point/>
   </object>
-  <object id="57" name="climbarea" x="360" y="200" width="40" height="80"/>
   <object id="58" name="window_oscillate" x="1200" y="200">
    <point/>
   </object>
-  <object id="63" name="climbarea" x="600" y="160" width="40" height="40"/>
   <object id="64" name="bellplayable" x="540" y="160" width="40" height="40">
    <properties>
     <property name="interactable" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="65" name="climblanding" x="360" y="400" width="40" height="40"/>
-  <object id="75" name="climbarea" x="600" y="280" width="40" height="40"/>
   <object id="76" name="window_glow" x="1120" y="120">
    <point/>
   </object>
@@ -242,6 +225,58 @@
    <properties>
     <property name="map" value="debug_rooms/lighting_test"/>
     <property name="marker" value="entry2"/>
+   </properties>
+  </object>
+  <object id="85" x="780" y="400">
+   <point/>
+  </object>
+  <object id="86" name="climbentry" x="760" y="320" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="87"/>
+   </properties>
+  </object>
+  <object id="87" name="climbexit" x="760" y="280" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="85"/>
+   </properties>
+  </object>
+  <object id="88" x="620" y="400">
+   <point/>
+  </object>
+  <object id="89" name="climbentry" x="600" y="320" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="90"/>
+   </properties>
+  </object>
+  <object id="90" name="climbexit" x="600" y="280" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="88"/>
+   </properties>
+  </object>
+  <object id="91" x="460" y="400">
+   <point/>
+  </object>
+  <object id="92" name="climbentry" x="440" y="320" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="93"/>
+   </properties>
+  </object>
+  <object id="93" name="climbexit" x="440" y="280" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="91"/>
+   </properties>
+  </object>
+  <object id="94" x="180" y="400">
+   <point/>
+  </object>
+  <object id="95" name="climbentry" x="160" y="320" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="96"/>
+   </properties>
+  </object>
+  <object id="96" name="climbexit" x="160" y="280" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="94"/>
    </properties>
   </object>
  </objectgroup>

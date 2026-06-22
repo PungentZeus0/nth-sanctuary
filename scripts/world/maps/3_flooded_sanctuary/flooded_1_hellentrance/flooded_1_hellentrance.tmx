@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="19" nextobjectid="51">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="62">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -140,7 +140,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="8" name="markers">
+ <objectgroup color="#aa00ff" id="8" name="markers">
   <object id="11" name="spawn" x="340" y="740">
    <point/>
   </object>
@@ -148,6 +148,12 @@
    <point/>
   </object>
   <object id="31" name="entry2" x="600" y="300">
+   <point/>
+  </object>
+  <object id="54" x="340" y="600">
+   <point/>
+  </object>
+  <object id="61" x="340" y="320">
    <point/>
   </object>
  </objectgroup>
@@ -174,19 +180,10 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup color="#00ffff" id="19" name="climbing">
+  <object id="8" x="320" y="400" width="40" height="120"/>
+ </objectgroup>
  <objectgroup color="#ff02ff" id="7" name="objects_party">
-  <object id="8" name="climbarea" x="320" y="400" width="40" height="120"/>
-  <object id="9" name="climbentry" x="320" y="520" width="40" height="40">
-   <properties>
-    <property name="area" type="object" value="8"/>
-   </properties>
-  </object>
-  <object id="10" name="climbentry" x="320" y="360" width="40" height="40">
-   <properties>
-    <property name="area" type="object" value="8"/>
-    <property name="up" type="bool" value="true"/>
-   </properties>
-  </object>
   <object id="12" name="ripplefloor" x="120" y="560" width="520" height="240"/>
   <object id="21" name="transition" x="320" y="800" width="40" height="40">
    <properties>
@@ -198,6 +195,26 @@
    <properties>
     <property name="map" value="3_flooded_sanctuary/flooded_1"/>
     <property name="marker" value="entry3"/>
+   </properties>
+  </object>
+  <object id="52" name="climbentry" x="320" y="520" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="53"/>
+   </properties>
+  </object>
+  <object id="53" name="climbexit" x="320" y="480" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="54"/>
+   </properties>
+  </object>
+  <object id="55" name="climbentry" x="320" y="360" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="56"/>
+   </properties>
+  </object>
+  <object id="56" name="climbexit" x="320" y="400" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="61"/>
    </properties>
   </object>
  </objectgroup>

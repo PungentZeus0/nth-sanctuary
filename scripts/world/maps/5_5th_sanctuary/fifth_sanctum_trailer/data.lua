@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 21,
-  nextobjectid = 114,
+  nextlayerid = 22,
+  nextobjectid = 120,
   properties = {
     ["border"] = "simple",
     ["music"] = "negative_Sanctum_wip",
@@ -31,7 +31,7 @@ return {
     },
     {
       name = "bg_dw_church_2_tileset",
-      firstgid = 686,
+      firstgid = 690,
       filename = "../../../tilesets/bg_dw_church_2_tileset.tsx"
     }
   },
@@ -197,7 +197,7 @@ return {
         74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 0, 0, 0, 541, 542, 542, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74,
         74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 0, 0, 0, 0, 0, 0, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74,
         80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 0, 0, 0, 0, 0, 0, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80,
-        713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 0, 0, 0, 0, 0, 0, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713, 713,
+        717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 0, 0, 0, 0, 0, 0, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717, 717,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
@@ -393,8 +393,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 4,
-      name = "objects_party",
+      id = 21,
+      name = "climbing",
       class = "",
       visible = true,
       opacity = 1,
@@ -405,40 +405,8 @@ return {
       properties = {},
       objects = {
         {
-          id = 2,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 640,
-          y = 240,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 4 }
-          }
-        },
-        {
-          id = 3,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 1000,
-          y = 240,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 7 }
-          }
-        },
-        {
           id = 4,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 640,
@@ -452,7 +420,7 @@ return {
         },
         {
           id = 5,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 720,
@@ -466,7 +434,7 @@ return {
         },
         {
           id = 6,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 800,
@@ -480,7 +448,7 @@ return {
         },
         {
           id = 7,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1000,
@@ -494,7 +462,7 @@ return {
         },
         {
           id = 8,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 960,
@@ -508,7 +476,7 @@ return {
         },
         {
           id = 9,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 880,
@@ -519,6 +487,86 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 4,
+      name = "objects_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 115,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 1000,
+          y = 240,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 116 }
+          }
+        },
+        {
+          id = 116,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 1000,
+          y = 200,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 114 }
+          }
+        },
+        {
+          id = 118,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 240,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 119 }
+          }
+        },
+        {
+          id = 119,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 200,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 117 }
+          }
         }
       }
     },
@@ -590,7 +638,7 @@ return {
       id = 6,
       name = "collision",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -811,6 +859,34 @@ return {
           shape = "point",
           x = 1880,
           y = 350,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 114,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 1020,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 117,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 660,
+          y = 320,
           width = 0,
           height = 0,
           rotation = 0,

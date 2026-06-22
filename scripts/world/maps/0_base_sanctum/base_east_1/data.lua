@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 21,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 24,
-  nextobjectid = 106,
+  nextlayerid = 25,
+  nextobjectid = 115,
   properties = {
     ["border"] = "base_sanctum",
     ["music"] = "homebase"
@@ -106,6 +106,7 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
+          opacity = 1,
           gid = 633,
           visible = true,
           properties = {}
@@ -120,6 +121,7 @@ return {
           width = 640,
           height = 1600,
           rotation = 0,
+          opacity = 1,
           gid = 637,
           visible = true,
           properties = {}
@@ -134,6 +136,7 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
+          opacity = 1,
           gid = 633,
           visible = true,
           properties = {}
@@ -164,6 +167,7 @@ return {
           width = 900,
           height = 1200,
           rotation = 270,
+          opacity = 1,
           gid = 641,
           visible = true,
           properties = {}
@@ -522,6 +526,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["trigger_horz"] = 200
@@ -537,6 +542,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["trigger_horz"] = 200
@@ -609,6 +615,7 @@ return {
           width = 1040,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -622,6 +629,7 @@ return {
           width = 880,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -635,6 +643,7 @@ return {
           width = 40,
           height = 480,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -648,6 +657,7 @@ return {
           width = 720,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -661,6 +671,7 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -674,6 +685,7 @@ return {
           width = 880,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -687,6 +699,7 @@ return {
           width = 200,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -700,6 +713,7 @@ return {
           width = 280,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -713,6 +727,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -726,6 +741,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -739,6 +755,65 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 24,
+      name = "climbing",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 107,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 400,
+          width = 120,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 108,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 400,
+          width = 120,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 109,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 400,
+          width = 120,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -768,6 +843,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -781,6 +857,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -794,6 +871,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -807,6 +885,35 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 110,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 540,
+          y = 580,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 112,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 220,
+          y = 580,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -836,63 +943,10 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["area"] = { id = 5 }
-          }
-        },
-        {
-          id = 5,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 480,
-          y = 400,
-          width = 120,
-          height = 80,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 6,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 400,
-          width = 120,
-          height = 80,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 7,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 160,
-          y = 400,
-          width = 120,
-          height = 80,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 8,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 200,
-          y = 480,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["area"] = { id = 7 }
+            ["target"] = { id = 111 }
           }
         },
         {
@@ -905,6 +959,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "0_base_sanctum/base_center",
@@ -921,6 +976,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "jamm",
@@ -937,6 +993,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "0_base_sanctum/base_east_2",
@@ -953,6 +1010,7 @@ return {
           width = 280,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["offx"] = 150,
@@ -974,6 +1032,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["prophecy"] = true
@@ -989,10 +1048,59 @@ return {
           width = 40,
           height = 82.6667,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "primary.jamm",
             ["flagcheck"] = "!jamm_join"
+          }
+        },
+        {
+          id = 111,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 440,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 110 }
+          }
+        },
+        {
+          id = 113,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 480,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 114 }
+          }
+        },
+        {
+          id = 114,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 440,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 112 }
           }
         }
       }
@@ -1021,6 +1129,7 @@ return {
           width = 160,
           height = 720,
           rotation = 0,
+          opacity = 1,
           gid = 625,
           visible = true,
           properties = {
@@ -1040,6 +1149,7 @@ return {
           width = 160,
           height = 720,
           rotation = 0,
+          opacity = 1,
           gid = 625,
           visible = true,
           properties = {
@@ -1059,6 +1169,7 @@ return {
           width = 376,
           height = 458,
           rotation = 0,
+          opacity = 1,
           gid = 623,
           visible = true,
           properties = {
@@ -1079,6 +1190,7 @@ return {
           width = 376,
           height = 458,
           rotation = 0,
+          opacity = 1,
           gid = 623,
           visible = true,
           properties = {
@@ -1099,6 +1211,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1112,6 +1225,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["alpha"] = 0.2,
@@ -1144,6 +1258,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1173,6 +1288,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"
@@ -1188,6 +1304,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["force_above"] = true,

@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.12.1",
   class = "",
@@ -9,8 +9,8 @@ return {
   height = 34,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 24,
-  nextobjectid = 138,
+  nextlayerid = 25,
+  nextobjectid = 150,
   properties = {
     ["border"] = "church_d",
     ["music"] = "fourth_church",
@@ -36,7 +36,7 @@ return {
     },
     {
       name = "ExtraClimbingTiles",
-      firstgid = 884,
+      firstgid = 888,
       filename = "../../../tilesets/ExtraClimbingTiles.tsx"
     }
   },
@@ -939,6 +939,280 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 24,
+      name = "climbing",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 40,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 840,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 41,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 43,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 44,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 600,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 45,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 600,
+          width = 40,
+          height = 200,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 104,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 600,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 108,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 680,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 110,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 600,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 111,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 112,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 113,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 680,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 114,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 600,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 138,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 680,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 885,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 139,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 680,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 885,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 140,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 600,
+          y = 680,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 885,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 141,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 885,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 142,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 885,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 143,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 600,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 885,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 11,
       name = "collision",
       class = "",
@@ -1255,6 +1529,34 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 144,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 340,
+          y = 880,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 147,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 740,
+          y = 1000,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -1302,122 +1604,6 @@ return {
           properties = {
             ["map"] = "4_4th_sanctuary/fourth_sanctum_2",
             ["marker"] = "entry2"
-          }
-        },
-        {
-          id = 37,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 720,
-          y = 880,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 38,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 720,
-          y = 920,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 37 }
-          }
-        },
-        {
-          id = 40,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 720,
-          y = 840,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 41,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 720,
-          y = 760,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 43,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 480,
-          y = 760,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 44,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 480,
-          y = 600,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 45,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 600,
-          width = 40,
-          height = 200,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 46,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 800,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 45 }
           }
         },
         {
@@ -1560,104 +1746,6 @@ return {
           }
         },
         {
-          id = 104,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 600,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 108,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 480,
-          y = 680,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 110,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 560,
-          y = 600,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 111,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 560,
-          y = 760,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 112,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 640,
-          y = 760,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 113,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 640,
-          y = 680,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 114,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 640,
-          y = 600,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 123,
           name = "climbcoin",
           type = "",
@@ -1722,102 +1810,6 @@ return {
           }
         },
         {
-          id = 127,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 520,
-          y = 720,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
-        {
-          id = 128,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 520,
-          y = 640,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
-        {
-          id = 129,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 600,
-          y = 640,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
-        {
-          id = 130,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 600,
-          y = 720,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
-        {
-          id = 131,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 440,
-          y = 640,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
-        {
-          id = 132,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 440,
-          y = 720,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
-        {
           id = 133,
           name = "climbcoin",
           type = "",
@@ -1831,6 +1823,70 @@ return {
           visible = true,
           properties = {
             ["value"] = 5
+          }
+        },
+        {
+          id = 145,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 800,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 146 }
+          }
+        },
+        {
+          id = 146,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 144 }
+          }
+        },
+        {
+          id = 148,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 920,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 149 }
+          }
+        },
+        {
+          id = 149,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 880,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 147 }
           }
         }
       }

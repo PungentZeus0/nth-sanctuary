@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 20,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 19,
-  nextobjectid = 51,
+  nextlayerid = 20,
+  nextobjectid = 62,
   properties = {
     ["border"] = "church_flooded_hell_dim",
     ["music"] = "waves"
@@ -87,6 +87,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -324,6 +325,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -337,6 +339,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -350,6 +353,35 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 54,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 340,
+          y = 600,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 61,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 340,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -379,6 +411,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["additive"] = true,
@@ -396,6 +429,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["additive"] = true,
@@ -413,12 +447,43 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["additive"] = true,
             ["color"] = "#ffffa040",
             ["scale"] = 0.75
           }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 19,
+      name = "climbing",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 8,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 400,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -437,50 +502,6 @@ return {
       properties = {},
       objects = {
         {
-          id = 8,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 400,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 9,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 520,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["area"] = { id = 8 }
-          }
-        },
-        {
-          id = 10,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 360,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["area"] = { id = 8 },
-            ["up"] = true
-          }
-        },
-        {
           id = 12,
           name = "ripplefloor",
           type = "",
@@ -490,6 +511,7 @@ return {
           width = 520,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -503,6 +525,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "sanctum_hell/hell_1",
@@ -519,10 +542,75 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "3_flooded_sanctuary/flooded_1",
             ["marker"] = "entry3"
+          }
+        },
+        {
+          id = 52,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 520,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 53 }
+          }
+        },
+        {
+          id = 53,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 480,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 54 }
+          }
+        },
+        {
+          id = 55,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 360,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 56 }
+          }
+        },
+        {
+          id = 56,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 400,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 61 }
           }
         }
       }
@@ -591,6 +679,7 @@ return {
           width = 160,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (It's an empty basin.)"
@@ -606,6 +695,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (There's nothing here just yet, sorry!)"
@@ -637,6 +727,7 @@ return {
           width = 600,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -650,6 +741,7 @@ return {
           width = 40,
           height = 440,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -663,6 +755,7 @@ return {
           width = 0,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -676,6 +769,7 @@ return {
           width = 520,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -689,6 +783,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -702,6 +797,7 @@ return {
           width = 160,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -715,6 +811,7 @@ return {
           width = 270,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -728,6 +825,7 @@ return {
           width = 310,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -741,6 +839,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -770,6 +869,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["active"] = true,
@@ -790,6 +890,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"
@@ -805,6 +906,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

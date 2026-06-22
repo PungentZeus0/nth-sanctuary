@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 23,
-  nextobjectid = 165,
+  nextobjectid = 185,
   properties = {
     ["border"] = "church_flooded_dynamic",
     ["music"] = "floodedsanctuary"
@@ -73,18 +73,18 @@ return {
     },
     {
       name = "ClimbableBrickTilesSilhouette",
-      firstgid = 1711,
+      firstgid = 1712,
       filename = "../../../tilesets/ClimbableBrickTilesSilhouette.tsx"
     },
     {
       name = "ExtraWallArchTiles",
-      firstgid = 1732,
+      firstgid = 1733,
       filename = "../../../tilesets/ExtraWallArchTiles.tsx",
       exportfilename = "../../../tilesets/ExtraWallArchTiles.lua"
     },
     {
       name = "light_areas",
-      firstgid = 1798,
+      firstgid = 1799,
       filename = "../../../tilesets/light_areas.tsx"
     }
   },
@@ -579,12 +579,12 @@ return {
         0, 0, 1572, 1555, 1556, 1557, 1572, 1572, 1555, 1556, 1557, 1572, 0, 0, 0, 0, 0, 1572, 1555, 1556, 1557, 1572, 1572, 1555, 1556, 1557, 1572, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 1536, 1564, 1565, 1566, 1536, 1536, 1555, 0, 1566, 1536, 0, 0, 0, 0, 0, 1536, 1564, 1565, 1566, 1536, 1536, 1564, 1565, 1566, 1536, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 1536, 1555, 0, 1566, 1536, 1536, 1555, 0, 1566, 1536, 0, 0, 0, 0, 0, 1536, 1555, 0, 1566, 1536, 1536, 1555, 0, 1566, 1536, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 1536, 1735, 1736, 1737, 1536, 1536, 1735, 1736, 1737, 1536, 0, 0, 0, 0, 0, 1536, 1735, 1736, 1737, 1536, 1536, 1735, 1736, 1737, 1536, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 1536, 1741, 1742, 1743, 1536, 1536, 1741, 1742, 1743, 1536, 0, 0, 0, 0, 0, 1536, 1741, 1742, 1743, 1536, 1536, 1741, 1742, 1743, 1536, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 1536, 1759, 1760, 1761, 1536, 1536, 1759, 1760, 1761, 1536, 0, 0, 0, 0, 0, 1536, 1759, 1760, 1761, 1536, 1536, 1759, 1760, 1761, 1536, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 1536, 1765, 1766, 1767, 1536, 1536, 1765, 1766, 1767, 1536, 0, 0, 0, 0, 0, 1536, 1765, 1766, 1767, 1536, 1536, 1765, 1766, 1767, 1536, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 1536, 1771, 1772, 1773, 1536, 1536, 1771, 1772, 1773, 1536, 0, 0, 0, 0, 0, 1536, 1771, 1772, 1773, 1536, 1536, 1771, 1772, 1773, 1536, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 1572, 1777, 1778, 1779, 1572, 1572, 1777, 1778, 1779, 1572, 0, 0, 0, 0, 0, 1572, 1777, 1778, 1779, 1572, 1572, 1777, 1778, 1779, 1572, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1536, 1736, 1737, 1738, 1536, 1536, 1736, 1737, 1738, 1536, 0, 0, 0, 0, 0, 1536, 1736, 1737, 1738, 1536, 1536, 1736, 1737, 1738, 1536, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1536, 1742, 1743, 1744, 1536, 1536, 1742, 1743, 1744, 1536, 0, 0, 0, 0, 0, 1536, 1742, 1743, 1744, 1536, 1536, 1742, 1743, 1744, 1536, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1536, 1760, 1761, 1762, 1536, 1536, 1760, 1761, 1762, 1536, 0, 0, 0, 0, 0, 1536, 1760, 1761, 1762, 1536, 1536, 1760, 1761, 1762, 1536, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1536, 1766, 1767, 1768, 1536, 1536, 1766, 1767, 1768, 1536, 0, 0, 0, 0, 0, 1536, 1766, 1767, 1768, 1536, 1536, 1766, 1767, 1768, 1536, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1536, 1772, 1773, 1774, 1536, 1536, 1772, 1773, 1774, 1536, 0, 0, 0, 0, 0, 1536, 1772, 1773, 1774, 1536, 1536, 1772, 1773, 1774, 1536, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1572, 1778, 1779, 1780, 1572, 1572, 1778, 1779, 1780, 1572, 0, 0, 0, 0, 0, 1572, 1778, 1779, 1780, 1572, 1572, 1778, 1779, 1780, 1572, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 1536, 1546, 1565, 1548, 1536, 1536, 1546, 1565, 1548, 1536, 0, 0, 0, 0, 0, 1536, 1546, 1565, 1548, 1536, 1536, 1546, 1565, 1548, 1536, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 1545, 1564, 1565, 1566, 1545, 1545, 1564, 1565, 1566, 1545, 0, 0, 0, 0, 0, 1545, 1564, 1565, 1566, 1545, 1545, 1564, 1565, 1566, 1545, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 1554, 1564, 1565, 1566, 1554, 1554, 1564, 1565, 1566, 1554, 0, 0, 0, 0, 0, 1554, 1564, 1565, 1566, 1554, 1554, 1564, 1565, 1566, 1554, 0, 0, 0, 0, 0, 0, 0,
@@ -664,15 +664,15 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 487, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1719, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1720, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1719, 0, 1719, 1719, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1720, 0, 1720, 1720, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 487, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1719, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1719, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 475, 0, 0, 0, 0, 0, 0, 0, 475, 0, 0, 0, 0, 0, 0, 0, 0, 1719, 0, 0, 1719, 1722, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1719, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1720, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1720, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 475, 0, 0, 0, 0, 0, 0, 0, 475, 0, 0, 0, 0, 0, 0, 0, 0, 1720, 0, 0, 1720, 1723, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 481, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1720, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 487, 0, 0, 0, 0, 0, 0, 0, 487, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 475, 0,
@@ -690,7 +690,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 15,
-      name = "climbareas",
+      name = "climbing",
       class = "",
       visible = true,
       opacity = 1,
@@ -702,7 +702,7 @@ return {
       objects = {
         {
           id = 119,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1280,
@@ -716,7 +716,7 @@ return {
         },
         {
           id = 120,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1280,
@@ -730,7 +730,7 @@ return {
         },
         {
           id = 121,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1240,
@@ -744,7 +744,7 @@ return {
         },
         {
           id = 122,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1120,
@@ -758,7 +758,7 @@ return {
         },
         {
           id = 123,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1120,
@@ -771,36 +771,8 @@ return {
           properties = {}
         },
         {
-          id = 124,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 760,
-          y = 1280,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 125,
-          name = "climbarea",
-          type = "",
-          shape = "rectangle",
-          x = 440,
-          y = 1280,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 126,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1080,
@@ -814,7 +786,7 @@ return {
         },
         {
           id = 127,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1000,
@@ -828,7 +800,7 @@ return {
         },
         {
           id = 128,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1000,
@@ -842,7 +814,7 @@ return {
         },
         {
           id = 129,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 1000,
@@ -856,7 +828,7 @@ return {
         },
         {
           id = 134,
-          name = "climbarea",
+          name = "",
           type = "",
           shape = "rectangle",
           x = 360,
@@ -1028,7 +1000,7 @@ return {
           shape = "rectangle",
           x = 642,
           y = 1240,
-          width = 278,
+          width = 118,
           height = 120,
           rotation = 0,
           opacity = 1,
@@ -1042,7 +1014,7 @@ return {
           shape = "rectangle",
           x = 320,
           y = 1240,
-          width = 278,
+          width = 120,
           height = 120,
           rotation = 0,
           opacity = 1,
@@ -1174,6 +1146,34 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 180,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 1240,
+          width = 120,
+          height = 120,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 181,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 800,
+          y = 1240,
+          width = 118,
+          height = 120,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -1260,6 +1260,62 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 167,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 380,
+          y = 600,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 168,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 1020,
+          y = 600,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 171,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 1300,
+          y = 1520,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 182,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 380,
+          y = 1080,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -1292,142 +1348,6 @@ return {
       parallaxy = 1,
       properties = {},
       objects = {
-        {
-          id = 10,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 1280,
-          y = 1600,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 8 },
-            ["up"] = false
-          }
-        },
-        {
-          id = 53,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 760,
-          y = 1320,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 50 },
-            ["up"] = false
-          }
-        },
-        {
-          id = 115,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 440,
-          y = 1320,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 116 },
-            ["up"] = false
-          }
-        },
-        {
-          id = 84,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 760,
-          y = 1240,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 82 },
-            ["up"] = true
-          }
-        },
-        {
-          id = 117,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 440,
-          y = 1240,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 82 },
-            ["up"] = true
-          }
-        },
-        {
-          id = 88,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 1000,
-          y = 640,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 87 },
-            ["up"] = true
-          }
-        },
-        {
-          id = 135,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 1120,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 116 },
-            ["up"] = false
-          }
-        },
-        {
-          id = 136,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 640,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["area"] = { id = 87 },
-            ["up"] = true
-          }
-        },
         {
           id = 150,
           name = "transition",
@@ -1512,6 +1432,134 @@ return {
             ["actor"] = "lobbyman",
             ["cutscene"] = "lobbyman.flood"
           }
+        },
+        {
+          id = 165,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 640,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 166 }
+          }
+        },
+        {
+          id = 166,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 680,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 167 }
+          }
+        },
+        {
+          id = 169,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 1000,
+          y = 640,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 170 }
+          }
+        },
+        {
+          id = 170,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 1000,
+          y = 680,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 168 }
+          }
+        },
+        {
+          id = 172,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 1280,
+          y = 1600,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 173 }
+          }
+        },
+        {
+          id = 173,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 1280,
+          y = 1560,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 171 }
+          }
+        },
+        {
+          id = 183,
+          name = "climbentry",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 1160,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 184 }
+          }
+        },
+        {
+          id = 184,
+          name = "climbexit",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 1120,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["target"] = { id = 182 }
+          }
         }
       }
     },
@@ -1540,7 +1588,7 @@ return {
           height = 720,
           rotation = 0,
           opacity = 1,
-          gid = 1800,
+          gid = 1801,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1560,7 +1608,7 @@ return {
           height = 720,
           rotation = 0,
           opacity = 1,
-          gid = 1800,
+          gid = 1801,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1580,7 +1628,7 @@ return {
           height = 720,
           rotation = 0,
           opacity = 1,
-          gid = 1800,
+          gid = 1801,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1600,7 +1648,7 @@ return {
           height = 720,
           rotation = 0,
           opacity = 1,
-          gid = 1800,
+          gid = 1801,
           visible = true,
           properties = {
             ["light"] = true,

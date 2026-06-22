@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="43" height="43" tilewidth="40" tileheight="40" infinite="0" nextlayerid="35" nextobjectid="243">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="43" height="43" tilewidth="40" tileheight="40" infinite="0" nextlayerid="35" nextobjectid="257">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -14,9 +14,9 @@
  <tileset firstgid="1191" source="../../../tilesets/WatersourceAnimated.tsx"/>
  <tileset firstgid="1221" source="../../../tilesets/ExtraClimbingTiles.tsx"/>
  <tileset firstgid="1230" source="../../../tilesets/church_objects.tsx"/>
- <tileset firstgid="1333" source="../../../tilesets/bg_dw_dither_overlay_tileset.tsx"/>
- <tileset firstgid="1379" source="../../../tilesets/RandomExtraTiles.tsx"/>
- <tileset firstgid="1667" source="../../../tilesets/bg_dw_church_watertileset_drained.tsx"/>
+ <tileset firstgid="1334" source="../../../tilesets/bg_dw_dither_overlay_tileset.tsx"/>
+ <tileset firstgid="1380" source="../../../tilesets/RandomExtraTiles.tsx"/>
+ <tileset firstgid="1668" source="../../../tilesets/bg_dw_church_watertileset_drained.tsx"/>
  <objectgroup id="16" name="objects_parallax2" visible="0" parallaxx="0.5" parallaxy="0.9">
   <object id="90" gid="3221226705" x="-235" y="899" width="400" height="1600"/>
   <object id="91" gid="1234" x="529" y="-309" width="640" height="1600" rotation="-180"/>
@@ -389,7 +389,7 @@
 0,0,0,0,154,164,165,166,154,0,0,0,0,136,146,147,148,136,0,0,0,0,0,0,0,136,146,147,148,136,0,0,0,0,154,164,165,166,154,0,0,0,0,
 0,0,0,0,154,164,165,166,154,0,0,0,0,136,155,156,157,136,0,0,0,0,0,0,0,136,155,156,157,136,0,0,0,0,154,164,165,166,154,0,0,0,0,
 0,0,0,0,154,164,165,166,154,0,0,0,0,172,164,165,166,172,0,0,0,0,0,0,0,172,164,165,166,172,0,0,0,0,154,164,165,166,154,0,0,0,0,
-0,0,0,0,163,1385,1386,1387,163,0,0,0,0,172,164,165,166,172,0,0,0,0,0,0,0,172,164,165,166,172,0,0,0,0,163,1385,1386,1387,163,0,0,0,0,
+0,0,0,0,163,1386,1387,1388,163,0,0,0,0,172,164,165,166,172,0,0,0,0,0,0,0,172,164,165,166,172,0,0,0,0,163,1386,1387,1388,163,0,0,0,0,
 0,0,0,0,10,10,10,10,10,87,0,0,0,136,164,165,166,136,0,0,0,0,0,0,0,136,164,165,166,136,0,0,0,88,10,10,10,10,10,0,0,0,0,
 0,0,0,0,10,10,10,10,10,96,87,0,0,145,164,165,166,145,0,0,0,0,0,0,0,145,164,165,166,145,0,0,88,97,10,10,10,10,10,0,0,0,0,
 0,0,0,0,10,10,10,10,10,105,96,87,0,154,164,165,166,154,0,0,0,0,0,0,0,154,164,165,166,154,0,88,97,106,10,10,10,10,10,0,0,0,0,
@@ -488,18 +488,18 @@
 0,0,0,0,0,0,0,0,0,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,1367,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,1368,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,1369,1367,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,1368,1370,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,1371,1369,1367,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,1368,1370,1372,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,331,1371,1369,1367,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,1368,1370,1372,331,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,331,331,1371,1369,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1370,1372,331,331,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,331,331,331,1371,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1372,331,331,331,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,1368,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,1369,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,1370,1368,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,1369,1371,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,1372,1370,1368,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,1369,1371,1373,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,331,1372,1370,1368,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,1369,1371,1373,331,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,331,331,1372,1370,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1371,1373,331,331,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,331,331,331,1372,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1373,331,331,331,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,331,331,331,331,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,331,331,331,331,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,331,331,331,1368,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,331,331,331,1369,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -527,7 +527,10 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="14" name="climbareas"/>
+ <objectgroup color="#00ffff" id="14" name="climbing">
+  <object id="243" x="600" y="520" width="40" height="240"/>
+  <object id="244" x="1080" y="520" width="40" height="240"/>
+ </objectgroup>
  <objectgroup id="15" name="objects_buckets"/>
  <objectgroup id="7" name="collision" visible="0">
   <object id="23" x="160" y="520" width="1400" height="240"/>
@@ -563,7 +566,7 @@
   <object id="221" x="240" y="0" width="40" height="240"/>
   <object id="222" x="1440" y="0" width="40" height="240"/>
  </objectgroup>
- <objectgroup id="6" name="markers">
+ <objectgroup color="#aa00ff" id="6" name="markers">
   <object id="7" name="entry" x="40" y="820">
    <point/>
   </object>
@@ -582,36 +585,24 @@
   <object id="148" name="targ" x="860" y="320">
    <point/>
   </object>
+  <object id="249" x="1100" y="800">
+   <point/>
+  </object>
+  <object id="250" x="620" y="800">
+   <point/>
+  </object>
+  <object id="255" x="1100" y="480">
+   <point/>
+  </object>
+  <object id="256" x="620" y="480">
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="5" name="objects_party">
+ <objectgroup color="#ff00ff" id="5" name="objects_party">
   <object id="6" name="transition" x="-40" y="760" width="40" height="120">
    <properties>
     <property name="map" value="2_2nd_sanctuary/second_sanctum_3"/>
     <property name="marker" value="entry2"/>
-   </properties>
-  </object>
-  <object id="9" name="climbarea" x="600" y="560" width="40" height="160"/>
-  <object id="10" name="climbentry" x="600" y="720" width="40" height="40">
-   <properties>
-    <property name="area" type="object" value="9"/>
-   </properties>
-  </object>
-  <object id="11" name="climbentry" x="600" y="520" width="40" height="40">
-   <properties>
-    <property name="area" type="object" value="9"/>
-    <property name="up" type="bool" value="true"/>
-   </properties>
-  </object>
-  <object id="12" name="climbarea" x="1080" y="560" width="40" height="160"/>
-  <object id="13" name="climbentry" x="1080" y="720" width="40" height="40">
-   <properties>
-    <property name="area" type="object" value="12"/>
-   </properties>
-  </object>
-  <object id="14" name="climbentry" x="1080" y="520" width="40" height="40">
-   <properties>
-    <property name="area" type="object" value="12"/>
-    <property name="up" type="bool" value="true"/>
    </properties>
   </object>
   <object id="74" name="slidearea" x="600" y="880" width="40" height="279"/>
@@ -756,6 +747,46 @@ YET BURNING WITH PROMISE.</property>
     <property name="actor" value="winglade"/>
    </properties>
    <point/>
+  </object>
+  <object id="245" name="climbentry" x="600" y="720" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="246"/>
+   </properties>
+  </object>
+  <object id="246" name="climbexit" x="600" y="680" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="250"/>
+   </properties>
+  </object>
+  <object id="247" name="climbentry" x="1080" y="720" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="248"/>
+   </properties>
+  </object>
+  <object id="248" name="climbexit" x="1080" y="680" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="249"/>
+   </properties>
+  </object>
+  <object id="251" name="climbentry" x="600" y="520" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="253"/>
+   </properties>
+  </object>
+  <object id="252" name="climbentry" x="1080" y="520" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="254"/>
+   </properties>
+  </object>
+  <object id="253" name="climbexit" x="600" y="560" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="256"/>
+   </properties>
+  </object>
+  <object id="254" name="climbexit" x="1080" y="560" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="255"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="30" name="objects_fog">

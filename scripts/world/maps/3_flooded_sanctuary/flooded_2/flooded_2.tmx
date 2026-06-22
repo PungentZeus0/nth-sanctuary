@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="29" nextobjectid="325">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="29" nextobjectid="348">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -14,6 +14,7 @@
  <tileset firstgid="994" source="../../../tilesets/ExtraClimbingTiles.tsx"/>
  <tileset firstgid="1003" source="../../../tilesets/ClimbableBrickTilesSilhouette.tsx"/>
  <tileset firstgid="1024" source="../../../tilesets/bg_dw_mansion_battle_tileset.tsx"/>
+ <tileset firstgid="1654" source="../../../tilesets/church_objects.tsx"/>
  <objectgroup id="12" name="objects_bg">
   <object id="114" name="lavawaverbg" x="0" y="0">
    <point/>
@@ -384,7 +385,7 @@
   <object id="323" x="1840" y="920" width="280" height="280"/>
   <object id="324" x="1720" y="1120" width="120" height="80"/>
  </objectgroup>
- <objectgroup color="#ff0000" id="3" name="climbareas">
+ <objectgroup color="#00ffff" id="3" name="climbing">
   <object id="20" x="280" y="760" width="40" height="120"/>
   <object id="22" x="360" y="760" width="40" height="40"/>
   <object id="23" x="440" y="760" width="40" height="40"/>
@@ -427,6 +428,15 @@
   <object id="208" x="1640" y="400" width="120" height="40"/>
   <object id="209" x="1720" y="360" width="80" height="40"/>
   <object id="210" x="1880" y="360" width="160" height="40"/>
+  <object id="339" name="fallingclimbarea" gid="1758" x="1440" y="240" width="40" height="40"/>
+  <object id="340" name="fallingclimbarea" gid="1758" x="1480" y="240" width="40" height="40"/>
+  <object id="341" name="fallingclimbarea" gid="1758" x="1520" y="240" width="40" height="40"/>
+  <object id="342" name="fallingclimbarea" gid="1758" x="1640" y="240" width="40" height="40"/>
+  <object id="343" name="fallingclimbarea" gid="1758" x="1680" y="240" width="40" height="40"/>
+  <object id="344" name="fallingclimbarea" gid="1758" x="1800" y="240" width="40" height="40"/>
+  <object id="345" name="fallingclimbarea" gid="1758" x="1920" y="240" width="40" height="40"/>
+  <object id="346" name="fallingclimbarea" gid="1758" x="1960" y="240" width="40" height="40"/>
+  <object id="347" name="fallingclimbarea" gid="1758" x="2000" y="240" width="40" height="40"/>
  </objectgroup>
  <objectgroup color="#0000ff" id="2" name="collision">
   <object id="15" x="0" y="880" width="360" height="40"/>
@@ -443,8 +453,8 @@
   <object id="180" x="1720" y="760" width="120" height="360"/>
   <object id="182" x="1440" y="1080" width="200" height="40"/>
   <object id="184" x="1440" y="840" width="200" height="40"/>
-  <object id="186" x="1440" y="560" width="200" height="80"/>
-  <object id="187" x="1280" y="520" width="160" height="40"/>
+  <object id="186" x="1400" y="560" width="200" height="80"/>
+  <object id="187" x="1280" y="520" width="120" height="40"/>
   <object id="188" x="1240" y="560" width="40" height="160"/>
   <object id="189" x="1280" y="720" width="200" height="40"/>
   <object id="190" x="1280" y="760" width="80" height="200"/>
@@ -707,54 +717,9 @@
     <property name="watertilelimit" type="int" value="32"/>
    </properties>
   </object>
-  <object id="141" name="destructableclimbarea" x="1920" y="200" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="201" name="destructableclimbarea" x="1960" y="200" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="145" name="destructableclimbarea" x="2000" y="200" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="146" name="destructableclimbarea" x="1440" y="200" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="147" name="destructableclimbarea" x="1520" y="200" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="148" name="destructableclimbarea" x="1680" y="200" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="149" name="destructableclimbarea" x="1480" y="200" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="150" name="destructableclimbarea" x="1640" y="200" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
-  <object id="151" name="destructableclimbarea" x="1800" y="200" width="40" height="40">
-   <properties>
-    <property name="sprite" value="world/events/climbtiles/brittlebrick"/>
-   </properties>
-  </object>
   <object id="160" name="climbmover" x="2120" y="280" width="40" height="40">
    <properties>
-    <property name="marker" value="moverpos"/>
+    <property name="target" type="object" value="161"/>
    </properties>
   </object>
   <object id="162" name="climbswitch" x="1320" y="200" width="40" height="40">
@@ -791,10 +756,10 @@
   <object id="252" name="screenbounds" x="2560" y="475.294" visible="0">
    <polygon points="0,84.7059 -1395.79,84.7059 -1395.79,338.824 -1560,338.824 -1560,804.706 0,804.706"/>
   </object>
-  <object id="257" name="climbmover" x="1960" y="680" width="40" height="40">
+  <object id="257" name="climbmover" x="1960" y="640" width="40" height="40">
    <properties>
-    <property name="marker" value="moverchest"/>
-    <property name="style" type="int" value="0"/>
+    <property name="one_way" type="bool" value="true"/>
+    <property name="target" type="object" value="259"/>
    </properties>
   </object>
  </objectgroup>
@@ -805,34 +770,26 @@
   <object id="6" name="spawn" x="1340" y="660">
    <point/>
   </object>
-  <object id="161" name="moverpos" x="240" y="760">
+  <object id="161" x="260" y="780">
    <point/>
   </object>
-  <object id="259" name="moverchest" x="1360" y="480">
+  <object id="259" x="1380" y="460">
+   <point/>
+  </object>
+  <object id="327" x="300" y="960">
+   <point/>
+  </object>
+  <object id="328" x="2180" y="440">
+   <point/>
+  </object>
+  <object id="331" x="1340" y="600">
+   <point/>
+  </object>
+  <object id="334" x="1260" y="1040">
    <point/>
   </object>
  </objectgroup>
  <objectgroup color="#00c000" id="5" name="objects_party">
-  <object id="19" name="climbentry" x="280" y="880" width="40" height="40">
-   <properties>
-    <property name="up" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="171" name="climbentry" x="1240" y="960" width="40" height="40">
-   <properties>
-    <property name="up" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="191" name="climbentry" x="1320" y="520" width="40" height="40">
-   <properties>
-    <property name="up" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="134" name="climbentry" x="2160" y="360" width="40" height="40">
-   <properties>
-    <property name="up" type="bool" value="false"/>
-   </properties>
-  </object>
   <object id="135" name="transition" x="-40" y="920" width="40" height="120">
    <properties>
     <property name="map" value="3_flooded_sanctuary/flooded_1"/>
@@ -852,9 +809,49 @@
    </properties>
    <point/>
   </object>
-  <object id="258" name="climbentry" x="1960" y="720" width="40" height="40">
+  <object id="325" name="climbentry" x="280" y="880" width="40" height="40">
    <properties>
-    <property name="up" type="bool" value="false"/>
+    <property name="target" type="object" value="326"/>
+   </properties>
+  </object>
+  <object id="326" name="climbexit" x="280" y="840" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="327"/>
+   </properties>
+  </object>
+  <object id="329" name="climbentry" x="2160" y="360" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="330"/>
+   </properties>
+  </object>
+  <object id="330" name="climbexit" x="2160" y="320" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="328"/>
+   </properties>
+  </object>
+  <object id="332" name="climbentry" x="1320" y="520" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="333"/>
+   </properties>
+  </object>
+  <object id="333" name="climbexit" x="1320" y="480" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="331"/>
+   </properties>
+  </object>
+  <object id="335" name="climbentry" x="1240" y="960" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="336"/>
+   </properties>
+  </object>
+  <object id="336" name="climbexit" x="1240" y="920" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="334"/>
+   </properties>
+  </object>
+  <object id="337" name="climbentry" x="1960" y="720" width="40" height="40">
+   <properties>
+    <property name="target" type="object" value="257"/>
    </properties>
   </object>
  </objectgroup>
