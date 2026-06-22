@@ -296,10 +296,10 @@
   <object id="23" x="480" y="480" width="120" height="40"/>
   <object id="24" x="280" y="600" width="200" height="40"/>
  </objectgroup>
- <objectgroup color="#00ffff" id="24" name="climbing">
-  <object id="107" x="160" y="400" width="120" height="80"/>
-  <object id="108" x="320" y="400" width="120" height="80"/>
-  <object id="109" x="480" y="400" width="120" height="80"/>
+ <objectgroup color="#00ffff" id="24" name="climbing" class="objects">
+  <object id="107" type="climbarea" x="160" y="400" width="120" height="80"/>
+  <object id="108" type="climbarea" x="320" y="400" width="120" height="80"/>
+  <object id="109" type="climbarea" x="480" y="400" width="120" height="80"/>
  </objectgroup>
  <objectgroup color="#aa00ff" id="2" name="markers">
   <object id="1" name="entry" x="40" y="280">

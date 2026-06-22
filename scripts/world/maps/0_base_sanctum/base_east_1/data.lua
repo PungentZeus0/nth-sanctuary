@@ -766,7 +766,7 @@ return {
       draworder = "topdown",
       id = 24,
       name = "climbing",
-      class = "",
+      class = "objects",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -778,7 +778,7 @@ return {
         {
           id = 107,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 160,
           y = 400,
@@ -792,7 +792,7 @@ return {
         {
           id = 108,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 320,
           y = 400,
@@ -806,7 +806,7 @@ return {
         {
           id = 109,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 480,
           y = 400,

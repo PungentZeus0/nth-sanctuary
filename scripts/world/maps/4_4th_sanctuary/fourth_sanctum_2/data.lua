@@ -1225,7 +1225,7 @@ return {
         {
           id = 14,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 0,
           y = 960,
@@ -1239,7 +1239,7 @@ return {
         {
           id = 15,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 0,
           y = 1120,
@@ -1253,7 +1253,7 @@ return {
         {
           id = 17,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 960,
           y = 1000,
@@ -1267,7 +1267,7 @@ return {
         {
           id = 18,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1600,
           y = 1000,
@@ -1281,7 +1281,7 @@ return {
         {
           id = 19,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 840,
           y = 1120,
@@ -1295,7 +1295,7 @@ return {
         {
           id = 20,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 840,
           y = 840,
@@ -1309,7 +1309,7 @@ return {
         {
           id = 21,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1400,
           y = 720,
@@ -1323,7 +1323,7 @@ return {
         {
           id = 22,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 840,
           y = 480,
@@ -1337,7 +1337,7 @@ return {
         {
           id = 23,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1200,
           y = 520,
@@ -1351,7 +1351,7 @@ return {
         {
           id = 24,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1280,
           y = 680,
@@ -1365,7 +1365,7 @@ return {
         {
           id = 25,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 240,
           y = 480,
@@ -1379,7 +1379,7 @@ return {
         {
           id = 26,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 200,
           y = 360,
@@ -1393,7 +1393,7 @@ return {
         {
           id = 27,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 240,
           y = 320,
@@ -1407,7 +1407,7 @@ return {
         {
           id = 28,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1200,
           y = 480,
@@ -1421,7 +1421,7 @@ return {
         {
           id = 30,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "polygon",
           x = 560,
           y = 1000,
@@ -1441,7 +1441,7 @@ return {
         {
           id = 31,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "polygon",
           x = 560,
           y = 1120,
@@ -1461,7 +1461,7 @@ return {
         {
           id = 50,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1440,
           y = 960,
@@ -1475,7 +1475,7 @@ return {
         {
           id = 130,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1200,
           y = 360,
@@ -1493,7 +1493,7 @@ return {
       draworder = "topdown",
       id = 28,
       name = "climbing",
-      class = "",
+      class = "objects",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -1505,7 +1505,7 @@ return {
         {
           id = 46,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1420,
           y = 640,
@@ -1521,7 +1521,7 @@ return {
         {
           id = 33,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1320,
           y = 640,
@@ -1535,7 +1535,7 @@ return {
         {
           id = 36,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1520,
           y = 800,
@@ -1549,7 +1549,7 @@ return {
         {
           id = 126,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1520,
           y = 720,
@@ -1563,7 +1563,7 @@ return {
         {
           id = 127,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1480,
           y = 640,
@@ -1577,7 +1577,7 @@ return {
         {
           id = 39,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1520,
           y = 920,
@@ -1593,7 +1593,7 @@ return {
         {
           id = 133,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1120,
           y = 280,
@@ -1607,7 +1607,7 @@ return {
         {
           id = 134,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1280,
           y = 280,
@@ -1621,7 +1621,7 @@ return {
         {
           id = 135,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1440,
           y = 200,
@@ -1635,7 +1635,7 @@ return {
         {
           id = 136,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1480,
           y = 280,
@@ -1649,7 +1649,7 @@ return {
         {
           id = 137,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 1320,
           y = 200,

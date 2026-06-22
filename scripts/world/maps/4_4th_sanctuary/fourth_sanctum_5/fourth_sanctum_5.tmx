@@ -232,27 +232,27 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup color="#00ffff" id="23" name="climbing">
-  <object id="85" x="680" y="120" width="40" height="40"/>
-  <object id="122" x="640" y="0" width="80" height="40"/>
-  <object id="125" x="560" y="0" width="40" height="40"/>
-  <object id="124" x="680" y="40" width="40" height="40"/>
-  <object id="90" x="760" y="200" width="40" height="40"/>
-  <object id="93" x="840" y="280" width="40" height="40"/>
-  <object id="86" x="680" y="200" width="40" height="40"/>
-  <object id="91" x="760" y="280" width="40" height="40"/>
-  <object id="94" x="840" y="360" width="40" height="40"/>
-  <object id="97" x="1000" y="400" width="40" height="40"/>
-  <object id="162" x="1000" y="320" width="40" height="40"/>
-  <object id="163" x="1000" y="240" width="80" height="40"/>
-  <object id="166" x="1120" y="280" width="40" height="40"/>
-  <object id="165" x="1040" y="280" width="40" height="40"/>
-  <object id="87" x="680" y="280" width="40" height="40"/>
-  <object id="156" x="560" y="280" width="40" height="40"/>
-  <object id="167" x="600" y="280" width="40" height="40"/>
-  <object id="92" x="760" y="360" width="40" height="40"/>
-  <object id="88" x="680" y="360" width="40" height="40"/>
-  <object id="96" x="920" y="360" width="40" height="80"/>
+ <objectgroup color="#00ffff" id="23" name="climbing" class="objects">
+  <object id="85" type="climbarea" x="680" y="120" width="40" height="40"/>
+  <object id="122" type="climbarea" x="640" y="0" width="80" height="40"/>
+  <object id="125" type="climbarea" x="560" y="0" width="40" height="40"/>
+  <object id="124" type="climbarea" x="680" y="40" width="40" height="40"/>
+  <object id="90" type="climbarea" x="760" y="200" width="40" height="40"/>
+  <object id="93" type="climbarea" x="840" y="280" width="40" height="40"/>
+  <object id="86" type="climbarea" x="680" y="200" width="40" height="40"/>
+  <object id="91" type="climbarea" x="760" y="280" width="40" height="40"/>
+  <object id="94" type="climbarea" x="840" y="360" width="40" height="40"/>
+  <object id="97" type="climbarea" x="1000" y="400" width="40" height="40"/>
+  <object id="162" type="climbarea" x="1000" y="320" width="40" height="40"/>
+  <object id="163" type="climbarea" x="1000" y="240" width="80" height="40"/>
+  <object id="166" type="climbarea" x="1120" y="280" width="40" height="40"/>
+  <object id="165" type="climbarea" x="1040" y="280" width="40" height="40"/>
+  <object id="87" type="climbarea" x="680" y="280" width="40" height="40"/>
+  <object id="156" type="climbarea" x="560" y="280" width="40" height="40"/>
+  <object id="167" type="climbarea" x="600" y="280" width="40" height="40"/>
+  <object id="92" type="climbarea" x="760" y="360" width="40" height="40"/>
+  <object id="88" type="climbarea" x="680" y="360" width="40" height="40"/>
+  <object id="96" type="climbarea" x="920" y="360" width="40" height="80"/>
  </objectgroup>
  <objectgroup color="#ff00ff" id="3" name="objects_party">
   <object id="12" name="transition" x="-40" y="80" width="40" height="120">

@@ -180,8 +180,8 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup color="#00ffff" id="19" name="climbing">
-  <object id="8" x="320" y="400" width="40" height="120"/>
+ <objectgroup color="#00ffff" id="19" name="climbing" class="objects">
+  <object id="8" type="climbarea" x="320" y="400" width="40" height="120"/>
  </objectgroup>
  <objectgroup color="#ff02ff" id="7" name="objects_party">
   <object id="12" name="ripplefloor" x="120" y="560" width="520" height="240"/>

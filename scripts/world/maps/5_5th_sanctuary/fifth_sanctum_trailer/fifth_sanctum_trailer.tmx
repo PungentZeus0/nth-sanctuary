@@ -119,13 +119,13 @@
    <polygon points="0,0 50,-50 100,0 50,50"/>
   </object>
  </objectgroup>
- <objectgroup color="#00ffff" id="21" name="climbing">
-  <object id="4" x="640" y="160" width="40" height="80"/>
-  <object id="5" x="720" y="160" width="40" height="40"/>
-  <object id="6" x="800" y="160" width="40" height="40"/>
-  <object id="7" x="1000" y="160" width="40" height="80"/>
-  <object id="8" x="960" y="160" width="40" height="40"/>
-  <object id="9" x="880" y="160" width="40" height="40"/>
+ <objectgroup color="#00ffff" id="21" name="climbing" class="objects">
+  <object id="4" type="climbarea" x="640" y="160" width="40" height="80"/>
+  <object id="5" type="climbarea" x="720" y="160" width="40" height="40"/>
+  <object id="6" type="climbarea" x="800" y="160" width="40" height="40"/>
+  <object id="7" type="climbarea" x="1000" y="160" width="40" height="80"/>
+  <object id="8" type="climbarea" x="960" y="160" width="40" height="40"/>
+  <object id="9" type="climbarea" x="880" y="160" width="40" height="40"/>
  </objectgroup>
  <objectgroup color="#ff00ff" id="4" name="objects_party">
   <object id="115" name="climbentry" x="1000" y="240" width="40" height="40">

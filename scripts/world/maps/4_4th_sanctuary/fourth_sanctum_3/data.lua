@@ -941,7 +941,7 @@ return {
       draworder = "topdown",
       id = 24,
       name = "climbing",
-      class = "",
+      class = "objects",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -953,7 +953,7 @@ return {
         {
           id = 40,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 720,
           y = 840,
@@ -967,7 +967,7 @@ return {
         {
           id = 41,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 720,
           y = 760,
@@ -981,7 +981,7 @@ return {
         {
           id = 43,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 480,
           y = 760,
@@ -995,7 +995,7 @@ return {
         {
           id = 44,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 480,
           y = 600,
@@ -1009,7 +1009,7 @@ return {
         {
           id = 45,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 320,
           y = 600,
@@ -1023,7 +1023,7 @@ return {
         {
           id = 104,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 360,
           y = 600,
@@ -1037,7 +1037,7 @@ return {
         {
           id = 108,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 480,
           y = 680,
@@ -1051,7 +1051,7 @@ return {
         {
           id = 110,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 560,
           y = 600,
@@ -1065,7 +1065,7 @@ return {
         {
           id = 111,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 560,
           y = 760,
@@ -1079,7 +1079,7 @@ return {
         {
           id = 112,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 640,
           y = 760,
@@ -1093,7 +1093,7 @@ return {
         {
           id = 113,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 640,
           y = 680,
@@ -1107,7 +1107,7 @@ return {
         {
           id = 114,
           name = "",
-          type = "",
+          type = "climbarea",
           shape = "rectangle",
           x = 640,
           y = 600,
