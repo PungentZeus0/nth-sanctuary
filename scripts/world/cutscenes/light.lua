@@ -327,7 +327,7 @@ return {
 		s.sprite.anim_speed = 0
 		cutscene:wait(60/30)
 		s:setSprite("look_down_left")
-		cutscene:text("* Get some rest,[wait:5] loser.")
+		cutscene:text("* Get some rest,[wait:5] Kris.")
 		s:setSprite("walk_look_down")
 		s:setFacing("down")
 		cutscene:wait(15/30)
