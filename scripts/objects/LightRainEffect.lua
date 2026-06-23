@@ -154,7 +154,7 @@ function LightRainEffect:update()
 			local xrange = SCREEN_WIDTH + (self.xspeed * SCREEN_HEIGHT)
 			local offx = SCREEN_WIDTH
 			if not self.prewarm and self.cam_y ~= Game.world.camera.y - SCREEN_HEIGHT / 2 and not self.ypan then
-				local ydiff = math.abs(self.cam_y - (Game.world.camera.y - SCREEN_HEIGHT / 2)) * 2
+				local ydiff = math.abs(self.cam_y - (Game.world.camera.y - SCREEN_HEIGHT / 2))
 				
 				if self.dropcount < self.genspeed * 25 then
 					gen = gen + ydiff
