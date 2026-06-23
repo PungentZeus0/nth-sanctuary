@@ -332,7 +332,7 @@ return {
 		s:setFacing("down")
 		cutscene:wait(0.5)
 		cutscene:walkTo(s, s.x, 640, 2, "down")
-		cutscene:wait(0.5)
+		cutscene:wait(2)
 		rainfx.rain_outdoors_sfx:fade(0, 2)
         cutscene:fadeOut(2)
 		cutscene:wait(2)
