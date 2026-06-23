@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="38" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="26" nextobjectid="60">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="38" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="26" nextobjectid="61">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -281,6 +281,7 @@
    </properties>
   </object>
   <object id="52" name="dryzone" x="988" y="200" width="360" height="139"/>
+  <object id="60" gid="443" x="1000" y="500" width="146" height="76"/>
  </objectgroup>
  <objectgroup color="#ff00ff" id="10" name="markers">
   <object id="24" name="spawn" x="860" y="40">

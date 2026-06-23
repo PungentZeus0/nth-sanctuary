@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.11" tiledversion="1.12.1" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="99" columns="0">
+<tileset version="1.11" tiledversion="1.12.1" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="100" columns="0">
  <editorsettings>
   <export target="hometownobjects.lua" format="lua"/>
  </editorsettings>
@@ -300,5 +300,8 @@
  </tile>
  <tile id="150">
   <image source="../../../assets/sprites/tilesets/objects/pew_night_5.png" width="200" height="68"/>
+ </tile>
+ <tile id="156">
+  <image source="../../../assets/sprites/world/objects/jamm_car.png" width="73" height="38"/>
  </tile>
 </tileset>
