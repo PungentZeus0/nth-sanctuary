@@ -28,7 +28,7 @@ return {
 				cutscene.church_door_lightning = Sprite("world/objects/church_door_lightning", cutscene.church_door.x, cutscene.church_door.y)
 				cutscene.church_door_lightning:setScale(2)
 				cutscene.church_door_lightning:setFrame(cutscene.church_door.frame)
-				cutscene.church_door_lightning:setLayer(Game.world:parseLayer("objects"))
+				cutscene.church_door_lightning:setLayer(Game.world:parseLayer("objects") + 0.01)
 				Game.world:addChild(cutscene.church_door_lightning)
 			end
 			if cutscene.church_darkness then
