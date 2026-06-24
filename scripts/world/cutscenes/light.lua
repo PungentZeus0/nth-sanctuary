@@ -1,5 +1,94 @@
 return {
     intro = function(cutscene)
+		cutscene.lightning_timers = nil
+		local function lightningFlash()
+			if cutscene.lightning_timers then
+				for _, timer in ipairs(cutscene.lightning_timers) do
+					Game.world.timer:cancel(timer)
+				end
+			end
+			if cutscene.church_lightning then
+				cutscene.church_lightning:remove()
+			end
+			if cutscene.church_door_lightning then
+				cutscene.church_door_lightning:remove()
+			end
+			cutscene.lightning_timers = {}
+			local top_layers = {"treeup"}
+			local palettesys = Game.world:getEvent("hometowndaynight")
+			palettesys.night = 2
+			palettesys.overlay.alpha = 0
+			if Game.world.map.id == "light/hometown/town_church" then
+				cutscene.church_lightning = Sprite("world/maps/hometown/church_lightning", 440, 0)
+				cutscene.church_lightning:setScale(2)
+				cutscene.church_lightning:setLayer(Game.world:parseLayer("objects"))
+				Game.world:addChild(cutscene.church_lightning)
+			end
+			if cutscene.church_door then
+				cutscene.church_door_lightning = Sprite("world/objects/church_door_lightning", cutscene.church_door.x, cutscene.church_door.y)
+				cutscene.church_door_lightning:setScale(2)
+				cutscene.church_door_lightning:setFrame(cutscene.church_door.frame)
+				cutscene.church_door_lightning:setLayer(Game.world:parseLayer("objects") + 0.01)
+				Game.world:addChild(cutscene.church_door_lightning)
+			end
+			if cutscene.church_darkness then
+				cutscene.church_darkness.lightning_cancel_alpha = 0
+			end
+			for _, chara in ipairs(Game.stage:getObjects(Character)) do
+				if chara:getFX("lightning") then
+					chara:removeFX("lightning")
+				end
+				chara:addFX(LightningFlashFX(1, 2), "lightning")
+			end
+			for _, layer_id in ipairs(top_layers) do
+				local layer = Game.world.map:getTileLayer(layer_id)
+				if layer:getFX("palhack") then
+					layer:removeFX("palhack")
+				end
+				layer:addFX(PaletteFX("world/town_palette", 2), "palhack")
+			end
+			table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, palettesys, {night = 1}, "out-cubic"))
+			table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, palettesys.overlay, {alpha = 0.6}, "out-cubic"))
+			if cutscene.church_lightning then
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_lightning, {alpha = 0}, "out-cubic"))
+			end
+			if cutscene.church_door_lightning then
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_door_lightning, {alpha = 0}, "out-cubic"))
+			end
+			if cutscene.church_darkness then
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_darkness, {lightning_cancel_alpha = 1}, "out-cubic"))
+			end
+			for _, chara in ipairs(Game.stage:getObjects(Character)) do
+				local fx = chara:getFX("lightning")
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, fx, {alpha = 0}, "out-cubic"))
+			end
+			for _, layer_id in ipairs(top_layers) do
+				local layer = Game.world.map:getTileLayer(layer_id)
+				local fx = layer:getFX("palhack")
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, fx, {palette_index = 1}, "out-cubic"))
+			end
+			table.insert(cutscene.lightning_timers, Game.world.timer:after(80/30, function()
+				for _, chara in ipairs(Game.stage:getObjects(Character)) do
+					chara:removeFX("lightning")
+				end
+				for _, layer_id in ipairs(top_layers) do
+					local layer = Game.world.map:getTileLayer(layer_id)
+					layer:removeFX("palhack")
+				end
+				palettesys.night = 1
+				palettesys.overlay.alpha = 0.6
+				if cutscene.church_darkness then
+					cutscene.church_darkness.lightning_cancel_alpha = 1
+				end
+				if cutscene.church_door_lightning then
+					cutscene.church_door_lightning:remove()
+				end
+				if cutscene.church_lightning then
+					cutscene.church_lightning:remove()
+				end
+				cutscene.lightning_timers = nil
+			end))
+		end
         cutscene:fadeOut(0)
 		Kristal.hideBorder(0)
 		cutscene:wait(0.5)
@@ -308,11 +397,12 @@ return {
 			Game.world:addChild(rainfx)
 		end
 		cutscene:wait(2)
-		cutscene:text("* ... The festival is tomorrow.[wait:5]\n* I don't wanna forget today.")
-		s:setSprite("walk_unhappy")
-		s:setFacing("down")
-		cutscene:text("* The Knight,[wait:5] the Titan...")
-		cutscene:text("* ...[wait:5] The old man...")
+		cutscene:text("* Kris.[wait:5] I want to make sure you know...[wait:5]", "dejected_smile")
+		cutscene:text("* What I saw in there...[wait:5]\n* It's nothing to be worried about.[wait:5] I swear.", "dejected_smile")
+		cutscene:text("* I'll meet you and Noelle at the festival tomorrow.", "sincere")
+		cutscene:wait(0.5)
+		s:setSprite("rain_windblow_1")
+		cutscene:text("* Until then,[wait:5] try to get some rest,[wait:5] dumbass.", "small_smile")
 		Game:setFlag("hometown_raining", 1)
 		rainfx.faded_in_starting_rainsfx = true
 		rainfx.rain_active = true
@@ -323,18 +413,103 @@ return {
 		rainfx.rain_outdoors_sfx:setPitch(0.9)
 		rainfx.rain_outdoors_sfx:fade(1, 2)
 		s:setAnimation("rain_windblow")
-		cutscene:wait(60/30)
+		cutscene:wait(2)
 		s.sprite.anim_speed = 0
-		cutscene:wait(60/30)
-		s:setSprite("look_down_left")
-		cutscene:text("* Get some rest,[wait:5] loser.")
+		cutscene:wait(2)
+		cutscene:text("* See you tomorrow,[wait:5] Kris.", "small_smile")
 		s:setSprite("walk_look_down")
 		s:setFacing("down")
-		cutscene:wait(15/30)
+		cutscene:wait(0.5)
 		cutscene:walkTo(s, s.x, 640, 2, "down")
-		cutscene:wait(15/30)
-		rainfx.rain_outdoors_sfx:fade(0, 2)
+		cutscene:wait(2)
+		rainfx.rain_outdoors_sfx:fade(0.5, 2)
         cutscene:fadeOut(2)
 		cutscene:wait(2)
+		Game:setFlag("hometown_raining", 2)
+        cutscene:loadMap("light/hometown/town_church")
+		s = cutscene:spawnNPC("susie_lw", 860, -40)
+		s:setSprite("walk_look_down")
+		s:setFacing("down")
+		cutscene:attachCameraImmediate()
+		Game.world.camera.target = s
+		Game.world.player.visible = false
+		Game.world.music:stop()
+		Game.world.map.image_layers["churchup"].visible = false
+		cutscene.church_door = ChurchDoorDarkness(566, 528)
+		cutscene.church_door:setLayer(Game.world:parseLayer("objects"))
+		Game.world:addChild(cutscene.church_door)
+		cutscene.church_darkness = ChurchDarknessVFX(0, 0)
+		cutscene.church_darkness:setLayer(Game.world:parseLayer("objects"))
+		Game.world:addChild(cutscene.church_darkness)
+		local rainfx = Game.stage:getObjects(LightRainEffect)[1]
+		if not rainfx then
+			rainfx = LightRainEffect()
+			Game.world:addChild(rainfx)
+		end
+		if not rainfx.rain_outdoors_sfx then
+			rainfx.rain_outdoors_sfx = Music()
+			rainfx.rain_outdoors_sfx:play("raining", 0.5, 1)
+		end
+		rainfx.rain_outdoors_sfx:setPitch(0.9)
+        cutscene:fadeIn(1)
+		cutscene:walkToSpeed(s, s.x, 500, 3, "down")
+		cutscene:wait(0.5)
+		cutscene:setSpeaker("susie")
+		cutscene:text("* Test fucking dialogue[wait:30]", nil, s, {skip = false, auto = true})
+		cutscene:text("* Test fucking dialogue 2[wait:30]", nil, s, {skip = false, auto = true})
+		cutscene:wait(function()
+			if s.y >= 500 then
+				return true
+			end
+			return false
+		end)
+		s:setSprite("walk_unhappy")
+		s:setFacing("down")
+		cutscene:wait(0.5)
+		s:setFacing("left")
+		cutscene:wait(0.5)
+		s:setFacing("up")
+		cutscene:wait(0.5)
+		s:setFacing("right")
+		cutscene:wait(0.5)
+		cutscene:walkTo(s, 960, 510, 0.5, "right")
+		cutscene:wait(1)
+		cutscene:text("* Test fucking Jamm Car dialogue")
+		cutscene:detachCamera()
+        cutscene:panTo(740, 580, 1, "out-cubic")
+		cutscene.wind_sound = Music()
+		cutscene.wind_sound:play("wind_highplace", 0, 0.6)
+		cutscene.windpitch = 1
+		Assets.playSound("dooropen", 0.7, 0.4)
+		Assets.playSound("dooropen", 0.7, 0.5)
+		cutscene.church_darkness.bg_active = true
+		cutscene.church_darkness.window_active = true
+		cutscene.church_door:setFrame(2)
+		cutscene.wind_sound:fade(1, 1)
+		rainfx.rain_outdoors_sfx:fade(0.3, 1)
+		cutscene:during(function()
+			cutscene.wind_sound:setPitch(cutscene.windpitch)
+		end)
+		Game.world.timer:tween(1, cutscene, {windpitch = 1.5}, "linear")
+		cutscene:wait(0.5)
+		Assets.playSound("sussurprise")
+		s:setSprite("shock_down")
+		s:shake()
+		s:alert(20/30, {play_sound = false})
+		cutscene:wait(1)
+		s:setSprite("walk_unhappy")
+		Game.world.music:play("cultchase")
+		cutscene:wait(cutscene:walkTo(s, s.x - 100, 730, 10/30, "down"))
+		cutscene:wait(cutscene:walkTo(s, 600, 730, 20/30, "left"))
+		s:setFacing("up")
+		Assets.playSound("thunder_instant")
+		lightningFlash()
+		cutscene:wait(function()
+			if Input.pressed("menu") then
+				Assets.stopAndPlaySound("thunder_instant")
+				lightningFlash()
+			end
+			return false
+		end)
     end
 }

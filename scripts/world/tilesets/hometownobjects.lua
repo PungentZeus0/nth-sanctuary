@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 99,
+  tilecount = 100,
   tiles = {
     {
       id = 1,
@@ -618,6 +618,12 @@ return {
       image = "../../../assets/sprites/tilesets/objects/pew_night_5.png",
       width = 200,
       height = 68
+    },
+    {
+      id = 156,
+      image = "../../../assets/sprites/world/objects/jamm_car.png",
+      width = 73,
+      height = 38
     }
   }
 }
