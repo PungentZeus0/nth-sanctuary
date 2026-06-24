@@ -15,7 +15,7 @@ return {
 			local palettesys = Game.world:getEvent("hometowndaynight")
 			palettesys.night = 2
 			palettesys.overlay.alpha = 0
-			if self.world.map.id == "light/hometown/town_church" then
+			if Game.world.map.id == "light/hometown/town_church" then
 				cutscene.church_lightning = Sprite("world/maps/hometown/church_lightning", 440, 0)
 				cutscene.church_lightning:setScale(2)
 				cutscene.church_lightning:setLayer(Game.world:parseLayer("objects"))
@@ -25,10 +25,10 @@ return {
 				cutscene.church_darkness.lightning_cancel_alpha = 0
 			end
 			for _, chara in ipairs(Game.stage:getObjects(Character)) do
-				if chara:getFX("flash") then
-					chara:removeFX("flash")
+				if chara:getFX("lightning") then
+					chara:removeFX("lightning")
 				end
-				chara:addFX(LightningFlashFX(1, 2), "flash")
+				chara:addFX(LightningFlashFX(1, 2), "lightning")
 			end
 			for _, layer_id in ipairs(top_layers) do
 				local layer = Game.world.map:getTileLayer(layer_id)
@@ -46,7 +46,7 @@ return {
 				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_darkness, {lightning_cancel_alpha = 1}, "out-cubic"))
 			end
 			for _, chara in ipairs(Game.stage:getObjects(Character)) do
-				local fx = chara:getFX("flash")
+				local fx = chara:getFX("lightning")
 				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, fx, {alpha = 0}, "out-cubic"))
 			end
 			for _, layer_id in ipairs(top_layers) do
@@ -56,7 +56,7 @@ return {
 			end
 			table.insert(cutscene.lightning_timers, Game.world.timer:after(80/30, function()
 				for _, chara in ipairs(Game.stage:getObjects(Character)) do
-					chara:removeFX("flash")
+					chara:removeFX("lightning")
 				end
 				for _, layer_id in ipairs(top_layers) do
 					local layer = Game.world.map:getTileLayer(layer_id)
