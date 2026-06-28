@@ -116,10 +116,10 @@ function ScythemareEffect:draw()
 		if self.success then
 			local alpha = MathUtils.clamp(MathUtils.lerp(1, 0, timer / 20), 0, 1)
 			Draw.setColor(r, g, b, a * alpha)
-			Draw.draw(self.z_split_tex[1], tween, 0, 0, 3, 3, self.z_split_tex:getWidth() / 2, self.z_split_tex:getHeight() / 2)
-			Draw.draw(self.z_split_tex[2], -tween, 0, 0, 3, 3, self.z_split_tex:getWidth() / 2, self.z_split_tex:getHeight() / 2)
-			Draw.draw(self.z_split_tex[1], tween * 2, 0, 0, 3, 3, self.z_split_tex:getWidth() / 2, self.z_split_tex:getHeight() / 2)
-			Draw.draw(self.z_split_tex[2], -tween * 2, 0, 0, 3, 3, self.z_split_tex:getWidth() / 2, self.z_split_tex:getHeight() / 2)
+			Draw.draw(self.z_split_tex[1], tween, 0, 0, 3, 3, self.z_split_tex[1]:getWidth() / 2, self.z_split_tex[1]:getHeight() / 2)
+			Draw.draw(self.z_split_tex[2], -tween, 0, 0, 3, 3, self.z_split_tex[1]:getWidth() / 2, self.z_split_tex[1]:getHeight() / 2)
+			Draw.draw(self.z_split_tex[1], tween * 2, 0, 0, 3, 3, self.z_split_tex[1]:getWidth() / 2, self.z_split_tex[1]:getHeight() / 2)
+			Draw.draw(self.z_split_tex[2], -tween * 2, 0, 0, 3, 3, self.z_split_tex[1]:getWidth() / 2, self.z_split_tex[1]:getHeight() / 2)
 		else
 			local shake = 0
 			if timer < 8 then
@@ -135,7 +135,7 @@ function ScythemareEffect:draw()
 		end
 		if timer < 9 then
 			Draw.setColor(r, g, b, a)
-			Draw.draw(self.slash_tex[math.floor(timer / 3 % self.slash_tex) + 1], 0, 0, -math.rad(90), 1, 2, self.slash_tex:getWidth() / 2, self.slash_tex:getHeight() / 2)
+			Draw.draw(self.slash_tex[math.floor(timer / 3 % #self.slash_tex) + 1], 0, 0, -math.rad(90), 1, 2, self.slash_tex[1]:getWidth() / 2, self.slash_tex[1]:getHeight() / 2)
 		end
 	end
 
