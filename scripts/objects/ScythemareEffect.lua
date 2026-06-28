@@ -57,7 +57,7 @@ function ScythemareEffect:update()
 			else
 				Assets.playSound("bump", 2, 1 + MathUtils.random(-0.5, 0.5))
 			end
-			if self.count == 0 then Assets.stopSound(self.pacify_sound)
+			if self.count == 0 then Assets.stopSound(self.pacify_sound) end
 			if self.joker then
 				if self.laugh then
 					Assets.playSound("joker_laugh0")
