@@ -71,7 +71,9 @@ function spell:onCast(user, target)
 				parent:addChild(effect)
 				
                 Game.battle.timer:after(56 / 30, function()
-                    enemy:spare(true)
+					if success then
+						enemy:spare(true)
+					end
                 end)
 			end)
 
