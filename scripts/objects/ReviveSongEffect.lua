@@ -12,7 +12,6 @@ function ReviveSongEffect:init(chara, x, y, after)
 	self.xoff = 0
 	self.yoff = 0
 	self.chara = chara
-	self.chara.layer = self.chara.layer - 0.01
 	self.yspawn = -5
 	self.do_heal = false
     self.after_func = after
@@ -52,7 +51,6 @@ function ReviveSongEffect:onRemove(parent)
 			feather.layer = self.layer
 		end
 	end
-	self.chara.layer = self.chara.layer + 0.01
 end
 
 local function returnAlphaColor(color, value)
