@@ -37,7 +37,8 @@ function ScythemareEffect:update()
 	elseif self.siner < 34 then
 		local timer = self.siner - 6
 		if timer >= 7 and self.count == 0 and self.con == 1 then
-			self.pacify_sound = Assets.playSound("spell_pacify")
+			self.pacify_sound = Assets.newSound("spell_pacify")
+			self.pacify_sound:play()
 			self.con = 2
 		end
     else
@@ -54,7 +55,7 @@ function ScythemareEffect:update()
 			else
 				Assets.playSound("bump", 2, 1 + MathUtils.random(-0.5, 0.5))
 			end
-			if self.count == 0 then Assets.stopSound(self.pacify_sound) end
+			if self.count == 0 then self.pacify_sound:stop() end
 			if self.joker then
 				if self.laugh then
 					Assets.playSound("joker_laugh0")
