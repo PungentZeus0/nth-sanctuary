@@ -32,7 +32,7 @@ function ReviveSongEffect:init(chara, x, y, after)
 			self.yoff = self.yoff - 12
 			self.xoff = self.xoff + 8
 		end
-	elseif chara.chara.id == "kris" then
+	elseif chara.chara.id == "ralsei" then
 		self.x = self.x + 34
 		self.y = self.y + 26
 		self.yoff = self.yoff - 22
