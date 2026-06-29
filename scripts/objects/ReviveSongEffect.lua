@@ -214,7 +214,7 @@ function ReviveSongEffect:draw()
             star2:setOrigin(0.5, 0.5)
             star2:setScale(2, 2)
 			star2:setColor(TableUtils.pick({ColorUtils.hexToRGB("#FFE04D"), ColorUtils.hexToRGB("#FFB56C")}))
-            star2:setPosition(xx - math.sin((self.timer / 3) + self.offset) * 30, yy - math.cps((self.timer / 3) + self.offset) * 10)
+            star2:setPosition(xx - math.sin((self.timer / 3) + self.offset) * 30, yy - math.cos((self.timer / 3) + self.offset) * 10)
             star2.layer = self.layer + 0.01
             star2:play(1/15, false, function(s) s:remove() end)
             Game.battle:addChild(star2)
