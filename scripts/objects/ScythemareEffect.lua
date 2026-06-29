@@ -30,7 +30,7 @@ function ScythemareEffect:update()
     self.siner = self.siner + DTMULT
 	if self.siner < 6 then
 		local timer = self.siner
-		if timer >= 4 and self.con == 0 then
+		if self.siner >= 4 and self.con == 0 then
 			Assets.playSound("impact")
 			self.con = 1
 		end
