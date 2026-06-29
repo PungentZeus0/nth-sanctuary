@@ -51,6 +51,7 @@ function spell:onCast(user, target)
 	if user.chara:getFlag("pacifyUses") > 15 then
 		user.chara:setFlag("pacifyUses", 15)
 	end
+	local pacify_sound = Assets.getSound("spell_pacify")
     for _, enemy in ipairs(target) do
         if enemy.done_state == nil then
             local success = enemy.tired
@@ -70,6 +71,12 @@ function spell:onCast(user, target)
 				end
 				parent:addChild(effect)
 				
+                Game.battle.timer:after(13 / 30, function()
+					pacify_sound:play()
+				end)
+                Game.battle.timer:after(34 / 30, function()
+					pacify_sound:stop()
+				end)
                 Game.battle.timer:after(56 / 30, function()
 					if success then
 						enemy:spare(true)

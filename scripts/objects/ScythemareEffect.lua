@@ -13,7 +13,6 @@ function ScythemareEffect:init(x, y, count, success)
     self.siner = 0
 	self.con = 0
 	self.laugh = false
-	self.pacify_sound = Assets.getSound("spell_pacify")
 	self.last_spin = 0
 	self.last_altspin = 0
 	self.count = count or 0
@@ -36,15 +35,9 @@ function ScythemareEffect:update()
 		end
 	elseif self.siner < 34 then
 		local timer = self.siner - 6
-		if timer >= 7 and self.con == 1 then
-			if self.count == 0 then
-				self.pacify_sound:play()
-			end
-			self.con = 2
-		end
     else
 		local timer = self.siner - 34
-		if timer >= 0 and self.con == 2 then
+		if timer >= 0 and self.con == 1 then
 			if self.success then
 				Game.battle.timer:script(function(wait)
 					Assets.playSound("swing", 1, 1.5 + (self.count * 0.25))
@@ -56,13 +49,12 @@ function ScythemareEffect:update()
 			else
 				Assets.playSound("bump", 2, 1 + MathUtils.random(-0.5, 0.5))
 			end
-			if self.count == 0 then self.pacify_sound:stop() end
 			if self.joker then
 				if self.laugh then
 					Assets.playSound("joker_laugh0")
 				end
 			end
-			self.con = 3
+			self.con = 2
 		end
     end
 	if self.siner >= 64 then
