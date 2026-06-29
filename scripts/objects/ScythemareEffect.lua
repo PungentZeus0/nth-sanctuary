@@ -28,8 +28,6 @@ end
 
 function ScythemareEffect:update()
     self.siner = self.siner + DTMULT
-    self.alpha = (math.sin(self.siner / 9) - 0.3) + (self.success and 0.3 or 0)
-
 	if self.siner < 6 then
 		local timer = self.siner
 		if timer >= 4 and self.con == 0 then
