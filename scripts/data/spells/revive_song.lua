@@ -48,7 +48,7 @@ function spell:onCast(user, target)
 
 		target:heal(heal_amount)
     end)
-    effect.layer = target.layer + 0.1
+    effect.layer = target.layer
     Game.battle:addChild(effect)
 	Game.battle.timer:after(75/30, function()
 		Game.battle:finishAction()
