@@ -1,6 +1,6 @@
-local Dummy, super = Class(EnemyBattler)
+local Huemist, super = Class(EnemyBattler)
 
-function Dummy:init()
+function Huemist:init()
     super.init(self)
 
     -- Enemy name
@@ -30,11 +30,10 @@ function Dummy:init()
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
-        -- Dialogue randomly displayed in the enemy's speech bubble
     self.dialogue = {
         "<::>",
         ">++<",
-        "|\\/|"
+        "|\\\\/|"
     }
 
     -- Check text (automatically has "ENEMY NAME - " at the start)
@@ -60,7 +59,7 @@ function Dummy:init()
     self.overlay = Assets.getTexture("enemies/huemist/overlay")
 end
 
-function Dummy:onAct(battler, name)
+function Huemist:onAct(battler, name)
     if name == "Smile" then
         -- Give the enemy 100% mercy
         self:addMercy(100)
@@ -101,7 +100,7 @@ function Dummy:onAct(battler, name)
     return super.onAct(self, battler, name)
 end
 
-function Dummy:update()
+function Huemist:update()
     super.update(self)
     self.siner = self.siner + DTMULT
     self.sprite.y = math.sin(self.siner/10)*5
@@ -114,7 +113,7 @@ function Dummy:update()
     end
 end
 
-function Dummy:draw()
+function Huemist:draw()
     Draw.pushShader("checkerboard_mask", {
         ["pattern"] = self.overlay
         }
@@ -124,4 +123,4 @@ function Dummy:draw()
     super.draw(self)
     Draw.popShader()
 end
-return Dummy
+return Huemist
