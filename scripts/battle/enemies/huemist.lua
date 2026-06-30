@@ -40,7 +40,7 @@ function Huemist:init()
     -- Text randomly displayed at the bottom of the screen each turn
     self.text = {
         "* Huemist daydreams about an empty\nfield somewhere distant.",
-        "* Huemist radiates in pink and gold.",
+        "* Huemist ripples like water.",
         "* The air feels clear and broad.",
         "* Smells like [friend][Pink & Gold][friend:unfriend] lemonade vapor.",
         "* And then you fired again.",
