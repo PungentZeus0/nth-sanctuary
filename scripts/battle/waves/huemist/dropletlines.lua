@@ -6,6 +6,7 @@ function DropletLines:init()
     self.time = 270/30
 	self.side = 0
 	self.last_add_diff = -1
+	self.add_diff_same_count = 0
 end
 
 function DropletLines:onStart()
