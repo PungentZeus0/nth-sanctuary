@@ -4,7 +4,7 @@ function Dummy:init()
     super.init(self)
 
     -- Text displayed at the bottom of the screen at the start of the encounter
-    self.text = "Huemist condensates in!"
+    self.text = "* Huemist condensates in!"
 
     -- Battle music ("battle" is rude buster)
     self.music = "ch4_battle"
