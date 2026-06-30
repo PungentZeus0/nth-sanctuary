@@ -5,6 +5,7 @@ function DropletLines:init()
 
     self.time = 270/30
 	self.side = 0
+	self.last_add_diff = -1
 end
 
 function DropletLines:onStart()
@@ -19,6 +20,17 @@ function DropletLines:onStart()
 		local x_diff, y_diff = 0, 0
 		local distance, diff = 60, 32
 		local add_diff = TableUtils.pick({0, 1})
+		if add_diff == self.last_add_diff then
+			self.add_diff_same_count = self.add_diff_same_count + 1
+			if self.add_diff_same_count >= 3 then
+				while add_diff == self.last_add_diff do
+					add_diff = TableUtils.pick({0, 1})
+					self.last_add_diff = add_diff
+				end
+				self.add_diff_same_count = 0
+			end
+		end
+		self.last_add_diff = add_diff
 		local turnvar = 0
 		if side == 1 then
 			y_diff = diff
