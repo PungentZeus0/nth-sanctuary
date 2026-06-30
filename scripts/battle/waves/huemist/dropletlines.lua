@@ -19,6 +19,7 @@ function DropletLines:onStart()
 		local x_diff, y_diff = 0, 0
 		local distance, diff = 60, 32
 		local add_diff = TableUtils.pick({0, 1})
+		local turnvar = 0
 		if side == 1 then
 			y_diff = diff
 			x = arena.left - distance
@@ -33,7 +34,8 @@ function DropletLines:onStart()
 			y = arena.bottom + distance
 		end
 		for i = -2, 2 - add_diff do
-			local bullet = self:spawnBullet("huemist/spiral", x + x_diff * i + (add_diff == 1 and x_diff / 2 or 0), y + y_diff * i + (add_diff == 1 and y_diff / 2 or 0), direction, (2 + (i + 2) / 2) * 4/3, 80)
+			turnvar = -math.rad(-(i + (add_diff == 1 and 0.5 or 0)) * 2)
+			local bullet = self:spawnBullet("huemist/spiral", x + x_diff * i + (add_diff == 1 and x_diff / 2 or 0), y + y_diff * i + (add_diff == 1 and y_diff / 2 or 0), direction, 4, 80, turnvar)
 			bullet.dont_remove_on_lifetime_end = true
 			bullet.remove_outside_arena = true
 		end
