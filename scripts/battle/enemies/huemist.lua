@@ -46,7 +46,7 @@ function Huemist:init()
         "* And then you fired again.",
     }
     -- Text displayed at the bottom of the screen when the enemy has low health
-    self.low_health_text = "* Huemist looks very worn."
+    self.low_health_text = "* Huemist is turning back into mist."
 
     -- Register act called "Smile"
     self:registerAct("Smile")
