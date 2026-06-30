@@ -1,0 +1,59 @@
+local HueDroplet, super = Class(Bullet, "huemist/huedroplet")
+
+function HueDroplet:init(x, y)
+    super.init(self, x, y, "battle/bullets/mizzle/holydroplet")
+
+    self:setScale(1)
+    self:setOriginExact(16, 18)
+
+    self.tp = (1/3) / 2.5
+	self.sprite.visible = false
+	self:setColor(COLORS.yellow)
+	self:setHitbox(10, 14, 14, 4)
+	self.outline_tex = Assets.getTexture("battle/bullets/mizzle/holydroplet_outline")
+	self.removing = false
+	self.was_in_arena = false
+	self.remove_outside_arena = false
+end
+
+function HueDroplet:update()
+    super.update(self)
+	if self.remove_outside_arena then
+		local arena = Game.battle.arena
+		if not self.was_in_arena then
+			if self.x >= arena.left - 16 and self.x <= arena.right + 16 and self.y >= arena.top - 18 and self.y <= arena.bottom + 18 then
+				self.was_in_arena = true
+			end
+		elseif self.x < arena.left - 16 then
+			self:doRemove()
+		elseif self.x > arena.right + 16 then
+			self:doRemove()
+		elseif self.y < arena.top - 18 then
+			self:doRemove()
+		elseif self.y > arena.bottom + 18 then
+			self:doRemove()
+		end
+	end
+end
+
+function HueDroplet:doRemove()
+	if self.removing then return end
+	self.removing = true
+	self.physics.speed = 0
+	self.collidable = false
+
+	Game.battle.timer:lerpVar(self, "alpha", 1, 0, 5)
+	Game.battle.timer:lerpVar(self, "scale_x", 1, 0, 5)
+	Game.battle.timer:lerpVar(self, "scale_y", 1, 0, 5)
+	Game.battle.timer:after(5/30, function() 
+		self:remove()
+	end)
+end
+
+function HueDroplet:onGraze(success)
+	if success then
+		Assets.stopAndPlaySound("graze") -- Stop graze sound spam
+	end
+end
+
+return HueDroplet 
