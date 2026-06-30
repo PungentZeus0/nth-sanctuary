@@ -7,7 +7,7 @@ function Dummy:init()
     self.text = "* Huemist condensates in!"
 
     -- Battle music ("battle" is rude buster)
-    self.music = "ch4_battle"
+    self.music = "vaporbattle"
     -- Enables the purple grid battle background
     self.background = true
 
@@ -16,6 +16,12 @@ function Dummy:init()
 
     --- Uncomment this line to add another!
     --self:addEnemy("dummy")
+    self.bg = VaporBattleBG()
+end
+
+function Dummy:createBackground()
+    self.bg.layer =BATTLE_LAYERS["background"]
+    return Game.battle:addChild(self.bg)
 end
 
 return Dummy
