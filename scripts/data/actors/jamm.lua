@@ -17,7 +17,7 @@ function actor:init()
     self.color = {0, 1, 1}
 
     -- Path to this actor's sprites (defaults to "")
-    self.path = "party/jamm/dark/new"
+    self.path = "party/jamm/dark"
     -- This actor's default sprite or animation, relative to the path (defaults to "")
     self.default = "walk"
 
