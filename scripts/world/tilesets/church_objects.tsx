@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="church_objects" tilewidth="2880" tileheight="800" tilecount="102" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="church_objects" tilewidth="2880" tileheight="800" tilecount="103" columns="0">
  <editorsettings>
   <export target="church_objects.lua" format="lua"/>
  </editorsettings>
@@ -362,5 +362,8 @@
  </tile>
  <tile id="107">
   <image width="120" height="80" source="../../../assets/sprites/world/objects/warning_dogmarriage.png"/>
+ </tile>
+ <tile id="108">
+  <image width="80" height="80" source="../../../assets/sprites/world/objects/shard_door_vapor.png"/>
  </tile>
 </tileset>

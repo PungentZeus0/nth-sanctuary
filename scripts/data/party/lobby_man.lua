@@ -7,7 +7,7 @@ function character:init()
     self.name = "Lobby Man"
 
     -- Actor (handles sprites)
-    self:setActor("ralsei")
+    self:setActor("lobbyman_party")
 
     -- Display level (saved to the save file)
     self.level = "??"
@@ -96,7 +96,7 @@ function character:init()
     -- Battle position offset (optional)
     self.battle_offset = {2, 6}
     -- Head icon position offset (optional)
-    self.head_icon_offset = nil
+    self.head_icon_offset = {0, -2}
     -- Menu icon position offset (optional)
     self.menu_icon_offset = nil
 

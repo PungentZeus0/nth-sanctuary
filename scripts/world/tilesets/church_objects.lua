@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 102,
+  tilecount = 103,
   tiles = {
     {
       id = 0,
@@ -811,6 +811,12 @@ return {
       id = 107,
       image = "../../../assets/sprites/world/objects/warning_dogmarriage.png",
       width = 120,
+      height = 80
+    },
+    {
+      id = 108,
+      image = "../../../assets/sprites/world/objects/shard_door_vapor.png",
+      width = 80,
       height = 80
     }
   }

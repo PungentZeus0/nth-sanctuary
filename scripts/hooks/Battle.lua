@@ -1,7 +1,7 @@
 local Battle, super = HookSystem.hookScript(Battle)
 
 function Battle:createPartyBattlers()
-    for i = 1, math.min(4, #Game.party) do
+    for i = 1, #Game.party do
         local party_member = Game.party[i]
 
         if Game.world.player and Game.world.player.visible and Game.world.player.actor.id == party_member:getActor().id then

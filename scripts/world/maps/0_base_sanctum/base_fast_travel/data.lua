@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 119,
+  nextobjectid = 121,
   properties = {
     ["border"] = "blank",
     ["music"] = "fast-travel"
@@ -29,17 +29,17 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 364,
+      firstgid = 370,
       filename = "../../../tilesets/light_areas.tsx"
     },
     {
       name = "tiles_moss",
-      firstgid = 374,
+      firstgid = 380,
       filename = "../../../tilesets/tiles_moss.tsx"
     },
     {
       name = "bg_dw_church_tileset_new",
-      firstgid = 376,
+      firstgid = 382,
       filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
       exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     }
@@ -76,7 +76,7 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 260, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 476, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 482, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 260, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 260, 260, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -417,7 +417,7 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225846, 1073742198, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225852, 1073742204, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -735,20 +735,6 @@ return {
           properties = {}
         },
         {
-          id = 24,
-          name = " ",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 1600,
-          width = 160,
-          height = 160,
-          rotation = 0,
-          gid = 272,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 25,
           name = "shard_door",
           type = "",
@@ -798,6 +784,9 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["map"] = "vapor_sanctum/vapor_sanctum_ripple",
+            ["map_name"] = "Vapor Sanctuary",
+            ["marker"] = "entry",
             ["req"] = "5",
             ["solid"] = true
           }
@@ -1126,6 +1115,20 @@ return {
             ["text3"] = "* Where does it lead?",
             ["text4"] = "* Oh,[wait:5] I don't remember..."
           }
+        },
+        {
+          id = 120,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 1600,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          gid = 369,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -1153,7 +1156,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 366,
+          gid = 372,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1172,7 +1175,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 366,
+          gid = 372,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1191,7 +1194,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 2147484014,
+          gid = 2147484020,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1226,7 +1229,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 366,
+          gid = 372,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1245,7 +1248,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 2147484014,
+          gid = 2147484020,
           visible = true,
           properties = {
             ["light"] = true,

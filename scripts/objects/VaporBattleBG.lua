@@ -12,13 +12,27 @@ function Glowy:init()
 
     self.spr = Assets.getTexture("world/objects/vapor_sun")
 
-    self:addFX(ShaderFX("wave_interlace", {
+    self.fx = ShaderFX("wave_interlace", {
 				["wave_sine"] = function () return Kristal.getTime() * 50 end,
 				["wave_mag"] = function () return 10 end,
 				["wave_height"] = 25,
 				["texsize"] = { SCREEN_WIDTH, SCREEN_HEIGHT }
-			}), "funky_mode")
+			}), "funky_mode"
+            self:addFX(self.fx)
             self.alpha = 0.01
+    self.timer = Timer()
+    self.timer:every(1, function()
+        local spr = Sprite("effects/ball")
+        Game.battle:addChild(spr)
+        spr.x,spr.y = love.math.random(0, SCREEN_WIDTH), SCREEN_HEIGHT
+        spr.physics.speed_y = -5
+        spr.layer = self.layer + 1
+        spr:setScale(love.math.random(5,15)/10)
+        spr:addFX(self.fx)
+        self.timer:after(3, function()
+        spr:fadeOutAndRemove(1)
+        end)
+    end)
 end
 
 function Glowy.mergeColorInHSV(a, b, t)
@@ -30,6 +44,7 @@ end
 
 function Glowy:update()
     super.update(self)
+    self.timer:update()
     self.siner = self.siner + DT
     self.bg_color = Glowy.mergeColorInHSV({1,0.7,0.5}, {1,0.5,1}, (math.sin(self.siner)+1)/2)
     if not self.fading_out then
