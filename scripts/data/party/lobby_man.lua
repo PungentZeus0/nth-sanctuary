@@ -31,6 +31,8 @@ function character:init()
     -- Spells
     self:addSpell("pacify")
     self:addSpell("compel")
+    --self:addSpell("blood_tax")
+    
 
     -- Current health (saved to the save file)
     self.health = 180
@@ -38,9 +40,9 @@ function character:init()
     -- Base stats (saved to the save file)
     self.stats = {
         health = 180,
-        attack = 15,
-        defense = 2,
-        magic = 14,
+        attack = 10,
+        defense = 3,
+        magic = 18,
     }
     -- Max stats from level-ups
     self.max_stats = {
@@ -108,7 +110,7 @@ function character:init()
 end
 
 function character:getTitle()
-    local prefix = "LV "..self:getLevel().." "
+    local prefix = "LV "..love.math.random(1, 99).." "
     local msg = ""
     if Mod:isWeird() then
         msg = "Cohort\nImbues enemies with\na Dark Will."
@@ -120,6 +122,25 @@ function character:getTitle()
 end
 
 function character:drawPowerStat(index, x, y, menu)
+    if index == 1 then
+        local icon = Assets.getTexture("ui/menu/icon/smile")
+        Draw.draw(icon, x-26, y+6, 0, 2, 2)
+        love.graphics.print("Darkness", x, y)
+        love.graphics.print("101", x+130, y)
+        return true
+    elseif index == 2 then
+        local icon = Assets.getTexture("ui/menu/icon/magic")
+        Draw.draw(icon, x-26, y+6, 0, 2, 2)
+        love.graphics.print("Influence", x, y, 0, 0.8, 1)
+
+        love.graphics.print("25", x+130, y)
+        return true
+    elseif index == 3 then
+        local icon = Assets.getTexture("ui/menu/icon/armor")
+        Draw.draw(icon, x-26, y+6, 0, 2, 2)
+        love.graphics.print("ResistDark", x, y, 0, 0.8, 1)
+        return true
+    end
     --[[if index == 1 then
         if Game.chapter == 1 then
             -- Chapter 1 Ralsei "Kindness" stat (doggable)

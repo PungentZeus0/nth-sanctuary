@@ -4,14 +4,14 @@ return {
   tiledversion = "1.10.2",
   name = "vapor_sanctum_wip",
   class = "",
-  tilewidth = 16,
-  tileheight = 16,
+  tilewidth = 20,
+  tileheight = 20,
   spacing = 0,
   margin = 0,
-  columns = 31,
+  columns = 20,
   image = "../../../assets/sprites/tilesets/vapor_sanctum_wip.png",
-  imagewidth = 500,
-  imageheight = 500,
+  imagewidth = 400,
+  imageheight = 800,
   objectalignment = "unspecified",
   tilerendersize = "grid",
   fillmode = "stretch",
@@ -21,11 +21,11 @@ return {
   },
   grid = {
     orientation = "orthogonal",
-    width = 16,
-    height = 16
+    width = 20,
+    height = 20
   },
   properties = {},
   wangsets = {},
-  tilecount = 961,
+  tilecount = 1250,
   tiles = {}
 }

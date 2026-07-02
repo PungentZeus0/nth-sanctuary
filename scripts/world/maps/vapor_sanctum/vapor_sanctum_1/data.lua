@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 12,
-  nextobjectid = 28,
+  nextobjectid = 36,
   properties = {
     ["music"] = "vapor_sanct_wip"
   },
@@ -57,7 +57,6 @@ return {
           width = 400,
           height = 278,
           rotation = 0,
-          opacity = 1,
           gid = 1,
           visible = true,
           properties = {}
@@ -88,7 +87,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -118,7 +116,6 @@ return {
           width = 320,
           height = 800,
           rotation = 315,
-          opacity = 1,
           gid = 3221225474,
           visible = true,
           properties = {}
@@ -133,7 +130,6 @@ return {
           width = 320,
           height = 800,
           rotation = 0,
-          opacity = 1,
           gid = 2,
           visible = true,
           properties = {}
@@ -148,7 +144,6 @@ return {
           width = 320,
           height = 800,
           rotation = 0,
-          opacity = 1,
           gid = 2,
           visible = true,
           properties = {}
@@ -179,7 +174,6 @@ return {
           width = 640,
           height = 1600,
           rotation = 45,
-          opacity = 1,
           gid = 2,
           visible = true,
           properties = {}
@@ -194,7 +188,6 @@ return {
           width = 640,
           height = 1600,
           rotation = 315,
-          opacity = 1,
           gid = 2,
           visible = true,
           properties = {}
@@ -225,7 +218,19 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 35,
+          name = "entry",
+          type = "",
+          shape = "point",
+          x = 1240,
+          y = 296,
+          width = 0,
+          height = 0,
+          rotation = 0,
           visible = true,
           properties = {}
         }
@@ -253,14 +258,14 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        263, 264, 264, 265, 263, 264, 264, 265, 263, 264, 264, 264, 265, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        209, 210, 211, 212, 209, 210, 211, 212, 209, 210, 211, 212, 295, 214, 215, 216, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        240, 241, 242, 243, 240, 241, 242, 243, 240, 241, 242, 243, 295, 245, 214, 215, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        271, 272, 273, 274, 271, 272, 273, 274, 271, 272, 273, 274, 295, 276, 245, 246, 263, 264, 265, 263, 265, 263, 265, 263, 265, 263, 265, 263, 265, 263, 265, 263, 265, 263, 265, 263, 265, 263, 265, 263,
-        302, 303, 304, 305, 302, 303, 304, 305, 302, 303, 304, 305, 326, 307, 276, 277, 294, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 338, 307, 308, 294, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 369, 338, 339, 294, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295, 296, 295,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 369, 370, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326, 326
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        221, 222, 223, 221, 222, 223, 221, 222, 223, 221, 222, 223, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        241, 242, 243, 241, 242, 243, 241, 242, 243, 241, 242, 243, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        261, 262, 263, 261, 262, 263, 261, 262, 263, 261, 262, 263, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        281, 282, 283, 281, 282, 283, 281, 282, 283, 204, 204, 204, 224, 224, 224, 224, 221, 222, 223, 221, 222, 223, 221, 222, 223, 221, 222, 223, 221, 222, 223, 221, 222, 223, 221, 222, 223, 221, 222, 223,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 204, 204, 204, 244, 244, 244, 244, 241, 242, 243, 241, 242, 243, 241, 242, 243, 241, 242, 243, 241, 242, 243, 241, 242, 243, 241, 242, 243, 241, 242, 243,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 204, 204, 204, 264, 264, 264, 264, 261, 262, 263, 261, 262, 263, 261, 262, 263, 261, 262, 263, 261, 262, 263, 261, 262, 263, 261, 262, 263, 261, 262, 263,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 281, 282, 283, 0, 0, 0, 0, 281, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 282, 283
       }
     },
     {
@@ -284,31 +289,10 @@ return {
           shape = "rectangle",
           x = 0,
           y = 160,
-          width = 416,
+          width = 384,
           height = 96,
           rotation = 0,
-          opacity = 1,
           visible = true,
-          properties = {}
-        },
-        {
-          id = 24,
-          name = "vaporreflect",
-          type = "",
-          shape = "polygon",
-          x = 416,
-          y = 160,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 96, y = 96 },
-            { x = 96, y = 192 },
-            { x = 0, y = 96 }
-          },
           properties = {}
         },
         {
@@ -321,7 +305,19 @@ return {
           width = 768,
           height = 96,
           rotation = 0,
-          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 33,
+          name = "vaporreflect",
+          type = "",
+          shape = "rectangle",
+          x = 288,
+          y = 256,
+          width = 96,
+          height = 96,
+          rotation = 0,
           visible = true,
           properties = {}
         }
@@ -340,7 +336,24 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 34,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1280,
+          y = 256,
+          width = 32,
+          height = 96,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "vapor_sanctum/vapor_sanctum_2",
+            ["marker"] = "entry"
+          }
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -363,10 +376,9 @@ return {
           shape = "rectangle",
           x = 0,
           y = 128,
-          width = 416,
+          width = 288,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -377,50 +389,10 @@ return {
           shape = "rectangle",
           x = 0,
           y = 256,
-          width = 416,
+          width = 288,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
-          properties = {}
-        },
-        {
-          id = 18,
-          name = "",
-          type = "",
-          shape = "polygon",
-          x = 512,
-          y = 256,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = -96, y = -96 },
-            { x = -96, y = -128 },
-            { x = 0, y = -128 }
-          },
-          properties = {}
-        },
-        {
-          id = 19,
-          name = "",
-          type = "",
-          shape = "polygon",
-          x = 416,
-          y = 256,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 0, y = 96 },
-            { x = 96, y = 96 }
-          },
           properties = {}
         },
         {
@@ -433,7 +405,6 @@ return {
           width = 800,
           height = 32,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -447,7 +418,58 @@ return {
           width = 800,
           height = 32,
           rotation = 0,
-          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 29,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 288,
+          y = 128,
+          width = 96,
+          height = 32,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 30,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 384,
+          y = 128,
+          width = 128,
+          height = 128,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 31,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 352,
+          width = 256,
+          height = 32,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 32,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 256,
+          width = 32,
+          height = 96,
+          rotation = 0,
           visible = true,
           properties = {}
         }

@@ -53,7 +53,25 @@ return {
             cutscene:setSpeaker("jamm")
             cutscene:text("* Where is it...", "suspicious")
         end
+    end,
+    vapor = function (cutscene)
+        local guy = cutscene:getCharacter("vaporman")
+        cutscene:text("[friend]* Heeeeeey, [wait:5]travellers. [wait:10]I am the [wave]Vapor Guy.")
+        cutscene:text("[friend]* Take a load off. [wait:10]See my shop, [wait:5]get yous a PartyBrew, and a [wave]Vaporizer.")
+        local choice = cutscene:choicer({
+            "See the shop",
+            "Do not"
+        })
+
+        if choice == 2 then
+            cutscene:text("[friend]* Aww, [wait:5]come on now. [wait:10]I have a lot of great stuff for yous.")
+        else
+            cutscene:text("[friend][wave]* Vaporific. [wait:10][wave:0]Come on right.")
+            cutscene:wait(cutscene:slideTo(guy, 1320, guy.y, 1, "linear"))
+            Game.world.player:setFacing("down")
+        end
     end
+        
 
     
 }
