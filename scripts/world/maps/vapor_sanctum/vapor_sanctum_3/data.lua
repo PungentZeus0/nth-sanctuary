@@ -47,7 +47,7 @@ return {
           name = "vaporsun",
           type = "",
           shape = "rectangle",
-          x = 200,
+          x = 120,
           y = 280,
           width = 400,
           height = 278,
@@ -500,7 +500,7 @@ return {
       objects = {
         {
           id = 31,
-          name = "",
+          name = "vaporreflect",
           type = "",
           shape = "rectangle",
           x = 0,
@@ -513,7 +513,7 @@ return {
         },
         {
           id = 32,
-          name = "",
+          name = "vaporreflect",
           type = "",
           shape = "rectangle",
           x = 600,
@@ -526,7 +526,7 @@ return {
         },
         {
           id = 33,
-          name = "",
+          name = "vaporreflect",
           type = "",
           shape = "rectangle",
           x = 80,
@@ -539,7 +539,7 @@ return {
         },
         {
           id = 34,
-          name = "",
+          name = "vaporreflect",
           type = "",
           shape = "rectangle",
           x = 120,
@@ -552,7 +552,7 @@ return {
         },
         {
           id = 35,
-          name = "",
+          name = "vaporreflect",
           type = "",
           shape = "rectangle",
           x = 120,

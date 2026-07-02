@@ -8,19 +8,19 @@
  </properties>
  <tileset firstgid="1" source="../../../tilesets/vapor_sanctum_wip.tsx"/>
  <tileset firstgid="801" source="../../../tilesets/vapor_assets.tsx"/>
- <objectgroup id="5" name="objects_parallax3" locked="1" parallaxx="0.1" parallaxy="0.1">
-  <object id="2" name="vaporsun" gid="801" x="200" y="280" width="400" height="278"/>
+ <objectgroup id="5" name="objects_parallax3" parallaxx="0.1" parallaxy="0.1">
+  <object id="2" name="vaporsun" gid="801" x="120" y="280" width="400" height="278"/>
  </objectgroup>
  <objectgroup id="6" name="objects_bottom">
   <object id="1" name="glowy" x="0" y="0">
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="7" name="objects_parallax2" parallaxx="0.3" parallaxy="0.3">
+ <objectgroup id="7" name="objects_parallax2" locked="1" parallaxx="0.3" parallaxy="0.3">
   <object id="6" gid="3221226274" x="360" y="480" width="320" height="800" rotation="315"/>
   <object id="8" gid="802" x="400" y="840" width="320" height="800" rotation="315"/>
  </objectgroup>
- <objectgroup id="8" name="objects_parallax" parallaxx="0.4" parallaxy="0.4">
+ <objectgroup id="8" name="objects_parallax" locked="1" parallaxx="0.4" parallaxy="0.4">
   <object id="9" gid="802" x="920" y="-360" width="640" height="1600" rotation="180"/>
   <object id="10" gid="802" x="-200" y="1400" width="640" height="1600"/>
  </objectgroup>
@@ -116,11 +116,11 @@
   </object>
  </objectgroup>
  <objectgroup id="12" name="objects_reflection">
-  <object id="31" x="0" y="120" width="600" height="120"/>
-  <object id="32" x="600" y="120" width="120" height="360"/>
-  <object id="33" x="80" y="520" width="520" height="120"/>
-  <object id="34" x="120" y="720" width="600" height="240"/>
-  <object id="35" x="120" y="1040" width="120" height="120"/>
+  <object id="31" name="vaporreflect" x="0" y="120" width="600" height="120"/>
+  <object id="32" name="vaporreflect" x="600" y="120" width="120" height="360"/>
+  <object id="33" name="vaporreflect" x="80" y="520" width="520" height="120"/>
+  <object id="34" name="vaporreflect" x="120" y="720" width="600" height="240"/>
+  <object id="35" name="vaporreflect" x="120" y="1040" width="120" height="120"/>
  </objectgroup>
  <objectgroup id="9" name="objects_party">
   <object id="11" name="transition" x="210" y="450" width="60" height="60">

@@ -39,6 +39,9 @@ function MouseHole:init()
     self.shopkeeper.slide = true
 
     self:registerItem("tensionbit")
+    for _, party in ipairs(Game.party) do
+        self:registerItem("brews/"..party.id)
+    end
 
     self:registerTalk("About Yourself")
     self:registerTalk("About Wall Guardian")
