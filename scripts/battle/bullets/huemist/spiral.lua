@@ -8,7 +8,6 @@ function Spiral:init(x, y, dir, speed, lifetime, turnvar)
     self.timer = 0
     self.turnvar = turnvar or 0
     self.angled = false
-
     self.made = false
 	self.bullet_direction = dir
 	self.bullet_speed = speed
@@ -19,6 +18,7 @@ end
 
 function Spiral:update()
     super.update(self)
+	
 
     if not self.made then	
         Game.battle.timer:lerpVar(self, "scale_x", 0, 1, 5)

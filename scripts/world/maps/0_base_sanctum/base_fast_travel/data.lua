@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -1346,7 +1346,7 @@ return {
           type = "",
           shape = "point",
           x = 600,
-          y = 1680,
+          y = 1640,
           width = 0,
           height = 0,
           rotation = 0,

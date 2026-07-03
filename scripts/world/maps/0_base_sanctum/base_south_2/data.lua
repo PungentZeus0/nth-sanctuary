@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -58,6 +58,7 @@ return {
           width = 200,
           height = 1240,
           rotation = 0,
+          opacity = 1,
           gid = 782,
           visible = true,
           properties = {}
@@ -72,6 +73,7 @@ return {
           width = 640,
           height = 1600,
           rotation = 0,
+          opacity = 1,
           gid = 785,
           visible = true,
           properties = {}
@@ -97,11 +99,12 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 675,
-          y = 1041,
-          width = 900,
+          x = 680,
+          y = 1040,
+          width = 960,
           height = 680,
           rotation = 270,
+          opacity = 1,
           gid = 789,
           visible = true,
           properties = {}
@@ -128,29 +131,29 @@ return {
       data = {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
-        0, 0, 0, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
-        0, 0, 0, 31, 31, 31, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28,
-        0, 0, 0, 31, 31, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 31, 31, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 31, 31, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 31, 31, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 31, 31, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 31, 31, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
-        0, 0, 0, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
-        0, 0, 0, 28, 28, 28, 28, 28, 28, 28, 28, 28, 31, 31, 31, 31,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31,
-        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31,
-        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31,
-        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31,
-        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31,
-        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31,
-        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31,
-        31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31,
-        31, 31, 31, 31, 31, 31, 31, 31, 31, 0, 31, 31, 31, 31, 31, 31,
+        0, 0, 0, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194,
+        0, 0, 0, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194,
+        0, 0, 0, 194, 194, 194, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28,
+        0, 0, 0, 194, 194, 194, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 194, 194, 194, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 194, 194, 194, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 194, 194, 194, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 194, 194, 194, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 194, 194, 194, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194,
+        0, 0, 0, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194,
+        0, 0, 0, 28, 28, 28, 28, 28, 28, 28, 28, 28, 194, 194, 194, 194,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 194, 194, 194, 194,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 194, 194, 194, 194,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 194, 194, 194, 194,
+        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 194, 194, 194, 194,
+        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 194, 194, 194, 194,
+        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 194, 194, 194, 194,
+        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 194, 194, 194, 194,
+        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 194, 194, 194, 194,
+        0, 0, 0, 331, 331, 331, 0, 0, 0, 0, 0, 0, 194, 194, 194, 194,
+        194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194,
+        194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194, 194,
         28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28
       }
     },
@@ -224,6 +227,7 @@ return {
           width = 400,
           height = 280,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["new_sprite"] = "yeah"
@@ -301,6 +305,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -330,6 +335,7 @@ return {
           width = 200,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "door.d1",
@@ -346,6 +352,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "2_2nd_sanctuary/second_sanctum_1_winglade"
@@ -361,6 +368,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "0_base_sanctum/base_south_1",
@@ -377,6 +385,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "jamm",
@@ -393,6 +402,7 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "primary.jamm",
@@ -425,6 +435,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -438,6 +449,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -451,6 +463,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -464,6 +477,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -477,6 +491,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -490,6 +505,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -503,6 +519,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -516,6 +533,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["comment"] = "Like, Titan spawn?"
@@ -531,6 +549,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -544,6 +563,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -555,7 +575,7 @@ return {
       id = 8,
       name = "collision",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -573,6 +593,7 @@ return {
           width = 680,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -586,6 +607,7 @@ return {
           width = 400,
           height = 280,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -599,6 +621,7 @@ return {
           width = 120,
           height = 440,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -612,6 +635,7 @@ return {
           width = 480,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -625,6 +649,7 @@ return {
           width = 206,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -638,6 +663,7 @@ return {
           width = 80,
           height = 280,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -651,6 +677,7 @@ return {
           width = 640,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -664,6 +691,7 @@ return {
           width = 40,
           height = 880,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -677,6 +705,7 @@ return {
           width = 80,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -706,6 +735,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"
@@ -721,6 +751,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv2"

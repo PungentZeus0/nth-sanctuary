@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="19" nextobjectid="122">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="19" nextobjectid="123">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -300,6 +300,9 @@
    <point/>
   </object>
   <object id="121" name="dess" x="400" y="920">
+   <point/>
+  </object>
+  <object id="122" name="base_exit" x="640" y="40">
    <point/>
   </object>
  </objectgroup>

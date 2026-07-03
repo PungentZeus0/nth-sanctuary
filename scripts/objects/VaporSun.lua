@@ -11,7 +11,7 @@ function VaporSun:init(x, y)
     self:addFX(ShaderFX("wave_interlace", {
 				["wave_sine"] = function () return Kristal.getTime() * 50 end,
 				["wave_mag"] = function () return 10 end,
-				["wave_height"] = 25,
+				["wave_height"] = 5,
 				["texsize"] = { SCREEN_WIDTH, SCREEN_HEIGHT }
 			}), "funky_mode")
 end

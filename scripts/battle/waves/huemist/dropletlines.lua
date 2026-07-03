@@ -2,12 +2,13 @@ local DropletLines, super = Class(Wave)
 
 function DropletLines:init()
     super.init(self)
-
+	self.siner = 0
     self.time = 270/30
 	self.side = 0
 	self.last_add_diff = -1
 	self.add_diff_same_count = 0
 end
+
 
 function DropletLines:onStart()
     local attackers = #self:getAttackers()           --scr_monsterpop()
@@ -47,9 +48,9 @@ function DropletLines:onStart()
 			x_diff = -diff
 			y = arena.bottom + distance
 		end
-		for i = -2, 2 - add_diff do
-			turnvar = -math.rad(-(i + (add_diff == 1 and 0.5 or 0)) * 2)
-			local bullet = self:spawnBullet("huemist/spiral", x + x_diff * i + (add_diff == 1 and x_diff / 2 or 0), y + y_diff * i + (add_diff == 1 and y_diff / 2 or 0), direction, 4, 80, turnvar)
+		for i = -2, 2 do
+			turnvar = 0
+			local bullet = self:spawnBullet("huemist/spiral", x + (x_diff * i), y + (y_diff * i), direction, 4, 50, turnvar)
 			bullet.dont_remove_on_lifetime_end = true
 			bullet.remove_outside_arena = true
 		end
@@ -64,15 +65,15 @@ end
 
 function DropletLines:update()
 	super.update(self)
-    --[[local attackers = #self:getAttackers()           --scr_monsterpop()
+	self.siner = self.siner + DTMULT
+    local attackers = #self:getAttackers()           --scr_monsterpop()
     local enemies = #Game.battle:getActiveEnemies()  --sameattack
     if enemies == attackers then
-		for _, bullet in ipairs(self.bullets) do
-			if bullet:isBullet("huemist/huedroplet") and not bullet:isRemoved() then
-				bullet.x = bullet.x + ((math.sin((Kristal.getTime()*30) * 0.1) * 1.5) / enemies)
-			end
-		end
-    end]]
+		--[[for _, bullet in ipairs(self.bullets) do
+			
+			
+		end]]
+    end
 end
 
 function DropletLines:draw()

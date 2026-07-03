@@ -18,6 +18,9 @@ function item:init()
     -- Menu description
     self.description = "A rainbow scarf formed from sound itself. \n It sounds like waves."
 
+
+    
+    
     -- Default shop price (sell price is halved)
     self.price = 250
     -- Whether the item can be sold

@@ -5,7 +5,7 @@ function HueDroplet:init(x, y)
 
     self:setScale(1)
     self:setOriginExact(16, 18)
-
+	self.siner = 0
     self.tp = (1/3) / 2.5
 	self.sprite.visible = false
 	self:setColor(COLORS.yellow)
@@ -18,19 +18,27 @@ end
 
 function HueDroplet:update()
     super.update(self)
+	self.siner = self.siner + DTMULT
+
+	if self.rotation == 0 or self.rotation == math.rad(180) then
+		self.y = self.y + math.cos((self.siner*(math.pi/2))/6)*2
+	else
+		self.x = self.x + math.cos((self.siner*(math.pi/2))/6)*2
+	end
+
 	if self.remove_outside_arena then
 		local arena = Game.battle.arena
 		if not self.was_in_arena then
 			if self.x >= arena.left - 16 and self.x <= arena.right + 16 and self.y >= arena.top - 18 and self.y <= arena.bottom + 18 then
 				self.was_in_arena = true
 			end
-		elseif self.x < arena.left - 16 then
+		elseif (self.x < arena.left) and self.rotation == math.pi then
 			self:doRemove()
-		elseif self.x > arena.right + 16 then
+		elseif (self.x > arena.right + -10) and self.rotation == 0 then
 			self:doRemove()
-		elseif self.y < arena.top - 18 then
+		elseif (self.y > arena.bottom) and self.rotation == math.pi/2 then
 			self:doRemove()
-		elseif self.y > arena.bottom + 18 then
+		elseif (self.y < arena.top) and self.rotation == (math.pi + math.pi/2) then
 			self:doRemove()
 		end
 	end
