@@ -37,7 +37,7 @@
         },
         {
             "fileName": "0_base_sanctum/base_south_1/base_south_1.tmx",
-            "height": 1600,
+            "height": 1640,
             "width": 1600,
             "x": 480,
             "y": 1040
@@ -82,7 +82,7 @@
             "height": 1120,
             "width": 1200,
             "x": -240,
-            "y": 4120
+            "y": 4160
         },
         {
             "fileName": "2_2nd_sanctuary/second_sanctum_3/second_sanctum_3.tmx",
@@ -685,6 +685,13 @@
             "width": 800,
             "x": 12880,
             "y": 2680
+        },
+        {
+            "fileName": "2_2nd_sanctuary/pre_ripple/pre_ripple.tmx",
+            "height": 2800,
+            "width": 800,
+            "x": -2200,
+            "y": 4240
         }
     ],
     "onlyShowAdjacentMaps": false,
