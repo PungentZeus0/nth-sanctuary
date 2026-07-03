@@ -89,7 +89,7 @@ function map:doIntro()
     self.ripple_fx.layer = WORLD_LAYERS["bottom"]
     Game.world:addChild(self.ripple_fx)
     self.ripple_fx_alt = RippleEffect()
-    self.ripple_fx_alt.layer = WORLD_LAYERS["above_events"]
+    self.ripple_fx_alt.layer = 0.8
     Game.world:addChild(self.ripple_fx_alt)
 
     Game.world.map.timer:script(function(wait)
@@ -122,20 +122,7 @@ function map:doIntro()
             Game.world.color = COLORS.white
             self.world:loadMap("2_2nd_sanctuary/second_sanctum_0_ripple_post", "spawn")
             self.fakefader:fadeOutAndRemove(0.5)
-            self.tiles.alpha = 1
-            self.tiles_osc.alpha = 1
             self.con = 2
-            for _, event in ipairs(self.events) do
-                if event.layer == self.layers["objects_parallax"] or 
-                   event.layer == self.layers["objects_parallax2"] or 
-                   event.layer == self.layers["objects_parallax3"] or 
-                   event.layer == self.layers["objects_tile_oscillate"] then
-                    event.visible = true
-                end
-            end
-            for _, filter in ipairs(Game.world.map:getEvents("filter")) do
-                filter.visible = true
-            end
         end)
 
         -- wait(60/30)
