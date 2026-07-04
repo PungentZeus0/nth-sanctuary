@@ -1,8 +1,9 @@
 local ClimbExitMany, super = Class(ClimbExit)
 
-function ClimbExitMany:init(data)
-    settings = data and data.properties or {}
-    super.init(data.x, data.y, data.shape, settings)
+function ClimbExit:init(x, y, shape, settings)
+    settings = settings or {}
+    shape = shape or { TILE_WIDTH, TILE_HEIGHT }
+    super.super.init(self, x, y, shape)
 
     self.target_down = settings.target_down
     self.target_up = settings.target_up

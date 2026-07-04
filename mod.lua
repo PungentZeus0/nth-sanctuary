@@ -103,7 +103,19 @@ function Mod:init()
     Game:registerEvent("vaporsun", function(data)
         return VaporSun(data.center_x, data.center_y)
     end)
-    
+    registry:register("climbexitmany", function(data)
+        return ClimbExitMany(data.x, data.y, getRectData(data), {
+            target_down = data.properties.target_down,
+			target_up = data.properties.target_up,
+			target_left = data.properties.target_left,
+			target_right = data.properties.target_right,
+            can_exit = data.properties.can_exit,
+            can_exit_down = data.properties.can_exit_down,
+			can_exit_up = data.properties.can_exit_up,
+			can_exit_left = data.properties.can_exit_left,
+			can_exit_right = data.properties.can_exit_right
+        })
+    end)
     TableUtils.copyInto(MUSIC_VOLUMES, {
         second_church = 0.8
     })
